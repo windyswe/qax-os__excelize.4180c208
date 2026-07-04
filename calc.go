@@ -7097,7 +7097,7 @@ func (fn *formulaFuncs) BINOMdotDISTdotRANGE(argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	sum := 0.0
-	for i := num1.Number; i < num2.Number; i++ {
+	for i := num1.Number; i <= num2.Number; i++ {
 		sum += binomdist(i, trials.Number, probability.Number)
 	}
 	return newNumberFormulaArg(sum)

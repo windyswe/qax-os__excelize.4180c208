@@ -8162,7 +8162,7 @@ func (fn *formulaFuncs) FREQUENCY(argsList *list.List) formulaArg {
 		}
 		c = append(c, rows)
 	}
-	for j = 0; j < len(dataMtx.List); j++ {
+	for j = 0; j < len(binsMtx.List); j++ {
 		n := 0.0
 		for i < len(dataMtx.List) && dataMtx.List[i].Number <= binsMtx.List[j].Number {
 			n++
@@ -8170,7 +8170,7 @@ func (fn *formulaFuncs) FREQUENCY(argsList *list.List) formulaArg {
 		}
 		c[j] = []formulaArg{newNumberFormulaArg(n)}
 	}
-	c[j] = []formulaArg{newNumberFormulaArg(float64(len(binsMtx.List) - i))}
+	c[j] = []formulaArg{newNumberFormulaArg(float64(len(dataMtx.List) - i))}
 	if len(c) > 2 {
 		c[1], c[2] = c[2], c[1]
 	}
